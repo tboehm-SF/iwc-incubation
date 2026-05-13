@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head', { title: 'Data 360 Track' }) %>
+<body>
+  <%- include('partials/header') %>
+
+  <!-- ============================================== -->
+  <!-- TRACK HERO                                     -->
+  <!-- ============================================== -->
+  <section class="track-hero-v2">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="/" class="breadcrumb__link">Home</a>
+        <span class="breadcrumb__separator">/</span>
+        <a href="/" class="breadcrumb__link">Tracks</a>
+        <span class="breadcrumb__separator">/</span>
+        <span class="breadcrumb__current">Data 360</span>
+      </nav>
+      <div class="track-hero-v2__badge">
+        <i class="ph ph-database"></i>
+        Data Cloud Deep-Dive
+      </div>
+      <h1 class="track-hero-v2__title">Data 360 Track</h1>
+      <p class="track-hero-v2__subtitle">Build a complete data unification solution for Coral Cloud Resorts using Data Cloud. Ingest data from CRM and external sources, resolve identities, create calculated insights, build segments, and activate audiences.</p>
+      <div class="track-hero-v2__stats">
+        <div class="track-hero-v2__stat">
+          <span class="track-hero-v2__stat-value">8</span>
+          <span class="track-hero-v2__stat-label">Modules</span>
+        </div>
+        <div class="track-hero-v2__stat">
+          <span class="track-hero-v2__stat-value">75</span>
+          <span class="track-hero-v2__stat-label">Steps</span>
+        </div>
+        <div class="track-hero-v2__stat">
+          <span class="track-hero-v2__stat-value">~120</span>
+          <span class="track-hero-v2__stat-label">Minutes</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <!-- STICKY PROGRESS BAR                            -->
+  <!-- ============================================== -->
+  <div class="progress-section-v2" id="progress-section-v2">
+    <div class="container">
+      <div class="progress-section-v2__inner">
+        <span class="progress-section-v2__label">Your Progress</span>
+        <div class="progress-section-v2__bar">
+          <div class="progress-section-v2__fill" id="overall-progress-main"></div>
+        </div>
+        <span class="progress-section-v2__percent" id="overall-progress-text">0%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- DATA 360 TRACK MODULES                         -->
+  <!-- ============================================== -->
+  <section class="section marketing-track-section" id="data360-track" style="padding-top: 40px;">
+    <div class="container">
+
+      <!-- ════════════════════════════════════════════ -->
+      <!-- MODULE 1: Data 360 Setup                    -->
+      <!-- ════════════════════════════════════════════ -->
+      <div class="module-v2 animate-on-scroll" data-module="module-1">
+        <div class="module-v2__card">
+          <div class="module-v2__header" role="button" aria-expanded="false">
+            <span class="module-v2__number">1</span>
+            <div class="module-v2__info">
+              <h3 class="module-v2__title">Data 360 Setup</h3>
+              <p class="module-v2__subtitle">CRM Streams, S3 Connector, Snowflake, Identity Resolution</p>
+            </div>
+            <div class="module-v2__meta">
+              <span class="module-v2__step-count">0 / 12</span>
+            </div>
+            <span class="module-v2__chevron"><i class="ph ph-caret-down"></i></span>
+          </div>
+          <div class="module-v2__content">
+            <div class="module-v2__body">
+              <p class="module-v2__description">Welcome to the Data 360 Track! In this module, you will set up the foundational data connections for <strong>Coral Cloud Resorts</strong> -- a luxury resort chain using Data Cloud to unify guest data from multiple sources. You will configure CRM data streams, external connectors, and identity resolution rules.</p>
+
+              <div class="callout-v2 callout-v2--info">
+                <span class="callout-v2__icon"><i class="ph ph-info"></i></span>
+                <div><strong>Scenario:</strong> Coral Cloud Resorts wants to unify guest data from their CRM, booking system (S3), and loyalty program to create a 360-degree view of each guest and personalize their experience.</div>
+              </div>
+
+              <h4 class="module-v2__section-title">Steps</h4>
+              <div class="step-list-v2">
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m1-s1">
+                  <span class="step-v2__text">Log into your <strong>Data Cloud org</strong> using the credentials provided</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m1-s2">
+                  <span class="step-v2__text">Navigate to <strong>Data Cloud Setup</strong> from the App Launcher</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m1-s3">
+                  <span class="step-v2__text">Create a <strong>CRM Data Stream</strong> for Contacts -- select the Contact object and relevant fields</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m1-s4">
+                  <span class="step-v2__text">Configure <strong>field mappings</strong> for the Contact DMO (First Name, Last Name, Email, Phone, Mailing Address)</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m1-s5">
+                  <span class="step-v2__text"><strong>Deploy</strong> the Contact data stream and verify records are flowing</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m1-s6">
+                  <span class="step-v2__text">Create an <strong>S3 Connection</strong> for external booking data (navigate to Data Cloud &gt; Connections)</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m1-s7">
+                  <span class="step-v2__text">Configure the <strong>S3 data stream</strong> for transaction/booking records</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m1-s8">
+                  <span class="step-v2__text"><strong>Map transaction fields</strong> to the appropriate DMO (Booking ID, Guest Email, Amount, Date, Resort Location)</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m1-s9">
+                  <span class="step-v2__text"><strong>Deploy</strong> the S3 data stream and confirm data ingestion</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m1-s10">
+                  <span class="step-v2__text">Navigate to <strong>Identity Resolution</strong> in Data Cloud Setup</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m1-s11">
+                  <span class="step-v2__text">Create a new <strong>Identity Resolution Ruleset</strong></span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m1-s12">
+                  <span class="step-v2__text">Configure <strong>match rules</strong>: Email Exact Match + Name Fuzzy Match (Levenshtein distance)</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ════════════════════════════════════════════ -->
+      <!-- MODULE 2: Data Explorer                     -->
+      <!-- ════════════════════════════════════════════ -->
+      <div class="module-v2 animate-on-scroll" data-module="module-2">
+        <div class="module-v2__card">
+          <div class="module-v2__header" role="button" aria-expanded="false">
+            <span class="module-v2__number">2</span>
+            <div class="module-v2__info">
+              <h3 class="module-v2__title">Data Explorer</h3>
+              <p class="module-v2__subtitle">Data Explorer, Profile Explorer, Unified Profiles</p>
+            </div>
+            <div class="module-v2__meta">
+              <span class="module-v2__step-count">0 / 8</span>
+            </div>
+            <span class="module-v2__chevron"><i class="ph ph-caret-down"></i></span>
+          </div>
+          <div class="module-v2__content">
+            <div class="module-v2__body">
+              <p class="module-v2__description">Explore the data that has been ingested into Data Cloud. Use Data Explorer to query data model objects and Profile Explorer to view unified customer profiles with merged records from multiple sources.</p>
+
+              <h4 class="module-v2__section-title">Steps</h4>
+              <div class="step-list-v2">
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m2-s1">
+                  <span class="step-v2__text">Open <strong>Data Explorer</strong> from the App Launcher</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m2-s2">
+                  <span class="step-v2__text">Run a query on the <strong>Unified Individual</strong> data model object</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m2-s3">
+                  <span class="step-v2__text">Add a filter for a <strong>specific email domain</strong> (e.g., @coralcloud.com)</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m2-s4">
+                  <span class="step-v2__text">Navigate to the <strong>Profile Explorer</strong> tab</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m2-s5">
+                  <span class="step-v2__text">Search for a <strong>specific unified profile</strong> by name or email</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m2-s6">
+                  <span class="step-v2__text">Review the <strong>timeline of merged records</strong> showing source system contributions</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m2-s7">
+                  <span class="step-v2__text">Check <strong>related data objects</strong> (bookings, interactions, loyalty points)</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m2-s8">
+                  <span class="step-v2__text">Verify <strong>identity resolution results</strong> -- confirm multiple source records merged into one profile</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ════════════════════════════════════════════ -->
+      <!-- MODULE 3: Segmentation                      -->
+      <!-- ════════════════════════════════════════════ -->
+      <div class="module-v2 animate-on-scroll" data-module="module-3">
+        <div class="module-v2__card">
+          <div class="module-v2__header" role="button" aria-expanded="false">
+            <span class="module-v2__number">3</span>
+            <div class="module-v2__info">
+              <h3 class="module-v2__title">Segmentation</h3>
+              <p class="module-v2__subtitle">Segment Builder, Audience Filters, Publishing</p>
+            </div>
+            <div class="module-v2__meta">
+              <span class="module-v2__step-count">0 / 10</span>
+            </div>
+            <span class="module-v2__chevron"><i class="ph ph-caret-down"></i></span>
+          </div>
+          <div class="module-v2__content">
+            <div class="module-v2__body">
+              <p class="module-v2__description">Create targeted segments using the Segment Builder. Combine demographic, behavioral, and calculated attributes to build high-value audience segments for Coral Cloud Resorts' marketing campaigns.</p>
+
+              <h4 class="module-v2__section-title">Steps</h4>
+              <div class="step-list-v2">
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m3-s1">
+                  <span class="step-v2__text">Navigate to <strong>Segments</strong> in the Data Cloud app</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m3-s2">
+                  <span class="step-v2__text">Create a <strong>new segment</strong> on the Unified Individual entity</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m3-s3">
+                  <span class="step-v2__text">Set the <strong>Data Space</strong> to "Default"</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m3-s4">
+                  <span class="step-v2__text">Add filter: <strong>Engagement Score &gt; 70</strong></span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m3-s5">
+                  <span class="step-v2__text">Add filter: <strong>Last Activity within 30 days</strong></span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m3-s6">
+                  <span class="step-v2__text">Add a related attribute: <strong>Total Lifetime Value &gt; 5000</strong></span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m3-s7">
+                  <span class="step-v2__text"><strong>Preview</strong> the segment count to verify filter criteria</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m3-s8">
+                  <span class="step-v2__text">Name your segment with your initials: <strong>[Initials]_HighValue_Engaged</strong></span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m3-s9">
+                  <span class="step-v2__text"><strong>Save and Publish</strong> the segment</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m3-s10">
+                  <span class="step-v2__text">Verify segment appears in the <strong>segment list</strong> with "Published" status</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ════════════════════════════════════════════ -->
+      <!-- MODULE 4: Activation                        -->
+      <!-- ════════════════════════════════════════════ -->
+      <div class="module-v2 animate-on-scroll" data-module="module-4">
+        <div class="module-v2__card">
+          <div class="module-v2__header" role="button" aria-expanded="false">
+            <span class="module-v2__number">4</span>
+            <div class="module-v2__info">
+              <h3 class="module-v2__title">Activation</h3>
+              <p class="module-v2__subtitle">S3/EDW Target, Marketing Cloud, Google Ads</p>
+            </div>
+            <div class="module-v2__meta">
+              <span class="module-v2__step-count">0 / 8</span>
+            </div>
+            <span class="module-v2__chevron"><i class="ph ph-caret-down"></i></span>
+          </div>
+          <div class="module-v2__content">
+            <div class="module-v2__body">
+              <p class="module-v2__description">Activate your segments by pushing audience data to downstream systems. Configure activation targets for S3 (data warehouse), Marketing Cloud (email campaigns), and advertising platforms.</p>
+
+              <h4 class="module-v2__section-title">Steps</h4>
+              <div class="step-list-v2">
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m4-s1">
+                  <span class="step-v2__text">Navigate to <strong>Activation Targets</strong> in Data Cloud</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m4-s2">
+                  <span class="step-v2__text">Create a new <strong>S3 Activation Target</strong></span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m4-s3">
+                  <span class="step-v2__text">Configure <strong>connection details</strong> (bucket, path, credentials)</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m4-s4">
+                  <span class="step-v2__text">Select your <strong>published segment</strong> for activation</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m4-s5">
+                  <span class="step-v2__text"><strong>Map attributes</strong> for export (Email, Name, Segment Membership, LTV)</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m4-s6">
+                  <span class="step-v2__text">Set the activation <strong>schedule</strong> to run daily</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m4-s7">
+                  <span class="step-v2__text">Create a <strong>Marketing Cloud activation</strong> for email campaign targeting</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m4-s8">
+                  <span class="step-v2__text">Review <strong>activation status</strong> and verify data flow to targets</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ════════════════════════════════════════════ -->
+      <!-- MODULE 5: Calculated Insights               -->
+      <!-- ════════════════════════════════════════════ -->
+      <div class="module-v2 animate-on-scroll" data-module="module-5">
+        <div class="module-v2__card">
+          <div class="module-v2__header" role="button" aria-expanded="false">
+            <span class="module-v2__number">5</span>
+            <div class="module-v2__info">
+              <h3 class="module-v2__title">Calculated Insights</h3>
+              <p class="module-v2__subtitle">SQL Queries, Scheduling, KPI Metrics</p>
+            </div>
+            <div class="module-v2__meta">
+              <span class="module-v2__step-count">0 / 8</span>
+            </div>
+            <span class="module-v2__chevron"><i class="ph ph-caret-down"></i></span>
+          </div>
+          <div class="module-v2__content">
+            <div class="module-v2__body">
+              <p class="module-v2__description">Create Calculated Insights to derive new metrics from your unified data. Write SQL queries to calculate lifetime value, average booking value, and visit frequency for each guest profile.</p>
+
+              <div class="callout-v2 callout-v2--tip">
+                <span class="callout-v2__icon"><i class="ph ph-lightbulb"></i></span>
+                <div><strong>Tip:</strong> Calculated Insights run on the Data Cloud SQL engine. Results are stored as new attributes on the Unified Individual profile.</div>
+              </div>
+
+              <h4 class="module-v2__section-title">Steps</h4>
+              <div class="step-list-v2">
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m5-s1">
+                  <span class="step-v2__text">Navigate to <strong>Calculated Insights</strong> in Data Cloud</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m5-s2">
+                  <span class="step-v2__text">Click <strong>New Calculated Insight</strong></span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m5-s3">
+                  <span class="step-v2__text">Write SQL to <strong>calculate total booking value</strong> per guest: <code>SELECT UnifiedIndividualId, SUM(BookingAmount) as TotalLTV FROM...</code></span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m5-s4">
+                  <span class="step-v2__text">Add <strong>dimensions and measures</strong> (group by individual, measure = SUM, AVG, COUNT)</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m5-s5">
+                  <span class="step-v2__text"><strong>Schedule</strong> the insight to run daily at a specified time</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m5-s6">
+                  <span class="step-v2__text"><strong>Preview results</strong> to verify calculations are correct</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m5-s7">
+                  <span class="step-v2__text"><strong>Link insight</strong> to the Unified Individual profile as a related attribute</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m5-s8">
+                  <span class="step-v2__text">Verify the insight <strong>appears on a customer record</strong> in the CRM</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ════════════════════════════════════════════ -->
+      <!-- MODULE 6: Data Actions                      -->
+      <!-- ════════════════════════════════════════════ -->
+      <div class="module-v2 animate-on-scroll" data-module="module-6">
+        <div class="module-v2__card">
+          <div class="module-v2__header" role="button" aria-expanded="false">
+            <span class="module-v2__number">6</span>
+            <div class="module-v2__info">
+              <h3 class="module-v2__title">Data Actions</h3>
+              <p class="module-v2__subtitle">Platform Events, Flow Builder, Real-Time</p>
+            </div>
+            <div class="module-v2__meta">
+              <span class="module-v2__step-count">0 / 7</span>
+            </div>
+            <span class="module-v2__chevron"><i class="ph ph-caret-down"></i></span>
+          </div>
+          <div class="module-v2__content">
+            <div class="module-v2__body">
+              <p class="module-v2__description">Configure Data Actions to trigger real-time business processes when data conditions are met. Use Platform Events and Flow Builder to create automated responses to customer behavior changes.</p>
+
+              <h4 class="module-v2__section-title">Steps</h4>
+              <div class="step-list-v2">
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m6-s1">
+                  <span class="step-v2__text">Navigate to <strong>Data Actions</strong> in Data Cloud Setup</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m6-s2">
+                  <span class="step-v2__text">Create a <strong>new Data Action</strong></span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m6-s3">
+                  <span class="step-v2__text">Select trigger: <strong>Calculated Insight update</strong> (when LTV value changes)</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m6-s4">
+                  <span class="step-v2__text">Define condition: <strong>LTV crosses threshold</strong> (e.g., exceeds $10,000)</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m6-s5">
+                  <span class="step-v2__text">Configure action: <strong>Create Platform Event</strong> (HighValueGuest__e)</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m6-s6">
+                  <span class="step-v2__text">Build a <strong>Flow</strong> to respond to the Platform Event (create a Task for the account team)</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m6-s7">
+                  <span class="step-v2__text"><strong>Test</strong> the end-to-end flow by triggering a data update</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ════════════════════════════════════════════ -->
+      <!-- MODULE 7: Einstein AI & Advanced Reporting  -->
+      <!-- ════════════════════════════════════════════ -->
+      <div class="module-v2 animate-on-scroll" data-module="module-7">
+        <div class="module-v2__card">
+          <div class="module-v2__header" role="button" aria-expanded="false">
+            <span class="module-v2__number">7</span>
+            <div class="module-v2__info">
+              <h3 class="module-v2__title">Einstein AI &amp; Advanced Reporting</h3>
+              <p class="module-v2__subtitle">DC Reports, Duplicate Detection, Einstein AI Segments, Flow Queries</p>
+            </div>
+            <div class="module-v2__meta">
+              <span class="module-v2__step-count">0 / 8</span>
+            </div>
+            <span class="module-v2__chevron"><i class="ph ph-caret-down"></i></span>
+          </div>
+          <div class="module-v2__content">
+            <div class="module-v2__body">
+              <p class="module-v2__description">Leverage Einstein AI capabilities within Data Cloud to create intelligent segments, detect duplicates, and build advanced cross-object reports. Use natural language to define complex audience criteria.</p>
+
+              <h4 class="module-v2__section-title">Steps</h4>
+              <div class="step-list-v2">
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m7-s1">
+                  <span class="step-v2__text">Open <strong>Data Cloud Reports</strong> from the navigation</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m7-s2">
+                  <span class="step-v2__text">Create a <strong>cross-object report</strong> joining Unified Individual with Booking data</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m7-s3">
+                  <span class="step-v2__text">Navigate to <strong>Identity Resolution</strong> and review the resolution dashboard</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m7-s4">
+                  <span class="step-v2__text">Run <strong>duplicate detection</strong> to identify potential false matches</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m7-s5">
+                  <span class="step-v2__text">Open <strong>Segment Builder</strong> and click "Create with AI"</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m7-s6">
+                  <span class="step-v2__text">Use <strong>Einstein AI</strong> for segment creation -- enter a natural language prompt</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m7-s7">
+                  <span class="step-v2__text">Enter prompt: <strong>"Guests who stayed more than 3 times in the past year and spent over $5,000 total"</strong></span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m7-s8">
+                  <span class="step-v2__text"><strong>Review and refine</strong> the AI-generated segment criteria</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ════════════════════════════════════════════ -->
+      <!-- MODULE 8: Advanced Topics                   -->
+      <!-- ════════════════════════════════════════════ -->
+      <div class="module-v2 animate-on-scroll" data-module="module-8">
+        <div class="module-v2__card">
+          <div class="module-v2__header" role="button" aria-expanded="false">
+            <span class="module-v2__number">8</span>
+            <div class="module-v2__info">
+              <h3 class="module-v2__title">Advanced Topics</h3>
+              <p class="module-v2__subtitle">Metadata Studio, Document AI, Data Governance, Data Spaces</p>
+            </div>
+            <div class="module-v2__meta">
+              <span class="module-v2__step-count">0 / 6</span>
+            </div>
+            <span class="module-v2__chevron"><i class="ph ph-caret-down"></i></span>
+          </div>
+          <div class="module-v2__content">
+            <div class="module-v2__body">
+              <p class="module-v2__description">Explore advanced Data Cloud capabilities including metadata management, AI-powered document processing, governance policies, and multi-brand data isolation with Data Spaces.</p>
+
+              <h4 class="module-v2__section-title">Steps</h4>
+              <div class="step-list-v2">
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m8-s1">
+                  <span class="step-v2__text">Explore <strong>Metadata Studio</strong> for data cataloging and lineage tracking</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m8-s2">
+                  <span class="step-v2__text">Review <strong>Document AI</strong> capabilities for extracting data from unstructured documents</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m8-s3">
+                  <span class="step-v2__text">Configure <strong>Data Governance</strong> policies (field classification, sensitivity labels)</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m8-s4">
+                  <span class="step-v2__text">Set up <strong>consent management</strong> rules for GDPR/privacy compliance</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m8-s5">
+                  <span class="step-v2__text">Create a <strong>Data Space</strong> for brand isolation (e.g., separate resort brands)</span>
+                </label>
+                <label class="step-v2">
+                  <input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m8-s6">
+                  <span class="step-v2__text">Review <strong>Data Space access controls</strong> and verify data visibility boundaries</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <%- include('partials/footer') %>
+  <script src="/js/app.js"></script>
+  <script src="/js/progress.js"></script>
+</body>
+</html>

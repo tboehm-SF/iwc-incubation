@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head', { title: title || 'Error' }) %>
+<body>
+  <%- include('partials/header') %>
+
+  <section class="section" style="min-height: 60vh; display: flex; align-items: center;">
+    <div class="container" style="text-align: center;">
+      <h1 style="font-size: 2rem; color: #C4A962; margin-bottom: 1rem;"><%= title || 'Error' %></h1>
+      <p style="color: rgba(255,255,255,0.7); margin-bottom: 2rem;"><%= message || 'An unexpected error occurred.' %></p>
+      <a href="/" class="btn btn--primary">Back to Home</a>
+    </div>
+  </section>
+
+  <%- include('partials/footer') %>
+  <script src="/js/app.js"></script>
+</body>
+</html>

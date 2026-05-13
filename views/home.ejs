@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head', { title: 'Home' }) %>
+<body>
+  <%- include('partials/header') %>
+
+  <!-- ============================================== -->
+  <!-- HERO SECTION                                   -->
+  <!-- ============================================== -->
+  <section class="hero" id="home">
+    <div class="hero__bg">
+      <div class="hero__shape hero__shape--1"></div>
+      <div class="hero__shape hero__shape--2"></div>
+      <div class="hero__shape hero__shape--3"></div>
+    </div>
+    <div class="hero__content container">
+      <div class="hero__text">
+        <div class="hero__eyebrow">
+          <span class="hero__eyebrow-dot"></span>
+          Salesforce + IWC Workshop
+        </div>
+        <h1 class="hero__title">
+          Data Cloud Incubation<br>
+          <span class="hero__title-gradient">Workshop</span>
+        </h1>
+        <p class="hero__greeting" id="hero-greeting">Welcome, <%= user.name %>!</p>
+        <p class="hero__subtitle">Comprehensive hands-on workshop covering Data Cloud, Segmentation, Identity Resolution, Calculated Insights, and Activation with a forward-looking outlook on Personalization and Agentforce capabilities.</p>
+        <div class="hero__actions">
+          <a href="/data360" class="btn btn--primary btn--lg">Start Workshop</a>
+          <a href="/use-cases" class="btn btn--secondary btn--lg">Explore Use Cases</a>
+        </div>
+      </div>
+      <div class="hero__mascot animate-on-scroll">
+        <img src="/assets/images/astro.png" alt="Astro" class="hero__astro">
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="hero__stats container">
+      <div class="stat-card animate-on-scroll">
+        <div class="stat-card__number">8</div>
+        <div class="stat-card__label">Deep-Dive Modules</div>
+      </div>
+      <div class="stat-card animate-on-scroll" data-delay="100">
+        <div class="stat-card__number">25</div>
+        <div class="stat-card__label">Outlook Topics</div>
+      </div>
+      <div class="stat-card animate-on-scroll" data-delay="200">
+        <div class="stat-card__number">4h+</div>
+        <div class="stat-card__label">Hands-On Content</div>
+      </div>
+      <div class="stat-card animate-on-scroll" data-delay="300">
+        <div class="stat-card__number">AI</div>
+        <div class="stat-card__label">Powered by Einstein</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <!-- WORKSHOP AGENDA                                -->
+  <!-- ============================================== -->
+  <section class="section agenda-section" id="agenda">
+    <div class="container">
+      <h2 class="section__title">Workshop Agenda</h2>
+      <div class="agenda">
+        <div class="agenda-slot">
+          <div class="agenda-slot__time">10:00</div>
+          <div class="agenda-slot__content">
+            <h3>Introduction into Data Cloud</h3>
+            <p>Overview of Data Cloud architecture, capabilities, and the workshop scenario</p>
+          </div>
+        </div>
+        <div class="agenda-slot">
+          <div class="agenda-slot__time">10:30</div>
+          <div class="agenda-slot__content">
+            <h3>Data Ingestion &amp; Harmonization (Exercise #1)</h3>
+            <p>CRM Streams, S3 Connector, field mappings, and DMO configuration</p>
+          </div>
+        </div>
+        <div class="agenda-slot">
+          <div class="agenda-slot__time">12:00</div>
+          <div class="agenda-slot__content">
+            <h3>Identity Resolution &amp; Profile Unification (Exercise #2)</h3>
+            <p>Match rules, fuzzy matching, and unified profile creation</p>
+          </div>
+        </div>
+        <div class="agenda-slot">
+          <div class="agenda-slot__time">12:30</div>
+          <div class="agenda-slot__content">
+            <h3>Lunch Break</h3>
+          </div>
+        </div>
+        <div class="agenda-slot">
+          <div class="agenda-slot__time">13:30</div>
+          <div class="agenda-slot__content">
+            <h3>Enhance Data with Calculated Insights (Exercise #3)</h3>
+            <p>SQL queries, scheduling, and KPI metric calculations</p>
+          </div>
+        </div>
+        <div class="agenda-slot">
+          <div class="agenda-slot__time">14:30</div>
+          <div class="agenda-slot__content">
+            <h3>Data &amp; Insights in Salesforce CRM (Exercise #4)</h3>
+            <p>Surfacing insights on records, Data Actions, and Platform Events</p>
+          </div>
+        </div>
+        <div class="agenda-slot">
+          <div class="agenda-slot__time">15:00</div>
+          <div class="agenda-slot__content">
+            <h3>Segmentation &amp; Activation (Exercise #5)</h3>
+            <p>Segment builder, audience filters, and publishing to targets</p>
+          </div>
+        </div>
+        <div class="agenda-slot">
+          <div class="agenda-slot__time">15:30</div>
+          <div class="agenda-slot__content">
+            <h3>What's Next?</h3>
+            <p>Roadmap, advanced topics, and future workshop tracks</p>
+          </div>
+        </div>
+        <div class="agenda-slot">
+          <div class="agenda-slot__time">16:00</div>
+          <div class="agenda-slot__content">
+            <h3>Credit Calculations Deep-Dive</h3>
+            <p>Understanding Data Cloud credit consumption and optimization</p>
+          </div>
+        </div>
+        <div class="agenda-slot">
+          <div class="agenda-slot__time">16:30</div>
+          <div class="agenda-slot__content">
+            <h3>Networking</h3>
+            <p>Open discussion, Q&amp;A, and next steps</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <!-- TRACK CARDS                                    -->
+  <!-- ============================================== -->
+  <section class="section tracks-section" id="tracks">
+    <div class="container">
+      <h2 class="section__title">Workshop Tracks</h2>
+      <p class="section__subtitle">Choose a track to begin your learning journey.</p>
+
+      <div class="tracks-grid">
+
+        <!-- Card 1: Data 360 Track -->
+        <a href="/data360" class="track-card" data-track="data360" data-color="gold">
+          <div class="track-card__badge track-card__badge--active">Active</div>
+          <div class="track-card__icon">
+            <i class="ph ph-database"></i>
+          </div>
+          <h3 class="track-card__title">Data 360 Track</h3>
+          <p class="track-card__description">Deep-dive into Data Cloud</p>
+          <div class="track-card__arrow">&rarr;</div>
+        </a>
+
+        <!-- Card 2: Personalization Track -->
+        <a href="/personalization" class="track-card" data-track="personalization" data-color="teal">
+          <div class="track-card__badge track-card__badge--soon">Coming Soon</div>
+          <div class="track-card__icon">
+            <i class="ph ph-user-focus"></i>
+          </div>
+          <h3 class="track-card__title">Personalization Track</h3>
+          <p class="track-card__description">Deliver 1:1 personalized experiences</p>
+          <div class="track-card__arrow">&rarr;</div>
+        </a>
+
+        <!-- Card 3: Agentforce Marketing -->
+        <a href="/marketing-intelligence" class="track-card" data-track="marketing-intelligence" data-color="navy">
+          <div class="track-card__badge track-card__badge--soon">Coming Soon</div>
+          <div class="track-card__icon">
+            <i class="ph ph-chart-line-up"></i>
+          </div>
+          <h3 class="track-card__title">Agentforce Marketing</h3>
+          <p class="track-card__description">Campaign creation &amp; automation</p>
+          <div class="track-card__arrow">&rarr;</div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <!-- SNEAK PEEKS                                    -->
+  <!-- ============================================== -->
+  <section class="section sneak-peeks-section" id="sneak-peeks">
+    <div class="container">
+      <h2 class="section__title">Sneak Peeks</h2>
+      <p class="section__subtitle">More tracks are on the way. Here's a preview of what's coming next.</p>
+
+      <div class="sneak-peeks-grid">
+
+        <a href="/personalization" class="sneak-peek-card animate-on-scroll">
+          <div class="sneak-peek-card__badge">Coming Soon</div>
+          <div class="sneak-peek-card__lock">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0110 0v4"></path>
+            </svg>
+          </div>
+          <h3 class="sneak-peek-card__title">Personalization Track</h3>
+          <p class="sneak-peek-card__description">Deliver 1:1 personalized experiences across every touchpoint. Explore web personalization, real-time decisioning, recommenders, experience templates, and personalized customer journeys powered by Data Cloud.</p>
+        </a>
+
+        <a href="/marketing-intelligence" class="sneak-peek-card animate-on-scroll" data-delay="100">
+          <div class="sneak-peek-card__badge">Coming Soon</div>
+          <div class="sneak-peek-card__lock">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0110 0v4"></path>
+            </svg>
+          </div>
+          <h3 class="sneak-peek-card__title">Agentforce Marketing</h3>
+          <p class="sneak-peek-card__description">Build campaigns with AI agents, create forms and landing pages, configure scoring models, set up website tracking, and orchestrate marketing flows with Agentforce integration.</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <%- include('partials/footer') %>
+  <script src="/js/app.js"></script>
+
+  <% if (typeof justLoggedIn !== 'undefined' && justLoggedIn && user && user.domain === 'iwc.com') { %>
+  <!-- ============================================== -->
+  <!-- IWC WELCOME MODAL                              -->
+  <!-- ============================================== -->
+  <div class="welcome-overlay" id="welcomeOverlay">
+    <div class="welcome-modal" id="welcomeModal">
+
+      <!-- Close button -->
+      <button class="welcome-modal__close" id="welcomeClose" aria-label="Close">
+        <i class="ph ph-x"></i>
+      </button>
+
+      <!-- Watch mechanism scene -->
+      <div class="welcome-modal__scene">
+        <svg class="welcome-modal__mechanism" viewBox="0 0 600 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="skyGrad" x1="300" y1="0" x2="300" y2="240" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#050d17"/>
+              <stop offset="50%" stop-color="#0C1B2A"/>
+              <stop offset="100%" stop-color="#152238"/>
+            </linearGradient>
+            <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#C4A962"/>
+              <stop offset="50%" stop-color="#E8D5A0"/>
+              <stop offset="100%" stop-color="#A68B4B"/>
+            </linearGradient>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="2" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <!-- Background -->
+          <rect width="600" height="240" fill="url(#skyGrad)"/>
+          <!-- Large gear (left) -->
+          <g class="welcome-gear welcome-gear--large" transform="translate(180, 120)">
+            <circle cx="0" cy="0" r="55" fill="none" stroke="#C4A962" stroke-width="1.5" opacity="0.4"/>
+            <circle cx="0" cy="0" r="45" fill="none" stroke="#C4A962" stroke-width="1" opacity="0.3"/>
+            <circle cx="0" cy="0" r="8" fill="#C4A962" opacity="0.6"/>
+            <!-- Teeth -->
+            <rect x="-3" y="-58" width="6" height="10" fill="#C4A962" opacity="0.5"/>
+            <rect x="-3" y="48" width="6" height="10" fill="#C4A962" opacity="0.5"/>
+            <rect x="-58" y="-3" width="10" height="6" fill="#C4A962" opacity="0.5"/>
+            <rect x="48" y="-3" width="10" height="6" fill="#C4A962" opacity="0.5"/>
+            <rect x="36" y="-40" width="6" height="10" fill="#C4A962" opacity="0.5" transform="rotate(45 39 -35)"/>
+            <rect x="-42" y="30" width="6" height="10" fill="#C4A962" opacity="0.5" transform="rotate(45 -39 35)"/>
+            <rect x="36" y="30" width="6" height="10" fill="#C4A962" opacity="0.5" transform="rotate(-45 39 35)"/>
+            <rect x="-42" y="-40" width="6" height="10" fill="#C4A962" opacity="0.5" transform="rotate(-45 -39 -35)"/>
+          </g>
+          <!-- Medium gear (right) -->
+          <g class="welcome-gear welcome-gear--medium" transform="translate(380, 100)">
+            <circle cx="0" cy="0" r="40" fill="none" stroke="#C4A962" stroke-width="1.5" opacity="0.4"/>
+            <circle cx="0" cy="0" r="32" fill="none" stroke="#C4A962" stroke-width="1" opacity="0.3"/>
+            <circle cx="0" cy="0" r="6" fill="#C4A962" opacity="0.6"/>
+            <rect x="-3" y="-43" width="6" height="8" fill="#C4A962" opacity="0.5"/>
+            <rect x="-3" y="35" width="6" height="8" fill="#C4A962" opacity="0.5"/>
+            <rect x="-43" y="-3" width="8" height="6" fill="#C4A962" opacity="0.5"/>
+            <rect x="35" y="-3" width="8" height="6" fill="#C4A962" opacity="0.5"/>
+            <rect x="25" y="-30" width="6" height="8" fill="#C4A962" opacity="0.5" transform="rotate(45 28 -26)"/>
+            <rect x="-31" y="22" width="6" height="8" fill="#C4A962" opacity="0.5" transform="rotate(45 -28 26)"/>
+          </g>
+          <!-- Small gear (bottom right) -->
+          <g class="welcome-gear welcome-gear--small" transform="translate(440, 180)">
+            <circle cx="0" cy="0" r="25" fill="none" stroke="#C4A962" stroke-width="1" opacity="0.3"/>
+            <circle cx="0" cy="0" r="18" fill="none" stroke="#C4A962" stroke-width="0.8" opacity="0.25"/>
+            <circle cx="0" cy="0" r="4" fill="#C4A962" opacity="0.5"/>
+            <rect x="-2" y="-27" width="4" height="6" fill="#C4A962" opacity="0.4"/>
+            <rect x="-2" y="21" width="4" height="6" fill="#C4A962" opacity="0.4"/>
+            <rect x="-27" y="-2" width="6" height="4" fill="#C4A962" opacity="0.4"/>
+            <rect x="21" y="-2" width="6" height="4" fill="#C4A962" opacity="0.4"/>
+          </g>
+          <!-- Precision lines -->
+          <g opacity="0.2" stroke="#C4A962" stroke-width="0.5">
+            <line x1="100" y1="60" x2="500" y2="60"/>
+            <line x1="120" y1="200" x2="480" y2="200"/>
+            <line x1="250" y1="40" x2="250" y2="220"/>
+            <line x1="350" y1="40" x2="350" y2="220"/>
+          </g>
+          <!-- Sparkle dots -->
+          <circle cx="100" cy="50" r="1.5" fill="#C4A962" opacity="0.6" class="welcome-star"/>
+          <circle cx="500" cy="70" r="1" fill="#C4A962" opacity="0.4" class="welcome-star"/>
+          <circle cx="300" cy="30" r="1.2" fill="#C4A962" opacity="0.5" class="welcome-star"/>
+          <circle cx="520" cy="180" r="1" fill="#C4A962" opacity="0.3" class="welcome-star"/>
+          <circle cx="80" cy="190" r="1.3" fill="#C4A962" opacity="0.5" class="welcome-star"/>
+        </svg>
+        <!-- Floating particles -->
+        <div class="welcome-modal__particles">
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="welcome-modal__content">
+        <div class="welcome-modal__iwc-badge">
+          <img src="/assets/images/iwc-logo.png" alt="IWC" class="welcome-modal__iwc-logo">
+        </div>
+
+        <h2 class="welcome-modal__greeting">
+          Welcome, <span class="welcome-modal__name"><%= user.name.split(' ')[0] %></span>
+        </h2>
+
+        <p class="welcome-modal__philosophy">
+          <em>Probus Scafusia</em>
+          <span class="welcome-modal__divider-dot">&middot;</span>
+          Craftsmanship from Schaffhausen
+        </p>
+
+        <p class="welcome-modal__message">
+          Just as IWC's master watchmakers combine centuries of heritage with cutting-edge innovation, today we unite the precision of <strong>Swiss engineering</strong> with the power of <strong>AI and Data Cloud</strong>.
+        </p>
+        <p class="welcome-modal__message welcome-modal__message--highlight">
+          <i class="ph ph-sparkle"></i>
+          Let the spirit of precision guide us as we explore <strong>Data Cloud</strong>, harness the power of <strong>unified customer profiles</strong>, and unlock new possibilities for IWC worldwide.
+        </p>
+
+        <div class="welcome-modal__values">
+          <div class="welcome-modal__value">
+            <div class="welcome-modal__value-icon"><i class="ph ph-crosshair"></i></div>
+            <span>Precision</span>
+          </div>
+          <div class="welcome-modal__value">
+            <div class="welcome-modal__value-icon"><i class="ph ph-gear-six"></i></div>
+            <span>Engineering</span>
+          </div>
+          <div class="welcome-modal__value">
+            <div class="welcome-modal__value-icon"><i class="ph ph-crown"></i></div>
+            <span>Heritage</span>
+          </div>
+          <div class="welcome-modal__value">
+            <div class="welcome-modal__value-icon"><i class="ph ph-lightning"></i></div>
+            <span>Innovation</span>
+          </div>
+        </div>
+
+        <button class="welcome-modal__cta" id="welcomeStart">
+          <span>Begin the Journey</span>
+          <i class="ph ph-arrow-right"></i>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <style>
+    .welcome-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0);
+      backdrop-filter: blur(0px);
+      -webkit-backdrop-filter: blur(0px);
+      animation: welcomeFadeIn 0.6s ease forwards;
+      padding: 1rem;
+    }
+    @keyframes welcomeFadeIn {
+      to {
+        background: rgba(0, 0, 0, 0.75);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+    }
+    .welcome-modal {
+      position: relative;
+      width: 100%;
+      max-width: 520px;
+      background: linear-gradient(180deg, #0C1B2A 0%, #152238 100%);
+      border: 1px solid rgba(196, 169, 98, 0.25);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow:
+        0 40px 80px rgba(0, 0, 0, 0.6),
+        0 0 60px rgba(196, 169, 98, 0.08);
+      opacity: 0;
+      transform: scale(0.92) translateY(20px);
+      animation: welcomeModalIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+    }
+    @keyframes welcomeModalIn {
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .welcome-modal__close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-index: 10;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 50%;
+      color: rgba(255, 255, 255, 0.6);
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+    }
+    .welcome-modal__close:hover {
+      background: rgba(196, 169, 98, 0.2);
+      color: #C4A962;
+    }
+    .welcome-modal__scene {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+    }
+    .welcome-modal__mechanism {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    /* Gear rotation animations */
+    .welcome-gear--large {
+      animation: gearRotate 20s linear infinite;
+      transform-origin: 180px 120px;
+    }
+    .welcome-gear--medium {
+      animation: gearRotateReverse 15s linear infinite;
+      transform-origin: 380px 100px;
+    }
+    .welcome-gear--small {
+      animation: gearRotate 10s linear infinite;
+      transform-origin: 440px 180px;
+    }
+    @keyframes gearRotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes gearRotateReverse {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(-360deg); }
+    }
+    .welcome-star {
+      animation: starTwinkle 3s ease-in-out infinite alternate;
+    }
+    .welcome-star:nth-child(2) { animation-delay: 0.5s; }
+    .welcome-star:nth-child(3) { animation-delay: 1s; }
+    .welcome-star:nth-child(4) { animation-delay: 1.5s; }
+    .welcome-star:nth-child(5) { animation-delay: 2s; }
+    @keyframes starTwinkle {
+      0% { opacity: 0.2; }
+      100% { opacity: 0.8; }
+    }
+    .welcome-modal__particles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    .welcome-modal__particles span {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: rgba(196, 169, 98, 0.6);
+      border-radius: 50%;
+      animation: particleFloat 6s ease-in-out infinite;
+    }
+    .welcome-modal__particles span:nth-child(1) { left: 15%; top: 60%; animation-delay: 0s; }
+    .welcome-modal__particles span:nth-child(2) { left: 30%; top: 40%; animation-delay: 1s; width: 3px; height: 3px; }
+    .welcome-modal__particles span:nth-child(3) { left: 55%; top: 50%; animation-delay: 2s; }
+    .welcome-modal__particles span:nth-child(4) { left: 70%; top: 35%; animation-delay: 0.5s; width: 3px; height: 3px; }
+    .welcome-modal__particles span:nth-child(5) { left: 85%; top: 55%; animation-delay: 1.5s; }
+    .welcome-modal__particles span:nth-child(6) { left: 45%; top: 70%; animation-delay: 2.5s; width: 2px; height: 2px; }
+    @keyframes particleFloat {
+      0%, 100% { transform: translateY(0) scale(1); opacity: 0; }
+      10% { opacity: 1; }
+      50% { transform: translateY(-40px) scale(1.5); opacity: 0.8; }
+      90% { opacity: 0; }
+    }
+    .welcome-modal__content {
+      padding: 2rem 2.5rem 2.5rem;
+      text-align: center;
+    }
+    .welcome-modal__iwc-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem 1.25rem;
+      background: rgba(196, 169, 98, 0.1);
+      border: 1px solid rgba(196, 169, 98, 0.25);
+      border-radius: 100px;
+      margin-bottom: 1.25rem;
+    }
+    .welcome-modal__iwc-logo {
+      height: 20px;
+      width: auto;
+      filter: brightness(0) invert(1);
+      opacity: 0.9;
+    }
+    .welcome-modal__greeting {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+    .welcome-modal__name {
+      background: linear-gradient(135deg, #C4A962, #E8D5A0, #C4A962);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .welcome-modal__philosophy {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 1.25rem;
+      font-style: italic;
+    }
+    .welcome-modal__divider-dot {
+      margin: 0 0.4rem;
+      color: rgba(196, 169, 98, 0.5);
+      font-style: normal;
+    }
+    .welcome-modal__message {
+      font-size: 0.92rem;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 0.75rem;
+    }
+    .welcome-modal__message strong {
+      color: rgba(255, 255, 255, 0.9);
+    }
+    .welcome-modal__message--highlight {
+      padding: 0.75rem 1rem;
+      background: rgba(196, 169, 98, 0.08);
+      border: 1px solid rgba(196, 169, 98, 0.15);
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .welcome-modal__message--highlight i {
+      color: #C4A962;
+      margin-right: 0.25rem;
+    }
+    .welcome-modal__values {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 1.75rem;
+    }
+    .welcome-modal__value {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .welcome-modal__value-icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(196, 169, 98, 0.1);
+      border: 1px solid rgba(196, 169, 98, 0.25);
+      border-radius: 12px;
+      color: #C4A962;
+      font-size: 1.15rem;
+      transition: all 0.3s ease;
+    }
+    .welcome-modal__value span {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .welcome-modal__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      color: #0C1B2A;
+      background: linear-gradient(135deg, #C4A962 0%, #E8D5A0 50%, #A68B4B 100%);
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .welcome-modal__cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent 50%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .welcome-modal__cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(196, 169, 98, 0.3);
+    }
+    .welcome-modal__cta:hover::before { opacity: 1; }
+    .welcome-modal__cta i {
+      font-size: 1.1rem;
+      transition: transform 0.2s ease;
+    }
+    .welcome-modal__cta:hover i {
+      transform: translateX(3px);
+    }
+    .welcome-overlay--closing {
+      animation: welcomeFadeOut 0.4s ease forwards;
+    }
+    .welcome-overlay--closing .welcome-modal {
+      animation: welcomeModalOut 0.35s ease forwards;
+    }
+    @keyframes welcomeFadeOut {
+      to { background: rgba(0, 0, 0, 0); backdrop-filter: blur(0px); -webkit-backdrop-filter: blur(0px); }
+    }
+    @keyframes welcomeModalOut {
+      to { opacity: 0; transform: scale(0.95) translateY(-10px); }
+    }
+    @media (max-width: 560px) {
+      .welcome-modal__content { padding: 1.5rem 1.5rem 2rem; }
+      .welcome-modal__greeting { font-size: 1.4rem; }
+      .welcome-modal__scene { height: 160px; }
+      .welcome-modal__values { gap: 1rem; }
+      .welcome-modal__value-icon { width: 36px; height: 36px; font-size: 1rem; }
+      .welcome-modal__value span { font-size: 0.65rem; }
+    }
+  </style>
+
+  <script>
+    (function() {
+      var overlay = document.getElementById('welcomeOverlay');
+      var closeBtn = document.getElementById('welcomeClose');
+      var startBtn = document.getElementById('welcomeStart');
+
+      function closeWelcome() {
+        overlay.classList.add('welcome-overlay--closing');
+        setTimeout(function() {
+          overlay.remove();
+          if (window.history.replaceState) {
+            window.history.replaceState({}, document.title, '/');
+          }
+        }, 450);
+      }
+
+      if (closeBtn) closeBtn.addEventListener('click', closeWelcome);
+      if (startBtn) startBtn.addEventListener('click', closeWelcome);
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) closeWelcome();
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && document.getElementById('welcomeOverlay')) {
+          closeWelcome();
+        }
+      });
+    })();
+  </script>
+  <% } %>
+
+</body>
+</html>

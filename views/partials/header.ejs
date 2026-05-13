@@ -1,0 +1,173 @@
+<!-- Overall progress bar -->
+<div class="progress-bar" id="overall-progress-container">
+  <div class="progress-bar__fill" id="overall-progress-fill"></div>
+</div>
+
+<!-- Sticky header -->
+<header class="header" id="site-header">
+  <div class="header__inner">
+    <!-- Left: Logos -->
+    <div class="header__brand">
+      <a href="/" class="header__logo-link">
+        <img src="/assets/images/salesforce-logo.png" alt="Salesforce" class="header__logo header__logo--salesforce">
+        <span class="header__logo-divider"></span>
+        <img src="/assets/images/iwc-logo.png" alt="IWC Schaffhausen" class="header__logo header__logo--iwc">
+      </a>
+    </div>
+
+    <!-- Center: Navigation -->
+    <nav class="header__nav" id="main-nav">
+      <ul class="header__nav-list">
+        <li class="header__nav-item">
+          <a href="/" class="header__nav-link<%= typeof currentPage !== 'undefined' && currentPage === 'home' ? ' header__nav-link--active' : '' %>">
+            <i class="ph ph-house"></i>
+            <span>Home</span>
+          </a>
+        </li>
+        <li class="header__nav-item header__nav-item--dropdown">
+          <button class="header__nav-link header__nav-link--dropdown-trigger<%= typeof currentPage !== 'undefined' && ['data360', 'personalization', 'marketing-intelligence'].includes(currentPage) ? ' header__nav-link--active' : '' %>" aria-expanded="false" aria-haspopup="true">
+            <i class="ph ph-path"></i>
+            <span>Tracks</span>
+            <i class="ph ph-caret-down header__nav-caret"></i>
+          </button>
+          <ul class="header__dropdown">
+            <li class="header__dropdown-item">
+              <a href="/tracks/data360" class="header__dropdown-link<%= typeof currentPage !== 'undefined' && currentPage === 'data360' ? ' header__dropdown-link--active' : '' %>">
+                <i class="ph ph-database"></i>
+                <span>Data 360</span>
+              </a>
+            </li>
+            <li class="header__dropdown-item">
+              <a href="/tracks/personalization" class="header__dropdown-link<%= typeof currentPage !== 'undefined' && currentPage === 'personalization' ? ' header__dropdown-link--active' : '' %>">
+                <i class="ph ph-user-focus"></i>
+                <span>Personalization</span>
+              </a>
+            </li>
+            <li class="header__dropdown-item">
+              <a href="/tracks/marketing-intelligence" class="header__dropdown-link<%= typeof currentPage !== 'undefined' && currentPage === 'marketing-intelligence' ? ' header__dropdown-link--active' : '' %>">
+                <i class="ph ph-chart-line-up"></i>
+                <span>Agentforce Marketing</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="header__nav-item">
+          <a href="/use-cases" class="header__nav-link<%= typeof currentPage !== 'undefined' && currentPage === 'use-cases' ? ' header__nav-link--active' : '' %>">
+            <i class="ph ph-lightbulb"></i>
+            <span>Use Cases</span>
+          </a>
+        </li>
+        <li class="header__nav-item">
+          <a href="/glossary" class="header__nav-link<%= typeof currentPage !== 'undefined' && currentPage === 'glossary' ? ' header__nav-link--active' : '' %>">
+            <i class="ph ph-book-open-text"></i>
+            <span>Glossary</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Right: User dropdown & hamburger -->
+    <div class="header__actions">
+      <% if (typeof user !== 'undefined' && user) { %>
+        <div class="header__user" id="user-dropdown">
+          <button class="header__user-trigger" aria-expanded="false" aria-haspopup="true">
+            <span class="header__user-avatar"><%= user.name ? user.name.charAt(0).toUpperCase() : 'U' %></span>
+            <span class="header__user-name"><%= user.name %></span>
+            <i class="ph ph-caret-down header__user-caret"></i>
+          </button>
+          <div class="header__user-menu">
+            <div class="header__user-menu-info">
+              <span class="header__user-menu-name"><%= user.name %></span>
+              <span class="header__user-menu-email"><%= user.email %></span>
+            </div>
+            <div class="header__user-menu-divider"></div>
+            <% if (user.isAdmin) { %>
+              <a href="/admin" class="header__user-menu-link">
+                <i class="ph ph-gear"></i>
+                <span>Admin</span>
+              </a>
+            <% } %>
+            <a href="/api/logout" class="header__user-menu-link header__user-menu-link--logout">
+              <i class="ph ph-sign-out"></i>
+              <span>Logout</span>
+            </a>
+          </div>
+        </div>
+      <% } %>
+
+      <!-- Mobile hamburger -->
+      <button class="header__hamburger" id="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="header__hamburger-line"></span>
+        <span class="header__hamburger-line"></span>
+        <span class="header__hamburger-line"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile drawer -->
+<div class="header__mobile-drawer" id="mobile-drawer">
+  <div class="header__mobile-drawer-overlay" id="mobile-drawer-overlay"></div>
+  <div class="header__mobile-drawer-panel">
+    <div class="header__mobile-drawer-header">
+      <img src="/assets/images/iwc-logo.png" alt="IWC" class="header__logo header__logo--iwc">
+      <button class="header__mobile-drawer-close" id="mobile-drawer-close" aria-label="Close navigation">
+        <i class="ph ph-x"></i>
+      </button>
+    </div>
+
+    <nav class="header__mobile-nav">
+      <a href="/" class="header__mobile-nav-link<%= typeof currentPage !== 'undefined' && currentPage === 'home' ? ' header__mobile-nav-link--active' : '' %>">
+        <i class="ph ph-house"></i>
+        <span>Home</span>
+      </a>
+
+      <div class="header__mobile-nav-section">
+        <span class="header__mobile-nav-section-title">Tracks</span>
+        <a href="/tracks/data360" class="header__mobile-nav-link<%= typeof currentPage !== 'undefined' && currentPage === 'data360' ? ' header__mobile-nav-link--active' : '' %>">
+          <i class="ph ph-database"></i>
+          <span>Data 360</span>
+        </a>
+        <a href="/tracks/personalization" class="header__mobile-nav-link<%= typeof currentPage !== 'undefined' && currentPage === 'personalization' ? ' header__mobile-nav-link--active' : '' %>">
+          <i class="ph ph-user-focus"></i>
+          <span>Personalization</span>
+        </a>
+        <a href="/tracks/marketing-intelligence" class="header__mobile-nav-link<%= typeof currentPage !== 'undefined' && currentPage === 'marketing-intelligence' ? ' header__mobile-nav-link--active' : '' %>">
+          <i class="ph ph-chart-line-up"></i>
+          <span>Agentforce Marketing</span>
+        </a>
+      </div>
+
+      <a href="/use-cases" class="header__mobile-nav-link<%= typeof currentPage !== 'undefined' && currentPage === 'use-cases' ? ' header__mobile-nav-link--active' : '' %>">
+        <i class="ph ph-lightbulb"></i>
+        <span>Use Cases</span>
+      </a>
+      <a href="/glossary" class="header__mobile-nav-link<%= typeof currentPage !== 'undefined' && currentPage === 'glossary' ? ' header__mobile-nav-link--active' : '' %>">
+        <i class="ph ph-book-open-text"></i>
+        <span>Glossary</span>
+      </a>
+    </nav>
+
+    <% if (typeof user !== 'undefined' && user) { %>
+      <div class="header__mobile-drawer-footer">
+        <div class="header__mobile-user-info">
+          <span class="header__user-avatar"><%= user.name ? user.name.charAt(0).toUpperCase() : 'U' %></span>
+          <div>
+            <span class="header__mobile-user-name"><%= user.name %></span>
+            <span class="header__mobile-user-email"><%= user.email %></span>
+          </div>
+        </div>
+        <% if (user.isAdmin) { %>
+          <a href="/admin" class="header__mobile-nav-link">
+            <i class="ph ph-gear"></i>
+            <span>Admin</span>
+          </a>
+        <% } %>
+        <a href="/api/logout" class="header__mobile-nav-link header__mobile-nav-link--logout">
+          <i class="ph ph-sign-out"></i>
+          <span>Logout</span>
+        </a>
+      </div>
+    <% } %>
+  </div>
+</div>

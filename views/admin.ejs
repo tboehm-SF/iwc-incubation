@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head', { title: 'Admin Dashboard' }) %>
+<body>
+  <%- include('partials/header') %>
+
+  <main class="admin-dashboard">
+    <div class="container">
+
+      <div class="admin-dashboard__header">
+        <div class="admin-dashboard__header-text">
+          <h1 class="admin-dashboard__title">Workshop Admin Dashboard</h1>
+          <p class="admin-dashboard__subtitle">Real-time analytics and attendee management</p>
+        </div>
+        <div class="admin-dashboard__header-actions">
+          <button class="btn btn--primary" id="export-csv">
+            <i class="ph ph-download-simple"></i>
+            Export CSV
+          </button>
+        </div>
+      </div>
+
+      <!-- IWC Password Debug Section -->
+      <div class="admin-card admin-card--debug">
+        <div class="admin-card__header">
+          <i class="ph ph-key"></i>
+          <h2 class="admin-card__title">IWC Password (Debug)</h2>
+        </div>
+        <div class="admin-card__body">
+          <p id="iwc-password-display" class="admin-debug__password">Loading...</p>
+        </div>
+      </div>
+
+      <!-- Stats Cards Row -->
+      <div class="admin-stats">
+        <div class="admin-stat-card">
+          <div class="admin-stat-card__icon">
+            <i class="ph ph-users"></i>
+          </div>
+          <div class="admin-stat-card__value" id="stat-total">--</div>
+          <div class="admin-stat-card__label">Total Registrations</div>
+        </div>
+        <div class="admin-stat-card">
+          <div class="admin-stat-card__icon admin-stat-card__icon--iwc">
+            <i class="ph ph-building"></i>
+          </div>
+          <div class="admin-stat-card__value" id="stat-iwc">--</div>
+          <div class="admin-stat-card__label">IWC Employees</div>
+        </div>
+        <div class="admin-stat-card">
+          <div class="admin-stat-card__icon admin-stat-card__icon--sf">
+            <i class="ph ph-cloud"></i>
+          </div>
+          <div class="admin-stat-card__value" id="stat-sf">--</div>
+          <div class="admin-stat-card__label">Salesforce Employees</div>
+        </div>
+        <div class="admin-stat-card">
+          <div class="admin-stat-card__icon admin-stat-card__icon--completion">
+            <i class="ph ph-chart-pie"></i>
+          </div>
+          <div class="admin-stat-card__value" id="stat-avg-completion">--</div>
+          <div class="admin-stat-card__label">Average Completion</div>
+        </div>
+      </div>
+
+      <!-- Attendee Table -->
+      <div class="admin-card">
+        <div class="admin-card__header">
+          <i class="ph ph-table"></i>
+          <h2 class="admin-card__title">Attendees</h2>
+          <div class="admin-card__search">
+            <i class="ph ph-magnifying-glass"></i>
+            <input
+              type="text"
+              id="attendee-search"
+              class="admin-search-input"
+              placeholder="Search by name, email, or company..."
+              autocomplete="off"
+            >
+          </div>
+        </div>
+        <div class="admin-card__body admin-card__body--table">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Company</th>
+                <th>Registered</th>
+                <th>Progress</th>
+                <th>Last Active</th>
+              </tr>
+            </thead>
+            <tbody id="attendees-table">
+              <tr>
+                <td colspan="6" class="admin-table__empty">Loading attendee data...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="admin-card__footer">
+          <span class="admin-table__count" id="table-count"></span>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <%- include('partials/footer') %>
+  <script src="/js/app.js"></script>
+  <script>
+    (function() {
+      // Load IWC password
+      fetch('/api/admin/iwc-password')
+        .then(r => r.json())
+        .then(data => {
+          document.getElementById('iwc-password-display').textContent = data.password || 'N/A';
+        })
+        .catch(() => {
+          document.getElementById('iwc-password-display').textContent = 'Error loading';
+        });
+
+      // Load registrations
+      fetch('/api/admin/registrations')
+        .then(r => r.json())
+        .then(data => {
+          var regs = data.registrations || [];
+          var total = regs.length;
+          var iwc = regs.filter(r => r.company === 'IWC Schaffhausen').length;
+          var sf = regs.filter(r => r.company === 'Salesforce').length;
+
+          document.getElementById('stat-total').textContent = total;
+          document.getElementById('stat-iwc').textContent = iwc;
+          document.getElementById('stat-sf').textContent = sf;
+
+          // Average completion
+          var totalCompletion = 0;
+          regs.forEach(r => {
+            if (r.totalSteps > 0) {
+              totalCompletion += Math.round((r.completedSteps / r.totalSteps) * 100);
+            }
+          });
+          var avg = total > 0 ? Math.round(totalCompletion / total) : 0;
+          document.getElementById('stat-avg-completion').textContent = avg + '%';
+
+          // Table
+          var tbody = document.getElementById('attendees-table');
+          if (regs.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="6" class="admin-table__empty">No registrations yet</td></tr>';
+            return;
+          }
+
+          tbody.innerHTML = regs.map(function(r) {
+            var pct = r.totalSteps > 0 ? Math.round((r.completedSteps / r.totalSteps) * 100) : 0;
+            var date = new Date(r.registeredAt).toLocaleDateString();
+            var lastActive = r.lastActive ? new Date(r.lastActive).toLocaleDateString() : '--';
+            return '<tr>' +
+              '<td>' + (r.name || '--') + '</td>' +
+              '<td>' + r.email + '</td>' +
+              '<td>' + (r.company || '--') + '</td>' +
+              '<td>' + date + '</td>' +
+              '<td><div class="admin-progress"><div class="admin-progress__bar" style="width:' + pct + '%"></div><span>' + pct + '%</span></div></td>' +
+              '<td>' + lastActive + '</td>' +
+            '</tr>';
+          }).join('');
+
+          document.getElementById('table-count').textContent = 'Showing ' + regs.length + ' attendees';
+        })
+        .catch(() => {
+          document.getElementById('attendees-table').innerHTML = '<tr><td colspan="6" class="admin-table__empty">Error loading data</td></tr>';
+        });
+
+      // Search
+      var searchInput = document.getElementById('attendee-search');
+      if (searchInput) {
+        searchInput.addEventListener('input', function() {
+          var q = this.value.toLowerCase();
+          var rows = document.querySelectorAll('#attendees-table tr');
+          rows.forEach(function(row) {
+            var text = row.textContent.toLowerCase();
+            row.style.display = text.indexOf(q) !== -1 ? '' : 'none';
+          });
+        });
+      }
+
+      // Export CSV
+      document.getElementById('export-csv').addEventListener('click', function() {
+        fetch('/api/admin/registrations')
+          .then(r => r.json())
+          .then(data => {
+            var regs = data.registrations || [];
+            var csv = 'Name,Email,Company,Registered,Completed Steps,Total Steps\n';
+            regs.forEach(r => {
+              csv += '"' + (r.name || '') + '","' + r.email + '","' + (r.company || '') + '","' + r.registeredAt + '",' + r.completedSteps + ',' + r.totalSteps + '\n';
+            });
+            var blob = new Blob([csv], { type: 'text/csv' });
+            var url = URL.createObjectURL(blob);
+            var a = document.createElement('a');
+            a.href = url;
+            a.download = 'iwc-workshop-attendees.csv';
+            a.click();
+          });
+      });
+    })();
+  </script>
+</body>
+</html>

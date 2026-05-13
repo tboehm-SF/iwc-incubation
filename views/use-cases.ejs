@@ -4,96 +4,967 @@
 <body>
   <%- include('partials/header') %>
 
-  <section class="track-hero-v2">
+  <!-- ============================================== -->
+  <!-- HERO SECTION                                   -->
+  <!-- ============================================== -->
+  <section class="uc-hero">
+    <div class="uc-hero__bg"></div>
     <div class="container">
-      <nav class="breadcrumb">
-        <a href="/" class="breadcrumb__link">Home</a>
-        <span class="breadcrumb__separator">/</span>
-        <span class="breadcrumb__current">Use Cases</span>
+      <nav class="uc-hero__breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="uc-hero__breadcrumb-sep">/</span>
+        <span>Use Cases</span>
       </nav>
-      <div class="track-hero-v2__badge">
-        <i class="ph ph-lightbulb"></i>
-        IWC Schaffhausen
-      </div>
-      <h1 class="track-hero-v2__title">Use Cases</h1>
-      <p class="track-hero-v2__subtitle">Explore how Data Cloud can transform the luxury retail experience for IWC Schaffhausen.</p>
+      <h1 class="uc-hero__title">Data Cloud Use Cases for IWC</h1>
+      <p class="uc-hero__subtitle">30 inspirational use cases across 6 topic areas &mdash; powered by Data Cloud, Personalization, Marketing Cloud, Einstein AI, Agentforce &amp; Service Cloud</p>
+      <div class="uc-hero__counter" id="uc-counter">Showing <strong>30</strong> of <strong>30</strong> use cases</div>
     </div>
   </section>
 
-  <section class="section use-cases-section">
+  <!-- ============================================== -->
+  <!-- FILTER BAR (sticky)                            -->
+  <!-- ============================================== -->
+  <div class="uc-filters" id="uc-filters">
     <div class="container">
-      <div class="use-cases-grid">
 
-        <div class="use-case-card animate-on-scroll">
-          <div class="use-case-card__icon">
-            <i class="ph ph-user-circle"></i>
-          </div>
-          <h3 class="use-case-card__title">Unified Customer Profile</h3>
-          <p class="use-case-card__description">Create a single, comprehensive view of each IWC customer by unifying data from boutiques, e-commerce, service centers, events, and CRM systems. Understand the complete customer journey across all touchpoints.</p>
-          <div class="use-case-card__tags">
-            <span class="use-case-tag">Data Cloud</span>
-            <span class="use-case-tag">Identity Resolution</span>
-            <span class="use-case-tag">360 Profile</span>
-          </div>
-        </div>
-
-        <div class="use-case-card animate-on-scroll" data-delay="100">
-          <div class="use-case-card__icon">
-            <i class="ph ph-chart-line"></i>
-          </div>
-          <h3 class="use-case-card__title">Behavior Tracking</h3>
-          <p class="use-case-card__description">Track customer engagement across IWC's digital properties, boutique visits, and event attendance. Understand browsing patterns, collection interests, and purchase intent signals in real time.</p>
-          <div class="use-case-card__tags">
-            <span class="use-case-tag">Web Analytics</span>
-            <span class="use-case-tag">Event Tracking</span>
-            <span class="use-case-tag">Real-Time</span>
-          </div>
-        </div>
-
-        <div class="use-case-card animate-on-scroll" data-delay="200">
-          <div class="use-case-card__icon">
-            <i class="ph ph-ranking"></i>
-          </div>
-          <h3 class="use-case-card__title">Lead Scoring</h3>
-          <p class="use-case-card__description">Use calculated insights and AI to score prospects based on engagement, purchase history, and behavioral signals. Prioritize high-value prospects for boutique outreach and exclusive event invitations.</p>
-          <div class="use-case-card__tags">
-            <span class="use-case-tag">Einstein AI</span>
-            <span class="use-case-tag">Calculated Insights</span>
-            <span class="use-case-tag">Scoring</span>
-          </div>
-        </div>
-
-        <div class="use-case-card animate-on-scroll" data-delay="300">
-          <div class="use-case-card__icon">
-            <i class="ph ph-user-focus"></i>
-          </div>
-          <h3 class="use-case-card__title">Web Personalization</h3>
-          <p class="use-case-card__description">Deliver personalized content on iwc.com based on customer preferences, browsing history, and collection interests. Show relevant watch recommendations, stories, and boutique information.</p>
-          <div class="use-case-card__tags">
-            <span class="use-case-tag">Personalization</span>
-            <span class="use-case-tag">Recommenders</span>
-            <span class="use-case-tag">Real-Time</span>
-          </div>
-        </div>
-
-        <div class="use-case-card animate-on-scroll" data-delay="400">
-          <div class="use-case-card__icon">
-            <i class="ph ph-users-three"></i>
-          </div>
-          <h3 class="use-case-card__title">Segmentation &amp; Activation</h3>
-          <p class="use-case-card__description">Build sophisticated audience segments based on purchase value, collection affinity, service history, and engagement patterns. Activate segments across email, advertising, and boutique outreach channels.</p>
-          <div class="use-case-card__tags">
-            <span class="use-case-tag">Segments</span>
-            <span class="use-case-tag">Activation</span>
-            <span class="use-case-tag">Multi-Channel</span>
-          </div>
-        </div>
-
+      <!-- Search -->
+      <div class="uc-filters__search">
+        <i class="ph ph-magnifying-glass uc-filters__search-icon"></i>
+        <input type="text" id="uc-search" class="uc-filters__search-input" placeholder="Search use cases..." autocomplete="off">
       </div>
+
+      <!-- Cluster pills -->
+      <div class="uc-filters__clusters" id="uc-cluster-filters">
+        <button class="uc-filters__cluster-btn active" data-cluster="all">All</button>
+        <button class="uc-filters__cluster-btn" data-cluster="1" style="--cluster-color: #C4A962">Client Intelligence</button>
+        <button class="uc-filters__cluster-btn" data-cluster="2" style="--cluster-color: #0D9488">Boutique Experience</button>
+        <button class="uc-filters__cluster-btn" data-cluster="3" style="--cluster-color: #3b82f6">Digital &amp; E-Commerce</button>
+        <button class="uc-filters__cluster-btn" data-cluster="4" style="--cluster-color: #8b5cf6">Marketing &amp; Campaigns</button>
+        <button class="uc-filters__cluster-btn" data-cluster="5" style="--cluster-color: #f59e0b">Service &amp; After-Sales</button>
+        <button class="uc-filters__cluster-btn" data-cluster="6" style="--cluster-color: #10b981">Heritage &amp; Sustainability</button>
+      </div>
+
+      <!-- Technology chips -->
+      <div class="uc-filters__tech" id="uc-tech-filters">
+        <button class="uc-filters__tech-btn active" data-tech="all">All Tech</button>
+        <button class="uc-filters__tech-btn" data-tech="Data Cloud" style="--tech-color: #8b5cf6">Data Cloud</button>
+        <button class="uc-filters__tech-btn" data-tech="Personalization" style="--tech-color: #14b8a6">Personalization</button>
+        <button class="uc-filters__tech-btn" data-tech="Marketing Cloud" style="--tech-color: #0176D3">Marketing Cloud</button>
+        <button class="uc-filters__tech-btn" data-tech="Einstein AI" style="--tech-color: #f59e0b">Einstein AI</button>
+        <button class="uc-filters__tech-btn" data-tech="Agentforce" style="--tech-color: #22c55e">Agentforce</button>
+        <button class="uc-filters__tech-btn" data-tech="Service Cloud" style="--tech-color: #ef4444">Service Cloud</button>
+      </div>
+
+      <!-- Expand / Collapse toggle -->
+      <div class="uc-filters__actions">
+        <button class="uc-filters__toggle-btn" id="uc-expand-toggle">
+          <i class="ph ph-arrows-out-simple"></i>
+          <span>Expand All</span>
+        </button>
+      </div>
+
     </div>
-  </section>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- USE CASE GRID                                  -->
+  <!-- ============================================== -->
+  <main class="uc-main">
+    <div class="container">
+
+      <!-- ==================== -->
+      <!-- CLUSTER 1: Client Intelligence -->
+      <!-- ==================== -->
+      <section class="uc-cluster" id="cluster-1" data-cluster-id="1">
+        <div class="uc-cluster__heading" style="--cluster-color: #C4A962">
+          <div class="uc-cluster__heading-icon"><i class="ph ph-user-circle-gear"></i></div>
+          <div>
+            <h2 class="uc-cluster__title">Client Intelligence &amp; 360&deg; Profiles</h2>
+            <p class="uc-cluster__range">UC1 &ndash; UC5</p>
+          </div>
+        </div>
+        <div class="uc-cluster__grid">
+
+          <!-- UC1 -->
+          <div class="uc-card" data-cluster="1" data-technologies="Data Cloud,Einstein AI" data-uc="1">
+            <div class="uc-card__header">
+              <span class="uc-card__badge" style="--cluster-color: #C4A962">UC1</span>
+              <h3 class="uc-card__title">Unified Collector Profile</h3>
+              <button class="uc-card__expand" aria-label="Expand details"><i class="ph ph-caret-down"></i></button>
+            </div>
+            <div class="uc-card__tags">
+              <span class="uc-card__tag" style="--tag-color: #8b5cf6">Data Cloud</span>
+              <span class="uc-card__tag" style="--tag-color: #f59e0b">Einstein AI</span>
+            </div>
+            <p class="uc-card__brief">Create a single 360&deg; view of each IWC collector by unifying data from boutique POS, e-commerce, service centres, event attendance, and warranty registrations</p>
+            <div class="uc-card__details">
+              <div class="uc-card__benefits">
+                <h4>Key Benefits</h4>
+                <ul>
+                  <li>Complete view of purchase history across all channels and markets</li>
+                  <li>Identity resolution merging online/offline identities into one golden record</li>
+                  <li>Real-time profile enrichment as new interactions occur globally</li>
+                  <li>Foundation for all downstream personalisation and segmentation use cases</li>
+                </ul>
+              </div>
+              <p class="uc-card__related">Related: UC2 (Collection Affinity), UC3 (Lifetime Value), UC11 (Boutique Clienteling)</p>
+            </div>
+          </div>
+
+          <!-- UC2 -->
+          <div class="uc-card" data-cluster="1" data-technologies="Data Cloud,Einstein AI" data-uc="2">
+            <div class="uc-card__header">
+              <span class="uc-card__badge" style="--cluster-color: #C4A962">UC2</span>
+              <h3 class="uc-card__title">Collection Affinity &amp; Preference Modelling</h3>
+              <button class="uc-card__expand" aria-label="Expand details"><i class="ph ph-caret-down"></i></button>
+            </div>
+            <div class="uc-card__tags">
+              <span class="uc-card__tag" style="--tag-color: #8b5cf6">Data Cloud</span>
+              <span class="uc-card__tag" style="--tag-color: #f59e0b">Einstein AI</span>
+            </div>
+            <p class="uc-card__brief">Determine which IWC collections (Portugieser, Pilot&rsquo;s, Portofino, etc.) each client gravitates toward based on browsing, try-on, and purchase signals</p>
+            <div class="uc-card__details">
+              <div class="uc-card__benefits">
+                <h4>Key Benefits</h4>
+                <ul>
+                  <li>AI-driven affinity scores per collection family updated in real-time</li>
+                  <li>Calculated Insights combining web behaviour, boutique dwell time, and purchases</li>
+                  <li>Enables hyper-relevant recommendations for new releases and limited editions</li>
+                  <li>Identifies cross-collection opportunities (e.g., Pilot fan open to Ingenieur)</li>
+                </ul>
+              </div>
+              <p class="uc-card__related">Related: UC1 (Unified Profile), UC14 (Product Recommendations), UC16 (Limited Edition Targeting)</p>
+            </div>
+          </div>
+
+          <!-- UC3 -->
+          <div class="uc-card" data-cluster="1" data-technologies="Data Cloud" data-uc="3">
+            <div class="uc-card__header">
+              <span class="uc-card__badge" style="--cluster-color: #C4A962">UC3</span>
+              <h3 class="uc-card__title">Collector Lifetime Value Scoring</h3>
+              <button class="uc-card__expand" aria-label="Expand details"><i class="ph ph-caret-down"></i></button>
+            </div>
+            <div class="uc-card__tags">
+              <span class="uc-card__tag" style="--tag-color: #8b5cf6">Data Cloud</span>
+            </div>
+            <p class="uc-card__brief">Compute lifetime value, purchase frequency, and next-purchase propensity using Calculated Insights across all transaction sources</p>
+            <div class="uc-card__details">
+              <div class="uc-card__benefits">
+                <h4>Key Benefits</h4>
+                <ul>
+                  <li>Dynamic CLV scoring combining purchase value, frequency, and recency</li>
+                  <li>Segment collectors into tiers (Platinum, Gold, Silver) for differentiated treatment</li>
+                  <li>Predict next purchase timing to trigger proactive outreach</li>
+                  <li>Identify rising collectors early for VIP programme consideration</li>
+                </ul>
+              </div>
+              <p class="uc-card__related">Related: UC1 (Unified Profile), UC5 (Churn Prediction), UC20 (VIP Engagement)</p>
+            </div>
+          </div>
+
+          <!-- UC4 -->
+          <div class="uc-card" data-cluster="1" data-technologies="Data Cloud,Einstein AI" data-uc="4">
+            <div class="uc-card__header">
+              <span class="uc-card__badge" style="--cluster-color: #C4A962">UC4</span>
+              <h3 class="uc-card__title">Cross-Market Identity Resolution</h3>
+              <button class="uc-card__expand" aria-label="Expand details"><i class="ph ph-caret-down"></i></button>
+            </div>
+            <div class="uc-card__tags">
+              <span class="uc-card__tag" style="--tag-color: #8b5cf6">Data Cloud</span>
+              <span class="uc-card__tag" style="--tag-color: #f59e0b">Einstein AI</span>
+            </div>
+            <p class="uc-card__brief">Resolve identities of collectors who shop across multiple markets (Zurich boutique, Tokyo duty-free, online) into a single unified record</p>
+            <div class="uc-card__details">
+              <div class="uc-card__benefits">
+                <h4>Key Benefits</h4>
+                <ul>
+                  <li>Fuzzy and exact match rules handling multilingual name variations</li>
+                  <li>Deduplication across regional CRM instances and e-commerce platforms</li>
+                  <li>Accurate global headcount for board-level reporting</li>
+                  <li>Prevents duplicate marketing to the same collector from different markets</li>
+                </ul>
+              </div>
+              <p class="uc-card__related">Related: UC1 (Unified Profile), UC27 (Data Governance)</p>
+            </div>
+          </div>
+
+          <!-- UC5 -->
+          <div class="uc-card" data-cluster="1" data-technologies="Data Cloud,Einstein AI,Marketing Cloud" data-uc="5">
+            <div class="uc-card__header">
+              <span class="uc-card__badge" style="--cluster-color: #C4A962">UC5</span>
+              <h3 class="uc-card__title">Collector Churn Prediction &amp; Re-Engagement</h3>
+              <button class="uc-card__expand" aria-label="Expand details"><i class="ph ph-caret-down"></i></button>
+            </div>
+            <div class="uc-card__tags">
+              <span class="uc-card__tag" style="--tag-color: #8b5cf6">Data Cloud</span>
+              <span class="uc-card__tag" style="--tag-color: #f59e0b">Einstein AI</span>
+              <span class="uc-card__tag" style="--tag-color: #0176D3">Marketing Cloud</span>
+            </div>
+            <p class="uc-card__brief">Predict which collectors are at risk of disengagement and auto-trigger personalised re-engagement journeys before they lapse</p>
+            <div class="uc-card__details">
+              <div class="uc-card__benefits">
+                <h4>Key Benefits</h4>
+                <ul>
+                  <li>Einstein-powered churn scoring based on engagement decay patterns</li>
+                  <li>Automated re-engagement journeys with exclusive content or event invitations</li>
+                  <li>Segment-specific retention strategies (high-CLV vs. one-time buyers)</li>
+                  <li>Measurable reduction in collector dormancy rates</li>
+                </ul>
+              </div>
+              <p class="uc-card__related">Related: UC3 (Lifetime Value), UC20 (VIP Engagement), UC17 (Journey Orchestration)</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==================== -->
+      <!-- CLUSTER 2: Boutique Experience -->
+      <!-- ==================== -->
+      <section class="uc-cluster" id="cluster-2" data-cluster-id="2">
+        <div class="uc-cluster__heading" style="--cluster-color: #0D9488">
+          <div class="uc-cluster__heading-icon"><i class="ph ph-storefront"></i></div>
+          <div>
+            <h2 class="uc-cluster__title">Boutique Experience &amp; Clienteling</h2>
+            <p class="uc-cluster__range">UC6 &ndash; UC10</p>
+          </div>
+        </div>
+        <div class="uc-cluster__grid">
+
+          <!-- UC6 -->
+          <div class="uc-card" data-cluster="2" data-technologies="Data Cloud,Agentforce" data-uc="6">
+            <div class="uc-card__header">
+              <span class="uc-card__badge" style="--cluster-color: #0D9488">UC6</span>
+              <h3 class="uc-card__title">Real-Time Clienteling Companion</h3>
+              <button class="uc-card__expand" aria-label="Expand details"><i class="ph ph-caret-down"></i></button>
+            </div>
+            <div class="uc-card__tags">
+              <span class="uc-card__tag" style="--tag-color: #8b5cf6">Data Cloud</span>
+              <span class="uc-card__tag" style="--tag-color: #22c55e">Agentforce</span>
+            </div>
+            <p class="uc-card__brief">Equip boutique advisors with an AI-powered companion that surfaces collector preferences, purchase history, and next-best-action recommendations during appointments</p>
+            <div class="uc-card__details">
+              <div class="uc-card__benefits">
+                <h4>Key Benefits</h4>
+                <ul>
+                  <li>Instant access to unified collector profile during walk-ins or appointments</li>
+                  <li>Agentforce-powered recommendations based on collection affinity and occasion</li>
+                  <li>Previous interaction history across all boutiques globally</li>
+                  <li>Higher conversion rates through informed, personalised consultations</li>
+                </ul>
+              </div>
+              <p class="uc-card__related">Related: UC1 (Unified Profile), UC7 (Appointment Intelligence), UC2 (Collection Affinity)</p>
+            </div>
+          </div>
+
+          <!-- UC7 -->
+          <div class="uc-card" data-cluster="2" data-technologies="Data Cloud,Marketing Cloud" data-uc="7">
+            <div class="uc-card__header">
+              <span class="uc-card__badge" style="--cluster-color: #0D9488">UC7</span>
+              <h3 class="uc-card__title">Appointment &amp; Walk-In Intelligence</h3>
+              <button class="uc-card__expand" aria-label="Expand details"><i class="ph ph-caret-down"></i></button>
+            </div>
+            <div class="uc-card__tags">
+              <span class="uc-card__tag" style="--tag-color: #8b5cf6">Data Cloud</span>
+              <span class="uc-card__tag" style="--tag-color: #0176D3">Marketing Cloud</span>
+            </div>
+            <p class="uc-card__brief">Enrich appointment bookings with collector data and trigger pre-visit preparation flows for advisors, plus post-visit follow-up journeys</p>
+            <div class="uc-card__details">
+              <div class="uc-card__benefits">
+                <h4>Key Benefits</h4>
+                <ul>
+                  <li>Pre-appointment briefing delivered to advisor with collector preferences</li>
+                  <li>Automated post-visit thank-you and product information delivery</li>
+                  <li>Walk-in traffic insights correlated with digital engagement data</li>
+                  <li>Seamless handoff between online research and boutique experience</li>
+                </ul>
+              </div>
+              <p class="uc-card__related">Related: UC6 (Clienteling), UC17 (Journey Orchestration)</p>
+            </div>
+          </div>
+
+          <!-- UC8 -->
+          <div class="uc-card" data-cluster="2" data-technologies="Data Cloud,Personalization" data-uc="8">
+            <div class="uc-card__header">
+              <span class="uc-card__badge" style="--cluster-color: #0D9488">UC8</span>
+              <h3 class="uc-card__title">In-Boutique Digital Personalisation</h3>
+              <button class="uc-card__expand" aria-label="Expand details"><i class="ph ph-caret-down"></i></button>
+            </div>
+            <div class="uc-card__tags">
+              <span class="uc-card__tag" style="--tag-color: #8b5cf6">Data Cloud</span>
+              <span class="uc-card__tag" style="--tag-color: #14b8a6">Personalization</span>
+            </div>
+            <p class="uc-card__brief">Personalise in-store digital displays and tablets based on the collector&rsquo;s profile when they check in or are identified at the boutique</p>
+            <div class="uc-card__details">
+              <div class="uc-card__benefits">
+                <h4>Key Benefits</h4>
+                <ul>
+                  <li>Dynamic content on boutique screens tailored to visitor&rsquo;s collection interests</li>
+                  <li>Try-on recommendations based on wrist size, past purchases, and preferences</li>
+                  <li>Elevated brand experience bridging digital sophistication with physical luxury</li>
+                  <li>Data captured from in-store interactions feeds back into the unified profile</li>
+                </ul>
+              </div>
+              <p class="uc-card__related">Related: UC6 (Clienteling), UC14 (Product Recommendations)</p>
+            </div>
+          </div>
+
+          <!-- UC9 -->
+          <div class="uc-card" data-cluster="2" data-technologies="Data Cloud,Einstein AI" data-uc="9">
+            <div class="uc-card__header">
+              <span class="uc-card__badge" style="--cluster-color: #0D9488">UC9</span>
+              <h3 class="uc-card__title">Event &amp; Exhibition Engagement Tracking</h3>
+              <button class="uc-card__expand" aria-label="Expand details"><i class="ph ph-caret-down"></i></button>
+            </div>
+            <div class="uc-card__tags">
+              <span class="uc-card__tag" style="--tag-color: #8b5cf6">Data Cloud</span>
+              <span class="uc-card__tag" style="--tag-color: #f59e0b">Einstein AI</span>
+            </div>
+            <p class="uc-card__brief">Track collector engagement at Watches &amp; Wonders, SIHH, brand dinners, and local events to build rich behavioural profiles</p>
+            <div class="uc-card__details">
+              <div class="uc-card__benefits">
+                <h4>Key Benefits</h4>
+                <ul>
+                  <li>Event attendance data integrated into unified collector profile</li>
+                  <li>Post-event follow-up journeys triggered by specific interactions</li>
+                  <li>RSVP and attendance patterns informing future event invitation targeting</li>
+                  <li>Measure ROI of exclusive events through downstream purchase attribution</li>
+                </ul>
+              </div>
+              <p class="uc-card__related">Related: UC20 (VIP Engagement), UC17 (Journey Orchestration)</p>
+            </div>
+          </div>
+
+          <!-- UC10 -->
+          <div class="uc-card" data-cluster="2" data-technologies="Data Cloud,Agentforce" data-uc="10">
+            <div class="uc-card__header">
+              <span class="uc-card__badge" style="--cluster-color: #0D9488">UC10</span>
+              <h3 class="uc-card__title">Boutique Performance Analytics</h3>
+              <button class="uc-card__expand" aria-label="Expand details"><i class="ph ph-caret-down"></i></button>
+            </div>
+            <div class="uc-card__tags">
+              <span class="uc-card__tag" style="--tag-color: #8b5cf6">Data Cloud</span>
+              <span class="uc-card__tag" style="--tag-color: #22c55e">Agentforce</span>
+            </div>
+            <p class="uc-card__brief">Aggregate footfall, conversion rates, average transaction value, and cross-sell ratios per boutique for data-driven retail decisions</p>
+            <div class="uc-card__details">
+              <div class="uc-card__benefits">
+                <h4>Key Benefits</h4>
+                <ul>
+                  <li>Real-time dashboards combining POS, appointment, and CRM data</li>
+                  <li>Benchmark boutique performance across regions and formats</li>
+                  <li>Identify training opportunities by correlating advisor interactions with outcomes</li>
+                  <li>Agentforce assistant for regional managers to query performance in natural language</li>
+                </ul>
+              </div>
+              <p class="uc-card__related">Related: UC3 (Lifetime Value), UC6 (Clienteling)</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==================== -->
+      <!-- CLUSTER 3: Digital & E-Commerce -->
+      <!-- ==================== -->
+      <section class="uc-cluster" id="cluster-3" data-cluster-id="3">
+        <div class="uc-cluster__heading" style="--cluster-color: #3b82f6">
+          <div class="uc-cluster__heading-icon"><i class="ph ph-globe-hemisphere-west"></i></div>
+          <div>
+            <h2 class="uc-cluster__title">Digital &amp; E-Commerce Personalisation</h2>
+            <p class="uc-cluster__range">UC11 &ndash; UC15</p>
+          </div>
+        </div>
+        <div class="uc-cluster__grid">
+
+          <!-- UC11 -->
+          <div class="uc-card" data-cluster="3" data-technologies="Data Cloud,Personalization" data-uc="11">
+            <div class="uc-card__header">
+              <span class="uc-card__badge" style="--cluster-color: #3b82f6">UC11</span>
+              <h3 class="uc-card__title">iwc.com Real-Time Web Personalisation</h3>
+              <button class="uc-card__expand" aria-label="Expand details"><i class="ph ph-caret-down"></i></button>
+            </div>
+            <div class="uc-card__tags">
+              <span class="uc-card__tag" style="--tag-color: #8b5cf6">Data Cloud</span>
+              <span class="uc-card__tag" style="--tag-color: #14b8a6">Personalization</span>
+            </div>
+            <p class="uc-card__brief">Deliver personalised hero banners, collection spotlights, and editorial content on iwc.com based on the visitor&rsquo;s unified profile and real-time behaviour</p>
+            <div class="uc-card__details">
+              <div class="uc-card__benefits">
+                <h4>Key Benefits</h4>
+                <ul>
+                  <li>First-party data activation for known and anonymous visitors</li>
+                  <li>Dynamic homepage adapting to collection affinity and browsing history</li>
+                  <li>A/B testing of personalisation strategies with real-time decisioning</li>
+                  <li>Increased time-on-site, engagement depth, and online conversion rates</li>
+                </ul>
+              </div>
+              <p class="uc-card__related">Related: UC2 (Collection Affinity), UC14 (Product Recommendations)</p>
+            </div>
+          </div>
+
+          <!-- UC12 -->
+          <div class="uc-card" data-cluster="3" data-technologies="Data Cloud,Personalization,Einstein AI" data-uc="12">
+            <div class="uc-card__header">
+              <span class="uc-card__badge" style="--cluster-color: #3b82f6">UC12</span>
+              <h3 class="uc-card__title">Configurator &amp; Wish List Intelligence</h3>
+              <button class="uc-card__expand" aria-label="Expand details"><i class="ph ph-caret-down"></i></button>
+            </div>
+            <div class="uc-card__tags">
+              <span class="uc-card__tag" style="--tag-color: #8b5cf6">Data Cloud</span>
+              <span class="uc-card__tag" style="--tag-color: #14b8a6">Personalization</span>
+              <span class="uc-card__tag" style="--tag-color: #f59e0b">Einstein AI</span>
+            </div>
+            <p class="uc-card__brief">Capture configurator interactions and wish list signals as engagement data, fuelling downstream personalisation and boutique advisor preparation</p>
+            <div class="uc-card__details">
+              <div class="uc-card__benefits">
+                <h4>Key Benefits</h4>
+                <ul>
+                  <li>Strap, dial, and complication preferences captured as structured data</li>
+                  <li>Wish list items shared with local boutique for proactive outreach</li>
+                  <li>Abandoned configurator sessions triggering re-engagement campaigns</li>
+                  <li>AI predicting purchase intent from configuration depth and time spent</li>
+                </ul>
+              </div>
+              <p class="uc-card__related">Related: UC11 (Web Personalisation), UC7 (Appointment Intelligence)</p>
+            </div>
+          </div>
+
+          <!-- UC13 -->
+          <div class="uc-card" data-cluster="3" data-technologies="Data Cloud,Marketing Cloud" data-uc="13">
+            <div class="uc-card__header">
+              <span class="uc-card__badge" style="--cluster-color: #3b82f6">UC13</span>
+              <h3 class="uc-card__title">Abandoned Browse &amp; Cart Recovery</h3>
+              <button class="uc-card__expand" aria-label="Expand details"><i class="ph ph-caret-down"></i></button>
+            </div>
+            <div class="uc-card__tags">
+              <span class="uc-card__tag" style="--tag-color: #8b5cf6">Data Cloud</span>
+              <span class="uc-card__tag" style="--tag-color: #0176D3">Marketing Cloud</span>
+            </div>
+            <p class="uc-card__brief">Detect high-intent abandoned sessions and route to the optimal recovery channel &mdash; email, SMS, boutique call, or advisor WhatsApp</p>
+            <div class="uc-card__details">
+              <div class="uc-card__benefits">
+                <h4>Key Benefits</h4>
+                <ul>
+                  <li>Data Cloud segments identifying high-value abandoned sessions in real-time</li>
+                  <li>Luxury-appropriate recovery messaging (invitation tone, not discount)</li>
+                  <li>Channel selection based on collector tier and communication preferences</li>
+                  <li>Attribution tracking from abandonment signal to eventual purchase</li>
+                </ul>
+              </div>
+              <p class="uc-card__related">Related: UC11 (Web Personalisation), UC17 (Journey Orchestration)</p>
+            </div>
+          </div>
+
+          <!-- UC14 -->
+          <div class="uc-card" data-cluster="3" data-technologies="Personalization,Data Cloud,Einstein AI" data-uc="14">
+            <div class="uc-card__header">
+              <span class="uc-card__badge" style="--cluster-color: #3b82f6">UC14</span>
+              <h3 class="uc-card__title">AI-Powered Product Recommendations</h3>
+              <button class="uc-card__expand" aria-label="Expand details"><i class="ph ph-caret-down"></i></button>
+            </div>
+            <div class="uc-card__tags">
+              <span class="uc-card__tag" style="--tag-color: #14b8a6">Personalization</span>
+              <span class="uc-card__tag" style="--tag-color: #8b5cf6">Data Cloud</span>
+              <span class="uc-card__tag" style="--tag-color: #f59e0b">Einstein AI</span>
+            </div>
+            <p class="uc-card__brief">Surface the most relevant watch recommendations across web, email, and in-boutique using collaborative filtering and collection affinity data</p>
+            <div class="uc-card__details">
+              <div class="uc-card__benefits">
+                <h4>Key Benefits</h4>
+                <ul>
+                  <li>Einstein Recommendations trained on purchase patterns of similar collectors</li>
+                  <li>Context-aware: different recs for gifting vs. self-purchase vs. collector expansion</li>
+                  <li>Respects product availability and regional pricing</li>
+                  <li>Measurable uplift in click-through and add-to-cart rates</li>
+                </ul>
+              </div>
+              <p class="uc-card__related">Related: UC2 (Collection Affinity), UC11 (Web Personalisation), UC8 (In-Boutique)</p>
+            </div>
+          </div>
+
+          <!-- UC15 -->
+          <div class="uc-card" data-cluster="3" data-technologies="Data Cloud,Personalization" data-uc="15">
+            <div class="uc-card__header">
+              <span class="uc-card__badge" style="--cluster-color: #3b82f6">UC15</span>
+              <h3 class="uc-card__title">Content &amp; Editorial Personalisation</h3>
+              <button class="uc-card__expand" aria-label="Expand details"><i class="ph ph-caret-down"></i></button>
+            </div>
+            <div class="uc-card__tags">
+              <span class="uc-card__tag" style="--tag-color: #8b5cf6">Data Cloud</span>
+              <span class="uc-card__tag" style="--tag-color: #14b8a6">Personalization</span>
+            </div>
+            <p class="uc-card__brief">Serve personalised editorial stories, ambassador content, and manufacture insights based on collector interests and engagement history</p>
+            <div class="uc-card__details">
+              <div class="uc-card__benefits">
+                <h4>Key Benefits</h4>
+                <ul>
+                  <li>Match editorial content (engineering, design, heritage) to interest profiles</li>
+                  <li>Ambassador affinity mapping (motorsport, aviation, ocean) for content curation</li>
+                  <li>Increased content engagement and brand affinity scores</li>
+                  <li>First-party data enrichment through content consumption signals</li>
+                </ul>
+              </div>
+              <p class="uc-card__related">Related: UC11 (Web Personalisation), UC29 (Heritage Storytelling)</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==================== -->
+      <!-- CLUSTER 4: Marketing & Campaigns -->
+      <!-- ==================== -->
+      <section class="uc-cluster" id="cluster-4" data-cluster-id="4">
+        <div class="uc-cluster__heading" style="--cluster-color: #8b5cf6">
+          <div class="uc-cluster__heading-icon"><i class="ph ph-megaphone"></i></div>
+          <div>
+            <h2 class="uc-cluster__title">Marketing &amp; Campaign Intelligence</h2>
+            <p class="uc-cluster__range">UC16 &ndash; UC20</p>
+          </div>
+        </div>
+        <div class="uc-cluster__grid">
+
+          <!-- UC16 -->
+          <div class="uc-card" data-cluster="4" data-technologies="Data Cloud,Marketing Cloud" data-uc="16">
+            <div class="uc-card__header">
+              <span class="uc-card__badge" style="--cluster-color: #8b5cf6">UC16</span>
+              <h3 class="uc-card__title">Limited Edition &amp; New Release Targeting</h3>
+              <button class="uc-card__expand" aria-label="Expand details"><i class="ph ph-caret-down"></i></button>
+            </div>
+            <div class="uc-card__tags">
+              <span class="uc-card__tag" style="--tag-color: #8b5cf6">Data Cloud</span>
+              <span class="uc-card__tag" style="--tag-color: #0176D3">Marketing Cloud</span>
+            </div>
+            <p class="uc-card__brief">Build precision segments for limited edition launches by combining collection affinity, CLV tier, and past limited-edition purchase behaviour</p>
+            <div class="uc-card__details">
+              <div class="uc-card__benefits">
+                <h4>Key Benefits</h4>
+                <ul>
+                  <li>Hyper-targeted audience for scarce pieces maximising sell-through velocity</li>
+                  <li>Fair allocation logic considering collector loyalty and engagement recency</li>
+                  <li>Multi-wave communication strategy (tease → reveal → invite → waitlist)</li>
+                  <li>Post-launch analytics measuring demand signals vs. allocation efficiency</li>
+                </ul>
+              </div>
+              <p class="uc-card__related">Related: UC2 (Collection Affinity), UC3 (Lifetime Value), UC20 (VIP Engagement)</p>
+            </div>
+          </div>
+
+          <!-- UC17 -->
+          <div class="uc-card" data-cluster="4" data-technologies="Marketing Cloud,Data Cloud,Einstein AI" data-uc="17">
+            <div class="uc-card__header">
+              <span class="uc-card__badge" style="--cluster-color: #8b5cf6">UC17</span>
+              <h3 class="uc-card__title">Omni-Channel Journey Orchestration</h3>
+              <button class="uc-card__expand" aria-label="Expand details"><i class="ph ph-caret-down"></i></button>
+            </div>
+            <div class="uc-card__tags">
+              <span class="uc-card__tag" style="--tag-color: #0176D3">Marketing Cloud</span>
+              <span class="uc-card__tag" style="--tag-color: #8b5cf6">Data Cloud</span>
+              <span class="uc-card__tag" style="--tag-color: #f59e0b">Einstein AI</span>
+            </div>
+            <p class="uc-card__brief">Orchestrate seamless collector journeys across email, push, SMS, WhatsApp, and boutique touchpoints with intelligent send-time optimisation</p>
+            <div class="uc-card__details">
+              <div class="uc-card__benefits">
+                <h4>Key Benefits</h4>
+                <ul>
+                  <li>Journey Builder powered by real-time Data Cloud segment membership</li>
+                  <li>Einstein Send Time Optimisation per collector and channel</li>
+                  <li>Frequency capping respecting luxury brand communication standards</li>
+                  <li>Cross-channel attribution from first touch to boutique purchase</li>
+                </ul>
+              </div>
+              <p class="uc-card__related">Related: UC5 (Re-Engagement), UC7 (Appointment Intelligence), UC16 (Limited Edition)</p>
+            </div>
+          </div>
+
+          <!-- UC18 -->
+          <div class="uc-card" data-cluster="4" data-technologies="Data Cloud,Marketing Cloud" data-uc="18">
+            <div class="uc-card__header">
+              <span class="uc-card__badge" style="--cluster-color: #8b5cf6">UC18</span>
+              <h3 class="uc-card__title">Paid Media Audience Activation</h3>
+              <button class="uc-card__expand" aria-label="Expand details"><i class="ph ph-caret-down"></i></button>
+            </div>
+            <div class="uc-card__tags">
+              <span class="uc-card__tag" style="--tag-color: #8b5cf6">Data Cloud</span>
+              <span class="uc-card__tag" style="--tag-color: #0176D3">Marketing Cloud</span>
+            </div>
+            <p class="uc-card__brief">Activate Data Cloud segments directly into Google, Meta, and programmatic platforms for lookalike modelling and suppression targeting</p>
+            <div class="uc-card__details">
+              <div class="uc-card__benefits">
+                <h4>Key Benefits</h4>
+                <ul>
+                  <li>First-party audience activation reducing dependency on third-party cookies</li>
+                  <li>Suppression of existing customers from acquisition campaigns</li>
+                  <li>High-value lookalike audiences based on best collector profiles</li>
+                  <li>Closed-loop measurement connecting paid media spend to in-store revenue</li>
+                </ul>
+              </div>
+              <p class="uc-card__related">Related: UC3 (Lifetime Value), UC16 (Limited Edition Targeting)</p>
+            </div>
+          </div>
+
+          <!-- UC19 -->
+          <div class="uc-card" data-cluster="4" data-technologies="Data Cloud,Einstein AI" data-uc="19">
+            <div class="uc-card__header">
+              <span class="uc-card__badge" style="--cluster-color: #8b5cf6">UC19</span>
+              <h3 class="uc-card__title">Campaign Performance &amp; Attribution</h3>
+              <button class="uc-card__expand" aria-label="Expand details"><i class="ph ph-caret-down"></i></button>
+            </div>
+            <div class="uc-card__tags">
+              <span class="uc-card__tag" style="--tag-color: #8b5cf6">Data Cloud</span>
+              <span class="uc-card__tag" style="--tag-color: #f59e0b">Einstein AI</span>
+            </div>
+            <p class="uc-card__brief">Unify campaign data from all channels into Data Cloud for holistic performance reporting and multi-touch attribution modelling</p>
+            <div class="uc-card__details">
+              <div class="uc-card__benefits">
+                <h4>Key Benefits</h4>
+                <ul>
+                  <li>Single source of truth for campaign metrics across channels and markets</li>
+                  <li>Multi-touch attribution connecting digital engagement to boutique purchases</li>
+                  <li>AI-powered budget allocation recommendations across channels</li>
+                  <li>Real-time campaign dashboards for agile marketing optimisation</li>
+                </ul>
+              </div>
+              <p class="uc-card__related">Related: UC18 (Paid Media), UC17 (Journey Orchestration)</p>
+            </div>
+          </div>
+
+          <!-- UC20 -->
+          <div class="uc-card" data-cluster="4" data-technologies="Data Cloud,Marketing Cloud,Personalization" data-uc="20">
+            <div class="uc-card__header">
+              <span class="uc-card__badge" style="--cluster-color: #8b5cf6">UC20</span>
+              <h3 class="uc-card__title">VIP &amp; Top Collector Engagement Programme</h3>
+              <button class="uc-card__expand" aria-label="Expand details"><i class="ph ph-caret-down"></i></button>
+            </div>
+            <div class="uc-card__tags">
+              <span class="uc-card__tag" style="--tag-color: #8b5cf6">Data Cloud</span>
+              <span class="uc-card__tag" style="--tag-color: #0176D3">Marketing Cloud</span>
+              <span class="uc-card__tag" style="--tag-color: #14b8a6">Personalization</span>
+            </div>
+            <p class="uc-card__brief">Deliver white-glove digital experiences for top-tier collectors including exclusive previews, manufacture invitations, and bespoke content journeys</p>
+            <div class="uc-card__details">
+              <div class="uc-card__benefits">
+                <h4>Key Benefits</h4>
+                <ul>
+                  <li>Dynamic VIP segments updated in real-time as collectors reach thresholds</li>
+                  <li>Exclusive content and early access to new collections</li>
+                  <li>Manufacture visit invitations and ambassador event prioritisation</li>
+                  <li>Personalised anniversary and milestone acknowledgements</li>
+                </ul>
+              </div>
+              <p class="uc-card__related">Related: UC3 (Lifetime Value), UC9 (Event Tracking), UC16 (Limited Edition)</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==================== -->
+      <!-- CLUSTER 5: Service & After-Sales -->
+      <!-- ==================== -->
+      <section class="uc-cluster" id="cluster-5" data-cluster-id="5">
+        <div class="uc-cluster__heading" style="--cluster-color: #f59e0b">
+          <div class="uc-cluster__heading-icon"><i class="ph ph-wrench"></i></div>
+          <div>
+            <h2 class="uc-cluster__title">Service &amp; After-Sales Excellence</h2>
+            <p class="uc-cluster__range">UC21 &ndash; UC25</p>
+          </div>
+        </div>
+        <div class="uc-cluster__grid">
+
+          <!-- UC21 -->
+          <div class="uc-card" data-cluster="5" data-technologies="Data Cloud,Service Cloud" data-uc="21">
+            <div class="uc-card__header">
+              <span class="uc-card__badge" style="--cluster-color: #f59e0b">UC21</span>
+              <h3 class="uc-card__title">Proactive Service Reminders</h3>
+              <button class="uc-card__expand" aria-label="Expand details"><i class="ph ph-caret-down"></i></button>
+            </div>
+            <div class="uc-card__tags">
+              <span class="uc-card__tag" style="--tag-color: #8b5cf6">Data Cloud</span>
+              <span class="uc-card__tag" style="--tag-color: #ef4444">Service Cloud</span>
+            </div>
+            <p class="uc-card__brief">Trigger proactive service reminders based on purchase date, movement type, and recommended service intervals using Data Actions</p>
+            <div class="uc-card__details">
+              <div class="uc-card__benefits">
+                <h4>Key Benefits</h4>
+                <ul>
+                  <li>Calculated Insights computing time-since-last-service per watch</li>
+                  <li>Data Actions triggering service centre notifications at optimal timing</li>
+                  <li>Personalised service communications referencing specific watch and history</li>
+                  <li>Increased service revenue and extended watch lifespan</li>
+                </ul>
+              </div>
+              <p class="uc-card__related">Related: UC22 (Service Journey), UC1 (Unified Profile)</p>
+            </div>
+          </div>
+
+          <!-- UC22 -->
+          <div class="uc-card" data-cluster="5" data-technologies="Data Cloud,Service Cloud,Marketing Cloud" data-uc="22">
+            <div class="uc-card__header">
+              <span class="uc-card__badge" style="--cluster-color: #f59e0b">UC22</span>
+              <h3 class="uc-card__title">Connected Service Journey</h3>
+              <button class="uc-card__expand" aria-label="Expand details"><i class="ph ph-caret-down"></i></button>
+            </div>
+            <div class="uc-card__tags">
+              <span class="uc-card__tag" style="--tag-color: #8b5cf6">Data Cloud</span>
+              <span class="uc-card__tag" style="--tag-color: #ef4444">Service Cloud</span>
+              <span class="uc-card__tag" style="--tag-color: #0176D3">Marketing Cloud</span>
+            </div>
+            <p class="uc-card__brief">Orchestrate the full service experience from drop-off through repair to collection, with real-time status updates and satisfaction surveys</p>
+            <div class="uc-card__details">
+              <div class="uc-card__benefits">
+                <h4>Key Benefits</h4>
+                <ul>
+                  <li>Automated journey: confirmation → progress updates → ready notification</li>
+                  <li>Service history feeding back into the unified collector profile</li>
+                  <li>Post-service satisfaction survey with NPS tracking</li>
+                  <li>Upsell opportunities (strap replacement, polishing) based on watch condition</li>
+                </ul>
+              </div>
+              <p class="uc-card__related">Related: UC21 (Service Reminders), UC23 (Warranty Intelligence)</p>
+            </div>
+          </div>
+
+          <!-- UC23 -->
+          <div class="uc-card" data-cluster="5" data-technologies="Data Cloud,Agentforce" data-uc="23">
+            <div class="uc-card__header">
+              <span class="uc-card__badge" style="--cluster-color: #f59e0b">UC23</span>
+              <h3 class="uc-card__title">Warranty &amp; Registration Intelligence</h3>
+              <button class="uc-card__expand" aria-label="Expand details"><i class="ph ph-caret-down"></i></button>
+            </div>
+            <div class="uc-card__tags">
+              <span class="uc-card__tag" style="--tag-color: #8b5cf6">Data Cloud</span>
+              <span class="uc-card__tag" style="--tag-color: #22c55e">Agentforce</span>
+            </div>
+            <p class="uc-card__brief">Unify warranty registrations from multiple channels into Data Cloud, enabling intelligent warranty status lookups and expiry-based marketing</p>
+            <div class="uc-card__details">
+              <div class="uc-card__benefits">
+                <h4>Key Benefits</h4>
+                <ul>
+                  <li>Single warranty truth across online registration, boutique, and retailer channels</li>
+                  <li>Agentforce assistant for instant warranty status checks and claims processing</li>
+                  <li>Pre-expiry campaigns offering extended warranty or service packages</li>
+                  <li>Fraud detection identifying suspicious registration patterns</li>
+                </ul>
+              </div>
+              <p class="uc-card__related">Related: UC21 (Service Reminders), UC24 (Concierge)</p>
+            </div>
+          </div>
+
+          <!-- UC24 -->
+          <div class="uc-card" data-cluster="5" data-technologies="Agentforce,Data Cloud,Service Cloud" data-uc="24">
+            <div class="uc-card__header">
+              <span class="uc-card__badge" style="--cluster-color: #f59e0b">UC24</span>
+              <h3 class="uc-card__title">AI-Powered Collector Concierge</h3>
+              <button class="uc-card__expand" aria-label="Expand details"><i class="ph ph-caret-down"></i></button>
+            </div>
+            <div class="uc-card__tags">
+              <span class="uc-card__tag" style="--tag-color: #22c55e">Agentforce</span>
+              <span class="uc-card__tag" style="--tag-color: #8b5cf6">Data Cloud</span>
+              <span class="uc-card__tag" style="--tag-color: #ef4444">Service Cloud</span>
+            </div>
+            <p class="uc-card__brief">Deploy an Agentforce-powered concierge that handles service bookings, warranty queries, boutique appointments, and product questions with full collector context</p>
+            <div class="uc-card__details">
+              <div class="uc-card__benefits">
+                <h4>Key Benefits</h4>
+                <ul>
+                  <li>24/7 availability with luxury-tone AI responses grounded in collector data</li>
+                  <li>Seamless escalation to human advisor with full conversation context</li>
+                  <li>Handles common queries: service status, boutique hours, strap compatibility</li>
+                  <li>Every interaction enriches the collector profile for future personalisation</li>
+                </ul>
+              </div>
+              <p class="uc-card__related">Related: UC6 (Clienteling), UC23 (Warranty), UC22 (Service Journey)</p>
+            </div>
+          </div>
+
+          <!-- UC25 -->
+          <div class="uc-card" data-cluster="5" data-technologies="Data Cloud,Einstein AI" data-uc="25">
+            <div class="uc-card__header">
+              <span class="uc-card__badge" style="--cluster-color: #f59e0b">UC25</span>
+              <h3 class="uc-card__title">Predictive Quality &amp; Service Demand</h3>
+              <button class="uc-card__expand" aria-label="Expand details"><i class="ph ph-caret-down"></i></button>
+            </div>
+            <div class="uc-card__tags">
+              <span class="uc-card__tag" style="--tag-color: #8b5cf6">Data Cloud</span>
+              <span class="uc-card__tag" style="--tag-color: #f59e0b">Einstein AI</span>
+            </div>
+            <p class="uc-card__brief">Analyse service centre data to predict demand spikes, identify quality patterns by reference/calibre, and optimise parts inventory</p>
+            <div class="uc-card__details">
+              <div class="uc-card__benefits">
+                <h4>Key Benefits</h4>
+                <ul>
+                  <li>Service demand forecasting by region, season, and watch age cohort</li>
+                  <li>Early quality signal detection correlating warranty claims by batch/calibre</li>
+                  <li>Parts inventory optimisation reducing customer wait times</li>
+                  <li>Feedback loop to manufacture for continuous product improvement</li>
+                </ul>
+              </div>
+              <p class="uc-card__related">Related: UC21 (Service Reminders), UC30 (Sustainability Reporting)</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==================== -->
+      <!-- CLUSTER 6: Heritage & Sustainability -->
+      <!-- ==================== -->
+      <section class="uc-cluster" id="cluster-6" data-cluster-id="6">
+        <div class="uc-cluster__heading" style="--cluster-color: #10b981">
+          <div class="uc-cluster__heading-icon"><i class="ph ph-leaf"></i></div>
+          <div>
+            <h2 class="uc-cluster__title">Heritage, Sustainability &amp; Governance</h2>
+            <p class="uc-cluster__range">UC26 &ndash; UC30</p>
+          </div>
+        </div>
+        <div class="uc-cluster__grid">
+
+          <!-- UC26 -->
+          <div class="uc-card" data-cluster="6" data-technologies="Data Cloud" data-uc="26">
+            <div class="uc-card__header">
+              <span class="uc-card__badge" style="--cluster-color: #10b981">UC26</span>
+              <h3 class="uc-card__title">Digital Watch Passport &amp; Provenance</h3>
+              <button class="uc-card__expand" aria-label="Expand details"><i class="ph ph-caret-down"></i></button>
+            </div>
+            <div class="uc-card__tags">
+              <span class="uc-card__tag" style="--tag-color: #8b5cf6">Data Cloud</span>
+            </div>
+            <p class="uc-card__brief">Create a digital provenance record for each timepiece &mdash; manufacture origin, service history, ownership transfers &mdash; stored as a connected data graph in Data Cloud</p>
+            <div class="uc-card__details">
+              <div class="uc-card__benefits">
+                <h4>Key Benefits</h4>
+                <ul>
+                  <li>Complete lifecycle record from manufacture to current owner</li>
+                  <li>Authentication support for pre-owned market verification</li>
+                  <li>Service history transparency building collector confidence</li>
+                  <li>Foundation for future blockchain/NFT certificate integration</li>
+                </ul>
+              </div>
+              <p class="uc-card__related">Related: UC23 (Warranty), UC29 (Heritage Storytelling)</p>
+            </div>
+          </div>
+
+          <!-- UC27 -->
+          <div class="uc-card" data-cluster="6" data-technologies="Data Cloud" data-uc="27">
+            <div class="uc-card__header">
+              <span class="uc-card__badge" style="--cluster-color: #10b981">UC27</span>
+              <h3 class="uc-card__title">Global Data Governance &amp; Consent</h3>
+              <button class="uc-card__expand" aria-label="Expand details"><i class="ph ph-caret-down"></i></button>
+            </div>
+            <div class="uc-card__tags">
+              <span class="uc-card__tag" style="--tag-color: #8b5cf6">Data Cloud</span>
+            </div>
+            <p class="uc-card__brief">Implement GDPR, CCPA, and regional consent management with Data Cloud&rsquo;s governance framework &mdash; field classification, consent tracking, and right-to-erasure automation</p>
+            <div class="uc-card__details">
+              <div class="uc-card__benefits">
+                <h4>Key Benefits</h4>
+                <ul>
+                  <li>Centralised consent management across all markets and touchpoints</li>
+                  <li>PII field classification with automated sensitivity labelling</li>
+                  <li>Right-to-erasure workflows spanning all connected systems</li>
+                  <li>Audit trail for compliance reporting and regulatory reviews</li>
+                </ul>
+              </div>
+              <p class="uc-card__related">Related: UC4 (Identity Resolution), UC28 (Data Spaces)</p>
+            </div>
+          </div>
+
+          <!-- UC28 -->
+          <div class="uc-card" data-cluster="6" data-technologies="Data Cloud" data-uc="28">
+            <div class="uc-card__header">
+              <span class="uc-card__badge" style="--cluster-color: #10b981">UC28</span>
+              <h3 class="uc-card__title">Multi-Brand Data Spaces (Richemont)</h3>
+              <button class="uc-card__expand" aria-label="Expand details"><i class="ph ph-caret-down"></i></button>
+            </div>
+            <div class="uc-card__tags">
+              <span class="uc-card__tag" style="--tag-color: #8b5cf6">Data Cloud</span>
+            </div>
+            <p class="uc-card__brief">Leverage Data Spaces to isolate IWC data while enabling controlled cross-brand analytics within the Richemont group ecosystem</p>
+            <div class="uc-card__details">
+              <div class="uc-card__benefits">
+                <h4>Key Benefits</h4>
+                <ul>
+                  <li>Brand-level data isolation protecting competitive positioning</li>
+                  <li>Controlled data sharing for group-level analytics and reporting</li>
+                  <li>Regional access boundaries respecting data residency requirements</li>
+                  <li>Scalable architecture supporting future brand acquisitions</li>
+                </ul>
+              </div>
+              <p class="uc-card__related">Related: UC27 (Data Governance), UC4 (Identity Resolution)</p>
+            </div>
+          </div>
+
+          <!-- UC29 -->
+          <div class="uc-card" data-cluster="6" data-technologies="Data Cloud,Personalization,Marketing Cloud" data-uc="29">
+            <div class="uc-card__header">
+              <span class="uc-card__badge" style="--cluster-color: #10b981">UC29</span>
+              <h3 class="uc-card__title">Heritage Storytelling &amp; Manufacture Connection</h3>
+              <button class="uc-card__expand" aria-label="Expand details"><i class="ph ph-caret-down"></i></button>
+            </div>
+            <div class="uc-card__tags">
+              <span class="uc-card__tag" style="--tag-color: #8b5cf6">Data Cloud</span>
+              <span class="uc-card__tag" style="--tag-color: #14b8a6">Personalization</span>
+              <span class="uc-card__tag" style="--tag-color: #0176D3">Marketing Cloud</span>
+            </div>
+            <p class="uc-card__brief">Deliver personalised heritage stories connecting each collector&rsquo;s watch to IWC&rsquo;s 155-year Schaffhausen legacy, specific calibres, and watchmaking craft</p>
+            <div class="uc-card__details">
+              <div class="uc-card__benefits">
+                <h4>Key Benefits</h4>
+                <ul>
+                  <li>Personalised manufacture stories based on owned calibres and collections</li>
+                  <li>Anniversary-triggered content (your watch is now X years old)</li>
+                  <li>Exclusive behind-the-scenes content deepening emotional brand connection</li>
+                  <li>Educational journeys building appreciation for haute horlogerie craftsmanship</li>
+                </ul>
+              </div>
+              <p class="uc-card__related">Related: UC15 (Editorial), UC26 (Watch Passport), UC20 (VIP Programme)</p>
+            </div>
+          </div>
+
+          <!-- UC30 -->
+          <div class="uc-card" data-cluster="6" data-technologies="Data Cloud,Einstein AI" data-uc="30">
+            <div class="uc-card__header">
+              <span class="uc-card__badge" style="--cluster-color: #10b981">UC30</span>
+              <h3 class="uc-card__title">Sustainability &amp; Circular Economy Insights</h3>
+              <button class="uc-card__expand" aria-label="Expand details"><i class="ph ph-caret-down"></i></button>
+            </div>
+            <div class="uc-card__tags">
+              <span class="uc-card__tag" style="--tag-color: #8b5cf6">Data Cloud</span>
+              <span class="uc-card__tag" style="--tag-color: #f59e0b">Einstein AI</span>
+            </div>
+            <p class="uc-card__brief">Track and report on sustainability metrics &mdash; service-over-replace rates, pre-owned market health, packaging reduction, and carbon footprint per timepiece lifecycle</p>
+            <div class="uc-card__details">
+              <div class="uc-card__benefits">
+                <h4>Key Benefits</h4>
+                <ul>
+                  <li>Lifecycle carbon tracking from raw materials through service and resale</li>
+                  <li>Circular economy KPIs: repair rate, average service lifespan extension</li>
+                  <li>Sustainability reporting aligned with Richemont group ESG commitments</li>
+                  <li>Collector-facing sustainability communications building brand loyalty</li>
+                </ul>
+              </div>
+              <p class="uc-card__related">Related: UC26 (Watch Passport), UC25 (Predictive Quality)</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- No results message -->
+      <div class="uc-no-results" id="uc-no-results" style="display: none;">
+        <div class="uc-no-results__icon"><i class="ph ph-magnifying-glass"></i></div>
+        <h3 class="uc-no-results__title">No use cases found</h3>
+        <p class="uc-no-results__text">Try adjusting your filters or search terms.</p>
+        <button class="btn btn--secondary" id="uc-clear-filters">Clear All Filters</button>
+      </div>
+
+    </div>
+  </main>
 
   <%- include('partials/footer') %>
   <script src="/js/app.js"></script>
+  <script src="/js/use-cases.js"></script>
 </body>
 </html>

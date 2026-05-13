@@ -9,11 +9,11 @@
     .screenshot-gallery { display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0; }
     .screenshot-thumb {
       position: relative; border-radius: 12px; overflow: hidden;
-      border: 1px solid rgba(196,169,98,0.2); cursor: pointer;
+      border: 1px solid var(--gray-200); cursor: pointer;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       flex: 1 1 260px; max-width: 100%;
     }
-    .screenshot-thumb:hover { border-color: #C4A962; box-shadow: 0 8px 30px rgba(196,169,98,0.15); transform: translateY(-2px); }
+    .screenshot-thumb:hover { border-color: var(--iwc-gold); box-shadow: 0 8px 30px rgba(196,169,98,0.2); transform: translateY(-2px); }
     .screenshot-thumb img { display: block; width: 100%; height: auto; transition: transform 0.3s ease; }
     .screenshot-thumb:hover img { transform: scale(1.02); }
     .screenshot-caption {
@@ -60,39 +60,39 @@
 
     /* Credential Tables */
     .credential-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
-    .credential-table th { padding: 0.75rem 1rem; text-align: left; font-weight: 600; color: #C4A962; border-bottom: 2px solid rgba(196,169,98,0.2); }
-    .credential-table td { padding: 0.75rem 1rem; border-bottom: 1px solid rgba(196,169,98,0.1); }
-    .credential-table code { font-family: 'SF Mono', monospace; background: rgba(196,169,98,0.08); padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; color: #C4A962; }
+    .credential-table th { padding: 0.75rem 1rem; text-align: left; font-weight: 600; color: var(--iwc-gold-dark); border-bottom: 2px solid rgba(196,169,98,0.3); }
+    .credential-table td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--gray-200); color: var(--gray-700); }
+    .credential-table code { font-family: 'SF Mono', monospace; background: rgba(12,27,42,0.06); padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; color: var(--iwc-navy); }
 
     /* Mapping Tables */
-    .mapping-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; border-radius: 12px; overflow: hidden; border: 1px solid rgba(196,169,98,0.15); }
-    .mapping-table th { padding: 0.6rem 0.8rem; background: #0C1B2A; color: #C4A962; text-align: left; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
-    .mapping-table td { padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(196,169,98,0.08); }
-    .mapping-table tr:nth-child(even) td { background: rgba(196,169,98,0.03); }
-    .mapping-table .mono { font-family: 'SF Mono', monospace; font-size: 0.75rem; }
+    .mapping-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; border-radius: 12px; overflow: hidden; border: 1px solid var(--gray-200); }
+    .mapping-table th { padding: 0.6rem 0.8rem; background: var(--iwc-navy); color: var(--iwc-gold); text-align: left; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .mapping-table td { padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--gray-100); color: var(--gray-700); }
+    .mapping-table tr:nth-child(even) td { background: var(--gray-50); }
+    .mapping-table .mono { font-family: 'SF Mono', monospace; font-size: 0.75rem; color: var(--iwc-navy); }
 
     /* Step Cards (detailed) */
-    .step-card-detailed { border: 1px solid rgba(196,169,98,0.15); border-radius: 12px; padding: 1.25rem; margin-bottom: 0.75rem; transition: all 0.2s ease; background: rgba(12,27,42,0.3); }
-    .step-card-detailed:hover { border-color: rgba(196,169,98,0.4); }
+    .step-card-detailed { border: 1px solid var(--gray-200); border-radius: 12px; padding: 1.25rem; margin-bottom: 0.75rem; transition: all 0.2s ease; background: var(--gray-50); }
+    .step-card-detailed:hover { border-color: var(--iwc-gold); }
     .step-card-detailed__number { width: 32px; height: 32px; background: linear-gradient(135deg, #C4A962, #A68B4B); color: #0C1B2A; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
-    .step-card-detailed__title { font-weight: 600; font-size: 0.9rem; color: #fff; margin-bottom: 0.25rem; }
-    .step-card-detailed__desc { font-size: 0.85rem; color: rgba(255,255,255,0.7); line-height: 1.6; }
+    .step-card-detailed__title { font-weight: 600; font-size: 0.9rem; color: var(--gray-800); margin-bottom: 0.25rem; }
+    .step-card-detailed__desc { font-size: 0.85rem; color: var(--gray-600); line-height: 1.6; }
 
     /* Section Headers */
     .section-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; margin-top: 2rem; }
-    .section-header__badge { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.7rem; font-weight: 700; color: #C4A962; background: rgba(196,169,98,0.1); padding: 0.25rem 0.75rem; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.05em; }
-    .section-header__title { font-size: 1.1rem; font-weight: 700; color: #fff; }
-    .section-divider-gold { height: 2px; background: linear-gradient(90deg, #C4A962, rgba(196,169,98,0.3), transparent); margin: 2rem 0 1.5rem; border-radius: 1px; }
+    .section-header__badge { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.7rem; font-weight: 700; color: var(--iwc-gold-dark); background: rgba(196,169,98,0.12); padding: 0.25rem 0.75rem; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .section-header__title { font-size: 1.1rem; font-weight: 700; color: var(--gray-800); }
+    .section-divider-gold { height: 2px; background: linear-gradient(90deg, var(--iwc-gold), rgba(196,169,98,0.3), transparent); margin: 2rem 0 1.5rem; border-radius: 1px; }
 
     /* Info/Tip/Warning boxes within modules */
     .module-callout { display: flex; gap: 0.75rem; padding: 1rem; border-radius: 10px; margin: 1rem 0; font-size: 0.85rem; line-height: 1.5; }
-    .module-callout--info { background: rgba(196,169,98,0.06); border: 1px solid rgba(196,169,98,0.2); color: rgba(255,255,255,0.8); }
-    .module-callout--tip { background: rgba(46,132,74,0.08); border: 1px solid rgba(46,132,74,0.3); color: rgba(255,255,255,0.8); }
-    .module-callout--warning { background: rgba(221,122,1,0.08); border: 1px solid rgba(221,122,1,0.3); color: rgba(255,255,255,0.8); }
+    .module-callout--info { background: rgba(196,169,98,0.08); border: 1px solid rgba(196,169,98,0.25); color: var(--gray-700); }
+    .module-callout--tip { background: var(--green-light); border: 1px solid rgba(46,132,74,0.3); color: #166534; }
+    .module-callout--warning { background: var(--orange-light); border: 1px solid rgba(221,122,1,0.3); color: #92400e; }
     .module-callout__icon { width: 24px; height: 24px; border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
     .module-callout--info .module-callout__icon { background: rgba(196,169,98,0.2); }
-    .module-callout--tip .module-callout__icon { background: rgba(46,132,74,0.2); }
-    .module-callout--warning .module-callout__icon { background: rgba(221,122,1,0.2); }
+    .module-callout--tip .module-callout__icon { background: rgba(46,132,74,0.15); }
+    .module-callout--warning .module-callout__icon { background: rgba(221,122,1,0.15); }
   </style>
 
   <!-- ============================================== -->
@@ -196,7 +196,7 @@
                 <span class="section-header__badge">Exercise 1a</span>
                 <span class="section-header__title">CRM Data Streams</span>
               </div>
-              <p style="color:rgba(255,255,255,0.7); font-size:0.85rem; margin-bottom:1rem;">Pull data directly from Salesforce CRM. These streams ingest Account, Contact, and Lead into Data Cloud, creating Data Lake Objects (DLOs) that map to standard Data Model Objects (DMOs).</p>
+              <p style="color:var(--gray-600); font-size:0.85rem; margin-bottom:1rem;">Pull data directly from Salesforce CRM. These streams ingest Account, Contact, and Lead into Data Cloud, creating Data Lake Objects (DLOs) that map to standard Data Model Objects (DMOs).</p>
 
               <!-- Screenshots: CRM Data Streams -->
               <div class="screenshot-gallery">
@@ -213,7 +213,7 @@
               <div class="section-header" style="margin-top:1.5rem">
                 <span class="section-header__title">DMO Attribute Mapping</span>
               </div>
-              <p style="color:rgba(255,255,255,0.6); font-size:0.8rem; margin-bottom:0.75rem;">Contact → Individual DMO</p>
+              <p style="color:var(--gray-500); font-size:0.8rem; margin-bottom:0.75rem;">Contact → Individual DMO</p>
               <table class="mapping-table">
                 <thead><tr><th>Source Field (CRM)</th><th>DMO Field (Individual)</th><th>Notes</th></tr></thead>
                 <tbody>
@@ -223,7 +223,7 @@
                   <tr><td class="mono">Id</td><td class="mono">Individual Id</td><td>Primary key</td></tr>
                 </tbody>
               </table>
-              <p style="color:rgba(255,255,255,0.6); font-size:0.8rem; margin:0.75rem 0;">Contact → Contact Point Email DMO</p>
+              <p style="color:var(--gray-500); font-size:0.8rem; margin:0.75rem 0;">Contact → Contact Point Email DMO</p>
               <table class="mapping-table">
                 <thead><tr><th>Source Field</th><th>DMO Field</th><th>Notes</th></tr></thead>
                 <tbody>
@@ -239,9 +239,9 @@
                 <span class="section-header__badge">Exercise 1b</span>
                 <span class="section-header__title">Amazon S3 Data Ingestion</span>
               </div>
-              <p style="color:rgba(255,255,255,0.7); font-size:0.85rem; margin-bottom:1rem;">Connect to S3 and ingest the Coral_Clouds_Guests.csv containing guest profiles.</p>
+              <p style="color:var(--gray-600); font-size:0.85rem; margin-bottom:1rem;">Connect to S3 and ingest the Coral_Clouds_Guests.csv containing guest profiles.</p>
 
-              <p style="color:rgba(196,169,98,0.9); font-size:0.8rem; font-weight:600; margin-bottom:0.5rem;">S3 CONNECTION CREDENTIALS</p>
+              <p style="color:var(--iwc-gold-dark); font-size:0.8rem; font-weight:600; margin-bottom:0.5rem; text-transform:uppercase; letter-spacing:0.03em;">S3 CONNECTION CREDENTIALS</p>
               <table class="credential-table">
                 <thead><tr><th>Field</th><th>Value</th></tr></thead>
                 <tbody>
@@ -259,7 +259,7 @@
                 <div class="screenshot-thumb" onclick="openLightbox('/assets/images/screenshots/ex1b-s3-connection-form.png','S3 Connection Form')"><img src="/assets/images/screenshots/ex1b-s3-connection-form.png" alt="S3 connection form" loading="lazy"><div class="screenshot-caption">S3 Connection Form</div><div class="screenshot-expand-icon"><i class="ph ph-magnifying-glass-plus" style="color:white;font-size:14px"></i></div></div>
               </div>
 
-              <p style="color:rgba(255,255,255,0.6); font-size:0.8rem; margin:1rem 0 0.5rem;">Guest DLO → DMO Field Mappings</p>
+              <p style="color:var(--gray-500); font-size:0.8rem; margin:1rem 0 0.5rem;">Guest DLO → DMO Field Mappings</p>
               <table class="mapping-table">
                 <thead><tr><th>DLO Field</th><th>→</th><th>Target DMO</th><th>DMO Field</th></tr></thead>
                 <tbody>
@@ -278,9 +278,9 @@
                 <span class="section-header__badge">Exercise 1c</span>
                 <span class="section-header__title">Snowflake Zero-Copy Data Sharing</span>
               </div>
-              <p style="color:rgba(255,255,255,0.7); font-size:0.85rem; margin-bottom:1rem;">Connect to Snowflake and ingest Hotel Reservations directly without duplicating data.</p>
+              <p style="color:var(--gray-600); font-size:0.85rem; margin-bottom:1rem;">Connect to Snowflake and ingest Hotel Reservations directly without duplicating data.</p>
 
-              <p style="color:rgba(196,169,98,0.9); font-size:0.8rem; font-weight:600; margin-bottom:0.5rem;">SNOWFLAKE CONNECTION CREDENTIALS</p>
+              <p style="color:var(--iwc-gold-dark); font-size:0.8rem; font-weight:600; margin-bottom:0.5rem; text-transform:uppercase; letter-spacing:0.03em;">SNOWFLAKE CONNECTION CREDENTIALS</p>
               <table class="credential-table">
                 <thead><tr><th>Field</th><th>Value</th></tr></thead>
                 <tbody>
@@ -308,7 +308,7 @@
                 <span class="section-header__badge">Exercise 2</span>
                 <span class="section-header__title">Identity Resolution</span>
               </div>
-              <p style="color:rgba(255,255,255,0.7); font-size:0.85rem; margin-bottom:1rem;">Create a ruleset to merge duplicate records across data sources using exact and fuzzy matching.</p>
+              <p style="color:var(--gray-600); font-size:0.85rem; margin-bottom:1rem;">Create a ruleset to merge duplicate records across data sources using exact and fuzzy matching.</p>
 
               <div class="screenshot-gallery">
                 <div class="screenshot-thumb" onclick="openLightbox('/assets/images/screenshots/ex2-new-ruleset-config.png','New Ruleset Configuration')"><img src="/assets/images/screenshots/ex2-new-ruleset-config.png" alt="New Ruleset config" loading="lazy"><div class="screenshot-caption">New Ruleset Config</div><div class="screenshot-expand-icon"><i class="ph ph-magnifying-glass-plus" style="color:white;font-size:14px"></i></div></div>
@@ -704,22 +704,22 @@
               <div class="section-header">
                 <span class="section-header__title">Metadata Studio (Informatica)</span>
               </div>
-              <p style="color:rgba(255,255,255,0.7); font-size:0.85rem; margin-bottom:0.5rem;">External metadata management, data lineage tracking, catalog integration with Informatica CLAIRE. Provides enterprise-wide visibility into data assets flowing through Data Cloud.</p>
+              <p style="color:var(--gray-600); font-size:0.85rem; margin-bottom:0.5rem;">External metadata management, data lineage tracking, catalog integration with Informatica CLAIRE. Provides enterprise-wide visibility into data assets flowing through Data Cloud.</p>
 
               <div class="section-header">
                 <span class="section-header__title">Document AI / Unstructured Data</span>
               </div>
-              <p style="color:rgba(255,255,255,0.7); font-size:0.85rem; margin-bottom:0.5rem;">AI-powered extraction from PDFs, images, and scanned documents. OCR integration for digitizing paper records. Unstructured-to-structured pipeline for enriching unified profiles.</p>
+              <p style="color:var(--gray-600); font-size:0.85rem; margin-bottom:0.5rem;">AI-powered extraction from PDFs, images, and scanned documents. OCR integration for digitizing paper records. Unstructured-to-structured pipeline for enriching unified profiles.</p>
 
               <div class="section-header">
                 <span class="section-header__title">Data Governance</span>
               </div>
-              <p style="color:rgba(255,255,255,0.7); font-size:0.85rem; margin-bottom:0.5rem;">Field classification (PII, Sensitive, Public), Consent management (GDPR opt-in/opt-out tracking), BYOK encryption for data at rest, and comprehensive Audit Trail for compliance.</p>
+              <p style="color:var(--gray-600); font-size:0.85rem; margin-bottom:0.5rem;">Field classification (PII, Sensitive, Public), Consent management (GDPR opt-in/opt-out tracking), BYOK encryption for data at rest, and comprehensive Audit Trail for compliance.</p>
 
               <div class="section-header">
                 <span class="section-header__title">Data Spaces</span>
               </div>
-              <p style="color:rgba(255,255,255,0.7); font-size:0.85rem; margin-bottom:0.5rem;">Multi-brand isolation for enterprise deployments. Access control boundaries between business units. Cross-space queries for centralized analytics. Essential for organizations with multiple brands or regions.</p>
+              <p style="color:var(--gray-600); font-size:0.85rem; margin-bottom:0.5rem;">Multi-brand isolation for enterprise deployments. Access control boundaries between business units. Cross-space queries for centralized analytics. Essential for organizations with multiple brands or regions.</p>
 
               <h4 class="module-v2__section-title">Steps</h4>
               <div class="step-list-v2">

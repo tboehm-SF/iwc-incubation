@@ -57,21 +57,6 @@
   </section>
 
   <!-- ============================================== -->
-  <!-- IWC CRAFTSMANSHIP BANNER                       -->
-  <!-- ============================================== -->
-  <section class="craftsmanship-banner">
-    <div class="craftsmanship-banner__image-wrapper">
-      <img src="/assets/images/iwc-assembly-hero.jpg" alt="IWC Ingenieur Assembly — Master Watchmaker at Work" class="craftsmanship-banner__image" loading="lazy">
-      <div class="craftsmanship-banner__overlay"></div>
-    </div>
-    <div class="craftsmanship-banner__content container">
-      <span class="craftsmanship-banner__eyebrow">Probus Scafusia</span>
-      <p class="craftsmanship-banner__quote">Assembled with the same precision we bring to your data</p>
-      <p class="craftsmanship-banner__caption">Every component matters — from movement to unified profile</p>
-    </div>
-  </section>
-
-  <!-- ============================================== -->
   <!-- WORKSHOP AGENDA                                -->
   <!-- ============================================== -->
   <section class="section agenda-section" id="agenda">
@@ -252,82 +237,10 @@
         <i class="ph ph-x"></i>
       </button>
 
-      <!-- Watch mechanism scene -->
+      <!-- Watch assembly hero image -->
       <div class="welcome-modal__scene">
-        <svg class="welcome-modal__mechanism" viewBox="0 0 600 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="skyGrad" x1="300" y1="0" x2="300" y2="240" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#050d17"/>
-              <stop offset="50%" stop-color="#0C1B2A"/>
-              <stop offset="100%" stop-color="#152238"/>
-            </linearGradient>
-            <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#C4A962"/>
-              <stop offset="50%" stop-color="#E8D5A0"/>
-              <stop offset="100%" stop-color="#A68B4B"/>
-            </linearGradient>
-            <filter id="glow">
-              <feGaussianBlur stdDeviation="2" result="blur"/>
-              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
-          </defs>
-          <!-- Background -->
-          <rect width="600" height="240" fill="url(#skyGrad)"/>
-          <!-- Large gear (left) -->
-          <g class="welcome-gear welcome-gear--large" transform="translate(180, 120)">
-            <circle cx="0" cy="0" r="55" fill="none" stroke="#C4A962" stroke-width="1.5" opacity="0.4"/>
-            <circle cx="0" cy="0" r="45" fill="none" stroke="#C4A962" stroke-width="1" opacity="0.3"/>
-            <circle cx="0" cy="0" r="8" fill="#C4A962" opacity="0.6"/>
-            <!-- Teeth -->
-            <rect x="-3" y="-58" width="6" height="10" fill="#C4A962" opacity="0.5"/>
-            <rect x="-3" y="48" width="6" height="10" fill="#C4A962" opacity="0.5"/>
-            <rect x="-58" y="-3" width="10" height="6" fill="#C4A962" opacity="0.5"/>
-            <rect x="48" y="-3" width="10" height="6" fill="#C4A962" opacity="0.5"/>
-            <rect x="36" y="-40" width="6" height="10" fill="#C4A962" opacity="0.5" transform="rotate(45 39 -35)"/>
-            <rect x="-42" y="30" width="6" height="10" fill="#C4A962" opacity="0.5" transform="rotate(45 -39 35)"/>
-            <rect x="36" y="30" width="6" height="10" fill="#C4A962" opacity="0.5" transform="rotate(-45 39 35)"/>
-            <rect x="-42" y="-40" width="6" height="10" fill="#C4A962" opacity="0.5" transform="rotate(-45 -39 -35)"/>
-          </g>
-          <!-- Medium gear (right) -->
-          <g class="welcome-gear welcome-gear--medium" transform="translate(380, 100)">
-            <circle cx="0" cy="0" r="40" fill="none" stroke="#C4A962" stroke-width="1.5" opacity="0.4"/>
-            <circle cx="0" cy="0" r="32" fill="none" stroke="#C4A962" stroke-width="1" opacity="0.3"/>
-            <circle cx="0" cy="0" r="6" fill="#C4A962" opacity="0.6"/>
-            <rect x="-3" y="-43" width="6" height="8" fill="#C4A962" opacity="0.5"/>
-            <rect x="-3" y="35" width="6" height="8" fill="#C4A962" opacity="0.5"/>
-            <rect x="-43" y="-3" width="8" height="6" fill="#C4A962" opacity="0.5"/>
-            <rect x="35" y="-3" width="8" height="6" fill="#C4A962" opacity="0.5"/>
-            <rect x="25" y="-30" width="6" height="8" fill="#C4A962" opacity="0.5" transform="rotate(45 28 -26)"/>
-            <rect x="-31" y="22" width="6" height="8" fill="#C4A962" opacity="0.5" transform="rotate(45 -28 26)"/>
-          </g>
-          <!-- Small gear (bottom right) -->
-          <g class="welcome-gear welcome-gear--small" transform="translate(440, 180)">
-            <circle cx="0" cy="0" r="25" fill="none" stroke="#C4A962" stroke-width="1" opacity="0.3"/>
-            <circle cx="0" cy="0" r="18" fill="none" stroke="#C4A962" stroke-width="0.8" opacity="0.25"/>
-            <circle cx="0" cy="0" r="4" fill="#C4A962" opacity="0.5"/>
-            <rect x="-2" y="-27" width="4" height="6" fill="#C4A962" opacity="0.4"/>
-            <rect x="-2" y="21" width="4" height="6" fill="#C4A962" opacity="0.4"/>
-            <rect x="-27" y="-2" width="6" height="4" fill="#C4A962" opacity="0.4"/>
-            <rect x="21" y="-2" width="6" height="4" fill="#C4A962" opacity="0.4"/>
-          </g>
-          <!-- Precision lines -->
-          <g opacity="0.2" stroke="#C4A962" stroke-width="0.5">
-            <line x1="100" y1="60" x2="500" y2="60"/>
-            <line x1="120" y1="200" x2="480" y2="200"/>
-            <line x1="250" y1="40" x2="250" y2="220"/>
-            <line x1="350" y1="40" x2="350" y2="220"/>
-          </g>
-          <!-- Sparkle dots -->
-          <circle cx="100" cy="50" r="1.5" fill="#C4A962" opacity="0.6" class="welcome-star"/>
-          <circle cx="500" cy="70" r="1" fill="#C4A962" opacity="0.4" class="welcome-star"/>
-          <circle cx="300" cy="30" r="1.2" fill="#C4A962" opacity="0.5" class="welcome-star"/>
-          <circle cx="520" cy="180" r="1" fill="#C4A962" opacity="0.3" class="welcome-star"/>
-          <circle cx="80" cy="190" r="1.3" fill="#C4A962" opacity="0.5" class="welcome-star"/>
-        </svg>
-        <!-- Floating particles -->
-        <div class="welcome-modal__particles">
-          <span></span><span></span><span></span><span></span><span></span><span></span>
-        </div>
+        <img src="/assets/images/iwc-assembly-hero.jpg" alt="IWC Ingenieur Assembly" class="welcome-modal__hero-image">
+        <div class="welcome-modal__scene-overlay"></div>
       </div>
 
       <!-- Content -->
@@ -446,70 +359,25 @@
     .welcome-modal__scene {
       position: relative;
       width: 100%;
-      height: 200px;
+      height: 220px;
       overflow: hidden;
     }
-    .welcome-modal__mechanism {
+    .welcome-modal__hero-image {
       width: 100%;
       height: 100%;
+      object-fit: cover;
+      object-position: center 60%;
       display: block;
     }
-    /* Gear rotation animations */
-    .welcome-gear--large {
-      animation: gearRotate 20s linear infinite;
-      transform-origin: 180px 120px;
-    }
-    .welcome-gear--medium {
-      animation: gearRotateReverse 15s linear infinite;
-      transform-origin: 380px 100px;
-    }
-    .welcome-gear--small {
-      animation: gearRotate 10s linear infinite;
-      transform-origin: 440px 180px;
-    }
-    @keyframes gearRotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-    @keyframes gearRotateReverse {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(-360deg); }
-    }
-    .welcome-star {
-      animation: starTwinkle 3s ease-in-out infinite alternate;
-    }
-    .welcome-star:nth-child(2) { animation-delay: 0.5s; }
-    .welcome-star:nth-child(3) { animation-delay: 1s; }
-    .welcome-star:nth-child(4) { animation-delay: 1.5s; }
-    .welcome-star:nth-child(5) { animation-delay: 2s; }
-    @keyframes starTwinkle {
-      0% { opacity: 0.2; }
-      100% { opacity: 0.8; }
-    }
-    .welcome-modal__particles {
+    .welcome-modal__scene-overlay {
       position: absolute;
       inset: 0;
-      pointer-events: none;
-    }
-    .welcome-modal__particles span {
-      position: absolute;
-      width: 4px;
-      height: 4px;
-      background: rgba(196, 169, 98, 0.6);
-      border-radius: 50%;
-      animation: particleFloat 6s ease-in-out infinite;
-    }
-    .welcome-modal__particles span:nth-child(1) { left: 15%; top: 60%; animation-delay: 0s; }
-    .welcome-modal__particles span:nth-child(2) { left: 30%; top: 40%; animation-delay: 1s; width: 3px; height: 3px; }
-    .welcome-modal__particles span:nth-child(3) { left: 55%; top: 50%; animation-delay: 2s; }
-    .welcome-modal__particles span:nth-child(4) { left: 70%; top: 35%; animation-delay: 0.5s; width: 3px; height: 3px; }
-    .welcome-modal__particles span:nth-child(5) { left: 85%; top: 55%; animation-delay: 1.5s; }
-    .welcome-modal__particles span:nth-child(6) { left: 45%; top: 70%; animation-delay: 2.5s; width: 2px; height: 2px; }
-    @keyframes particleFloat {
-      0%, 100% { transform: translateY(0) scale(1); opacity: 0; }
-      10% { opacity: 1; }
-      50% { transform: translateY(-40px) scale(1.5); opacity: 0.8; }
-      90% { opacity: 0; }
+      background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(12, 27, 42, 0.3) 60%,
+        rgba(12, 27, 42, 0.9) 100%
+      );
     }
     .welcome-modal__content {
       padding: 2rem 2.5rem 2.5rem;

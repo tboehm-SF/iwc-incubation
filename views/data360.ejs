@@ -584,94 +584,14 @@ Qn9cJ/tvcXhqvErS3bEBpEPm</pre>
         </div>
       </div>
 
+
       <!-- ════════════════════════════════════════════ -->
-      <!-- MODULE 4: Activation                        -->
+      <!-- MODULE 4: Calculated Insights               -->
       <!-- ════════════════════════════════════════════ -->
       <div class="module-v2 animate-on-scroll" data-module="module-4">
         <div class="module-v2__card">
           <div class="module-v2__header" role="button" aria-expanded="false">
             <span class="module-v2__number">4</span>
-            <div class="module-v2__info">
-              <h3 class="module-v2__title">Activation</h3>
-              <p class="module-v2__subtitle">S3/EDW Target, Contact Point Mapping, Attribute Export</p>
-            </div>
-            <div class="module-v2__meta">
-              <span class="module-v2__step-count">0 / 10</span>
-            </div>
-            <span class="module-v2__chevron"><i class="ph ph-caret-down"></i></span>
-          </div>
-          <div class="module-v2__content">
-            <div class="module-v2__body">
-              <p class="module-v2__description">Activate your segments by pushing audience data to downstream systems. Configure activation targets for S3 (data warehouse), Marketing Cloud (email campaigns), and advertising platforms.</p>
-
-              <div class="module-callout module-callout--info">
-                <span class="module-callout__icon"><i class="ph ph-info" style="color:#C4A962"></i></span>
-                <div><strong>Activation Pipeline:</strong> Ingest (Data Streams) → Unify (Identity Resolution) → Segment (Segmentation) → <strong>Activate</strong> (Activation). This is where unified data becomes actionable.</div>
-              </div>
-
-              <div class="section-header">
-                <span class="section-header__title">Activation Target Types</span>
-              </div>
-              <table class="mapping-table" style="margin-bottom:1rem">
-                <thead><tr><th>Target Type</th><th>Platform</th><th>Use Case</th><th>Output</th></tr></thead>
-                <tbody>
-                  <tr><td>Marketing Cloud</td><td>SFMC Engagement</td><td>Email campaigns, journeys</td><td>Data Extension</td></tr>
-                  <tr><td>Enterprise Data Warehouse</td><td>Amazon S3</td><td>Analytics, BI, data science</td><td>CSV / Parquet</td></tr>
-                  <tr><td>Google Ads</td><td>Google Ads</td><td>Paid media, lookalikes</td><td>Customer Match</td></tr>
-                </tbody>
-              </table>
-
-              <p style="color:var(--iwc-gold-dark); font-size:0.8rem; font-weight:600; margin-bottom:0.5rem; text-transform:uppercase; letter-spacing:0.03em;">S3 ACTIVATION TARGET CREDENTIALS</p>
-              <table class="credential-table" style="margin-bottom:1.25rem">
-                <thead><tr><th>Field</th><th>Value</th></tr></thead>
-                <tbody>
-                  <tr><td>Bucket</td><td><code>dcworkshops</code></td></tr>
-                  <tr><td>Access Key</td><td>
-                    <div class="private-key-inline">
-                      <code id="aws-access-key-act">AKIA47CRZ7L5P7VBV3LD</code>
-                      <button class="copy-key-btn copy-key-btn--inline" onclick="copyPrivateKey('aws-access-key-act')" title="Copy">
-                        <i class="ph ph-copy"></i>
-                      </button>
-                      <span class="copy-key-confirmation" id="copied-aws-access-key-act">Copied!</span>
-                    </div>
-                  </td></tr>
-                  <tr><td>Secret Access Key</td><td>
-                    <div class="private-key-inline">
-                      <code id="aws-secret-key-act">PIVzypT/xl7EG9dwbv2tMOqoHpiPBV9AeEvZFvd9</code>
-                      <button class="copy-key-btn copy-key-btn--inline" onclick="copyPrivateKey('aws-secret-key-act')" title="Copy">
-                        <i class="ph ph-copy"></i>
-                      </button>
-                      <span class="copy-key-confirmation" id="copied-aws-secret-key-act">Copied!</span>
-                    </div>
-                  </td></tr>
-                </tbody>
-              </table>
-
-              <h4 class="module-v2__section-title">Steps</h4>
-              <div class="step-list-v2">
-                <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m4-s1"><span class="step-v2__text">Navigate to <strong>Activation Targets</strong> → Click "New"</span></label>
-                <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m4-s2"><span class="step-v2__text">Select platform: <strong>Amazon S3</strong> → Configure bucket: <strong>dcworkshops</strong></span></label>
-                <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m4-s3"><span class="step-v2__text">Enter S3 credentials (Access Key + Secret Key from table above) → <strong>Save</strong></span></label>
-                <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m4-s4"><span class="step-v2__text">Navigate to <strong>Activations</strong> → Click "New" → Select <strong>Enterprise Data Warehouse</strong></span></label>
-                <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m4-s5"><span class="step-v2__text">Select segment: <strong>"High Value Guests"</strong></span></label>
-                <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m4-s6"><span class="step-v2__text">Configure Contact Point: <strong>Unified Indv Contact Point Email → Email Address</strong></span></label>
-                <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m4-s7"><span class="step-v2__text">Add Direct Attribute: <strong>lifetime_value__c</strong> from Spend Profile By Guest</span></label>
-                <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m4-s8"><span class="step-v2__text">Add Related Attributes: <strong>Unified Individual Id</strong> + <strong>Person Name</strong></span></label>
-                <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m4-s9"><span class="step-v2__text">Name: <strong>"EDW Customer Activation"</strong> → Refresh: Incremental → Schedule: Don't refresh</span></label>
-                <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m4-s10"><span class="step-v2__text"><strong>Save</strong> and verify activation appears in list → Check status in Data Explorer</span></label>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ════════════════════════════════════════════ -->
-      <!-- MODULE 5: Calculated Insights               -->
-      <!-- ════════════════════════════════════════════ -->
-      <div class="module-v2 animate-on-scroll" data-module="module-5">
-        <div class="module-v2__card">
-          <div class="module-v2__header" role="button" aria-expanded="false">
-            <span class="module-v2__number">5</span>
             <div class="module-v2__info">
               <h3 class="module-v2__title">Calculated Insights</h3>
               <p class="module-v2__subtitle">Visual Builder, Measures, Dimensions, Scheduling, CRM Related Lists</p>
@@ -724,68 +644,14 @@ Qn9cJ/tvcXhqvErS3bEBpEPm</pre>
         </div>
       </div>
 
+
       <!-- ════════════════════════════════════════════ -->
-      <!-- MODULE 6: Data Actions                      -->
+      <!-- MODULE 5: Einstein AI & Advanced Reporting  -->
       <!-- ════════════════════════════════════════════ -->
-      <div class="module-v2 animate-on-scroll" data-module="module-6">
+      <div class="module-v2 animate-on-scroll" data-module="module-5">
         <div class="module-v2__card">
           <div class="module-v2__header" role="button" aria-expanded="false">
-            <span class="module-v2__number">6</span>
-            <div class="module-v2__info">
-              <h3 class="module-v2__title">Data Actions</h3>
-              <p class="module-v2__subtitle">Platform Events, Data Action Targets, Response Flows</p>
-            </div>
-            <div class="module-v2__meta">
-              <span class="module-v2__step-count">0 / 10</span>
-            </div>
-            <span class="module-v2__chevron"><i class="ph ph-caret-down"></i></span>
-          </div>
-          <div class="module-v2__content">
-            <div class="module-v2__body">
-              <p class="module-v2__description">Configure Data Actions to trigger real-time business processes when data conditions are met. Create Platform Events, configure Data Action Targets, and build response Flows that automate case creation and notifications.</p>
-
-              <div class="module-callout module-callout--info">
-                <span class="module-callout__icon"><i class="ph ph-info" style="color:#C4A962"></i></span>
-                <div><strong>Data Action Types:</strong> Platform Events (real-time triggers), Record-Triggered Flows (automation), Webhooks (external systems). In this module we focus on Platform Events + Flow Builder.</div>
-              </div>
-
-              <div class="section-header">
-                <span class="section-header__title">Platform Event Configuration</span>
-              </div>
-              <table class="mapping-table" style="margin-bottom:1rem">
-                <thead><tr><th>Setting</th><th>Value</th></tr></thead>
-                <tbody>
-                  <tr><td>Event Name</td><td class="mono">Data_Cloud_Case_Action__e</td></tr>
-                  <tr><td>Custom Field</td><td class="mono">Record_Id__c (Text, 18 chars)</td></tr>
-                  <tr><td>Publish Behavior</td><td>Publish Immediately</td></tr>
-                </tbody>
-              </table>
-
-              <h4 class="module-v2__section-title">Steps</h4>
-              <div class="step-list-v2">
-                <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m6-s1"><span class="step-v2__text">Setup → <strong>Platform Events</strong> → New → Name: <strong>Data_Cloud_Case_Action__e</strong></span></label>
-                <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m6-s2"><span class="step-v2__text">Add custom field: <strong>Record_Id__c</strong> (Text, length 18)</span></label>
-                <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m6-s3"><span class="step-v2__text">Navigate to Data 360 → <strong>Data Action Targets</strong> → New</span></label>
-                <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m6-s4"><span class="step-v2__text">Select Type: <strong>Salesforce (Org)</strong> → Name the target → Save</span></label>
-                <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m6-s5"><span class="step-v2__text">Navigate to <strong>Data Actions</strong> → New → Select DMO and define trigger condition</span></label>
-                <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m6-s6"><span class="step-v2__text">Map fields from the DMO to the Platform Event (Record_Id__c)</span></label>
-                <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m6-s7"><span class="step-v2__text">Open <strong>Flow Builder</strong> → New → <strong>Platform Event-Triggered Flow</strong></span></label>
-                <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m6-s8"><span class="step-v2__text">Select event: <strong>Data_Cloud_Case_Action__e</strong> → Add Create Records action (create Case)</span></label>
-                <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m6-s9"><span class="step-v2__text"><strong>Activate</strong> the Flow</span></label>
-                <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m6-s10"><span class="step-v2__text"><strong>Test</strong> end-to-end: trigger data condition → verify Platform Event fires → confirm Case is created</span></label>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ════════════════════════════════════════════ -->
-      <!-- MODULE 7: Einstein AI & Advanced Reporting  -->
-      <!-- ════════════════════════════════════════════ -->
-      <div class="module-v2 animate-on-scroll" data-module="module-7">
-        <div class="module-v2__card">
-          <div class="module-v2__header" role="button" aria-expanded="false">
-            <span class="module-v2__number">7</span>
+            <span class="module-v2__number">5</span>
             <div class="module-v2__info">
               <h3 class="module-v2__title">Einstein AI & Advanced Reporting</h3>
               <p class="module-v2__subtitle">Data 360 Reports, Duplicate Detection, Einstein Segments, Flow Queries</p>
@@ -823,12 +689,12 @@ Qn9cJ/tvcXhqvErS3bEBpEPm</pre>
       </div>
 
       <!-- ════════════════════════════════════════════ -->
-      <!-- MODULE 8: Advanced Topics                   -->
+      <!-- MODULE 6: Advanced Topics                   -->
       <!-- ════════════════════════════════════════════ -->
-      <div class="module-v2 animate-on-scroll" data-module="module-8">
+      <div class="module-v2 animate-on-scroll" data-module="module-6">
         <div class="module-v2__card">
           <div class="module-v2__header" role="button" aria-expanded="false">
-            <span class="module-v2__number">8</span>
+            <span class="module-v2__number">6</span>
             <div class="module-v2__info">
               <h3 class="module-v2__title">Advanced Topics</h3>
               <p class="module-v2__subtitle">Metadata Studio, Document AI, Data Governance, Data Spaces</p>

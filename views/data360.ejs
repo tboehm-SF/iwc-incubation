@@ -133,6 +133,152 @@
       font-size: 0.7rem;
     }
 
+    /* Einstein Trust Layer Diagram */
+    .trust-layer {
+      margin: 1.5rem 0;
+      padding: 1.5rem;
+      background: linear-gradient(135deg, #f0f4ff 0%, #faf5eb 100%);
+      border: 1px solid rgba(196, 169, 98, 0.2);
+      border-radius: 16px;
+    }
+    .trust-layer__title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--iwc-navy);
+      text-align: center;
+      margin-bottom: 0.25rem;
+    }
+    .trust-layer__subtitle {
+      font-size: 0.78rem;
+      color: var(--gray-500);
+      text-align: center;
+      margin-bottom: 1.25rem;
+    }
+    .trust-layer__flow {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    .trust-layer__stage {
+      flex: 1;
+      max-width: 220px;
+      background: #fff;
+      border: 2px solid var(--gray-200);
+      border-radius: 12px;
+      padding: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .trust-layer__stage:hover {
+      border-color: rgba(196, 169, 98, 0.5);
+      box-shadow: 0 4px 16px rgba(196, 169, 98, 0.15);
+    }
+    .trust-layer__stage--active {
+      border-color: var(--iwc-gold);
+      box-shadow: 0 4px 16px rgba(196, 169, 98, 0.2);
+    }
+    .trust-layer__stage-number {
+      width: 24px; height: 24px;
+      background: var(--iwc-navy);
+      color: var(--iwc-gold);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .trust-layer__stage--active .trust-layer__stage-number {
+      background: linear-gradient(135deg, #C4A962, #E8D5A0);
+      color: var(--iwc-navy);
+    }
+    .trust-layer__stage-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--iwc-navy);
+      margin-bottom: 0.5rem;
+    }
+    .trust-layer__stage-details {
+      display: none;
+    }
+    .trust-layer__stage--active .trust-layer__stage-details {
+      display: block;
+      animation: trustFadeIn 0.3s ease;
+    }
+    @keyframes trustFadeIn {
+      from { opacity: 0; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .trust-layer__stage-details ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .trust-layer__stage-details li {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      color: var(--gray-700);
+      padding: 0.3rem 0;
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .trust-layer__stage-details li:last-child { border-bottom: none; }
+    .trust-layer__stage-details li i { color: var(--iwc-gold-dark); font-size: 0.85rem; flex-shrink: 0; }
+    .trust-layer__source {
+      margin-top: 0.5rem;
+      font-size: 0.7rem;
+      color: var(--gray-500);
+      padding: 0.4rem 0.6rem;
+      background: var(--gray-50);
+      border-radius: 6px;
+    }
+    .trust-layer__source-label {
+      display: block;
+      font-weight: 600;
+      color: var(--iwc-gold-dark);
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 2px;
+    }
+    .trust-layer__badge {
+      margin-top: 0.6rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #dc2626;
+      background: rgba(220, 38, 38, 0.08);
+      padding: 0.3rem 0.6rem;
+      border-radius: 6px;
+    }
+    .trust-layer__badge i { font-size: 0.8rem; }
+    .trust-layer__arrow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-top: 2.5rem;
+      color: var(--gray-400);
+      font-size: 1.2rem;
+    }
+    .trust-layer__gateway {
+      font-size: 0.6rem;
+      color: var(--gray-400);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-weight: 600;
+      margin-top: 0.2rem;
+      white-space: nowrap;
+    }
+    @media (max-width: 680px) {
+      .trust-layer__flow { flex-direction: column; align-items: center; }
+      .trust-layer__stage { max-width: 100%; }
+      .trust-layer__arrow { transform: rotate(90deg); padding: 0.5rem 0; }
+    }
+
     /* Mapping Tables */
     .mapping-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; border-radius: 12px; overflow: hidden; border: 1px solid var(--gray-200); }
     .mapping-table th { padding: 0.6rem 0.8rem; background: var(--iwc-navy); color: var(--iwc-gold); text-align: left; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
@@ -665,6 +811,69 @@ Qn9cJ/tvcXhqvErS3bEBpEPm</pre>
             <div class="module-v2__body">
               <p class="module-v2__description">Leverage Agentforce capabilities within Data 360. Create intelligent segments with natural language, detect duplicates, build cross-object reports, and query Data 360 from Flows.</p>
 
+              <!-- Einstein Trust Layer Interactive Diagram -->
+              <div class="trust-layer">
+                <h4 class="trust-layer__title">The Einstein Trust Layer</h4>
+                <p class="trust-layer__subtitle">Click each stage to explore the security guardrails</p>
+
+                <div class="trust-layer__flow">
+                  <!-- Stage 1: Prompt -->
+                  <div class="trust-layer__stage trust-layer__stage--active" data-stage="prompt" onclick="toggleTrustStage(this)">
+                    <div class="trust-layer__stage-number">1</div>
+                    <h5 class="trust-layer__stage-title">Prompt</h5>
+                    <div class="trust-layer__stage-details">
+                      <ul>
+                        <li><i class="ph ph-shield-check"></i> Secure data retrieval</li>
+                        <li><i class="ph ph-crosshair"></i> Dynamic grounding</li>
+                        <li><i class="ph ph-eye-slash"></i> Data masking</li>
+                        <li><i class="ph ph-lock"></i> Prompt defense</li>
+                      </ul>
+                      <div class="trust-layer__source">
+                        <span class="trust-layer__source-label">Source</span>
+                        CRM apps, customer, company &amp; outcome data
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="trust-layer__arrow"><i class="ph ph-arrow-right"></i><span class="trust-layer__gateway">Secure Gateway</span></div>
+
+                  <!-- Stage 2: Models -->
+                  <div class="trust-layer__stage" data-stage="models" onclick="toggleTrustStage(this)">
+                    <div class="trust-layer__stage-number">2</div>
+                    <h5 class="trust-layer__stage-title">Models</h5>
+                    <div class="trust-layer__stage-details">
+                      <ul>
+                        <li><i class="ph ph-cloud"></i> <strong>Hosted models</strong> in Salesforce trust boundary</li>
+                        <li><i class="ph ph-buildings"></i> <strong>Bring Your Own Models</strong> on your infrastructure</li>
+                        <li><i class="ph ph-plugs-connected"></i> <strong>External models</strong> with shared trust boundary</li>
+                      </ul>
+                      <div class="trust-layer__badge">
+                        <i class="ph ph-prohibit"></i> Zero Retention
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="trust-layer__arrow"><i class="ph ph-arrow-right"></i><span class="trust-layer__gateway">Secure Gateway</span></div>
+
+                  <!-- Stage 3: Response -->
+                  <div class="trust-layer__stage" data-stage="response" onclick="toggleTrustStage(this)">
+                    <div class="trust-layer__stage-number">3</div>
+                    <h5 class="trust-layer__stage-title">Response</h5>
+                    <div class="trust-layer__stage-details">
+                      <ul>
+                        <li><i class="ph ph-warning"></i> Toxicity detection</li>
+                        <li><i class="ph ph-eye"></i> Data demasking</li>
+                        <li><i class="ph ph-clipboard-text"></i> Audit trail</li>
+                      </ul>
+                      <div class="trust-layer__source">
+                        <span class="trust-layer__source-label">Output to</span>
+                        Sales, Service, Marketing, Commerce, IT
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               <div class="callout-v2 callout-v2--tip">
                 <span class="callout-v2__icon"><i class="ph ph-lightbulb"></i></span>
                 <div><strong>Optional Advanced Exercises:</strong> These exercises demonstrate cutting-edge capabilities. They require Data 360 Reports and Einstein features to be enabled in your org.</div>
@@ -783,6 +992,13 @@ Qn9cJ/tvcXhqvErS3bEBpEPm</pre>
     });
 
     // Copy Private Key function
+    // Trust Layer interactive toggle
+    function toggleTrustStage(el) {
+      var stages = document.querySelectorAll('.trust-layer__stage');
+      stages.forEach(function(s) { s.classList.remove('trust-layer__stage--active'); });
+      el.classList.add('trust-layer__stage--active');
+    }
+
     function copyPrivateKey(elementId) {
       var keyEl = document.getElementById(elementId);
       var copiedEl = document.getElementById('copied-' + elementId);

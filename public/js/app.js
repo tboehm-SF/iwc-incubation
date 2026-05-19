@@ -1,5 +1,5 @@
 /**
- * Data Cloud Incubation Workshop - IWC Schaffhausen
+ * Data 360 Incubation Workshop - IWC Schaffhausen
  * Shared App Logic
  *
  * Handles: header scroll effects, mobile nav drawer, dropdown menus,

@@ -157,10 +157,10 @@
       </nav>
       <div class="track-hero-v2__badge">
         <i class="ph ph-database"></i>
-        Data Cloud Deep-Dive
+        Data 360 Deep-Dive
       </div>
       <h1 class="track-hero-v2__title">Data 360 Track</h1>
-      <p class="track-hero-v2__subtitle">Build a complete data unification solution for Coral Cloud Resorts using Data Cloud. Ingest data from CRM and external sources, resolve identities, create calculated insights, build segments, and activate audiences.</p>
+      <p class="track-hero-v2__subtitle">Build a complete data unification solution for Coral Cloud Resorts using Data 360. Ingest data from CRM and external sources, resolve identities, create calculated insights, build segments, and activate audiences.</p>
       <div class="track-hero-v2__stats">
         <div class="track-hero-v2__stat">
           <span class="track-hero-v2__stat-value">8</span>
@@ -217,7 +217,7 @@
           </div>
           <div class="module-v2__content">
             <div class="module-v2__body">
-              <p class="module-v2__description">Welcome to the Data 360 Track! In this module, you will set up the foundational data connections for <strong>Coral Cloud Resorts</strong> — a luxury resort chain using Data Cloud to unify guest data from multiple sources. You will configure CRM data streams, external connectors (Amazon S3 and Snowflake), and identity resolution rules.</p>
+              <p class="module-v2__description">Welcome to the Data 360 Track! In this module, you will set up the foundational data connections for <strong>Coral Cloud Resorts</strong> — a luxury resort chain using Data 360 to unify guest data from multiple sources. You will configure CRM data streams, external connectors (Amazon S3 and Snowflake), and identity resolution rules.</p>
 
               <div class="callout-v2 callout-v2--info">
                 <span class="callout-v2__icon"><i class="ph ph-info"></i></span>
@@ -244,7 +244,7 @@
                 <span class="section-header__badge">Exercise 1a</span>
                 <span class="section-header__title">CRM Data Streams</span>
               </div>
-              <p style="color:var(--gray-600); font-size:0.85rem; margin-bottom:1rem;">Pull data directly from Salesforce CRM. These streams ingest Account, Contact, and Lead into Data Cloud, creating Data Lake Objects (DLOs) that map to standard Data Model Objects (DMOs).</p>
+              <p style="color:var(--gray-600); font-size:0.85rem; margin-bottom:1rem;">Pull data directly from Salesforce CRM. These streams ingest Account, Contact, and Lead into Data 360, creating Data Lake Objects (DLOs) that map to standard Data Model Objects (DMOs).</p>
 
               <!-- Screenshots: CRM Data Streams -->
               <div class="screenshot-gallery">
@@ -403,7 +403,7 @@ Qn9cJ/tvcXhqvErS3bEBpEPm</pre>
               <!-- Steps -->
               <h4 class="module-v2__section-title" style="margin-top:1.5rem">Steps</h4>
               <div class="step-list-v2">
-                <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m1-s1"><span class="step-v2__text">Provision a <strong>Simple Demo Org (SDO)</strong> with Data Cloud enabled</span></label>
+                <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m1-s1"><span class="step-v2__text">Provision a <strong>Simple Demo Org (SDO)</strong> with Data 360 enabled</span></label>
                 <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m1-s2"><span class="step-v2__text">Install the <strong>Coral Cloud Resort Data Kit</strong> (Data Streams → New → Installed Data Kits)</span></label>
                 <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m1-s3"><span class="step-v2__text">Verify Data Kit: confirm Account, Contact, Lead records in CRM</span></label>
                 <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m1-s4"><span class="step-v2__text">Create <strong>CRM Data Stream</strong>: Data Streams → New → Salesforce CRM → Select Account, Contact, Lead</span></label>
@@ -413,7 +413,7 @@ Qn9cJ/tvcXhqvErS3bEBpEPm</pre>
                 <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m1-s8"><span class="step-v2__text">Configure Guest DLO (Label: Guest, Category: Profile, Primary Key: Guest Id)</span></label>
                 <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m1-s9"><span class="step-v2__text"><strong>Deploy & Refresh</strong> S3 stream, verify Guest DLO appears</span></label>
                 <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m1-s10"><span class="step-v2__text">Map <strong>Guest DLO</strong> to Individual and Contact Point Email DMOs</span></label>
-                <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m1-s11"><span class="step-v2__text">Open <strong>Data Cloud Setup</strong> → Snowflake Connector → New</span></label>
+                <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m1-s11"><span class="step-v2__text">Open <strong>Data 360 Setup</strong> → Snowflake Connector → New</span></label>
                 <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m1-s12"><span class="step-v2__text">Enter <strong>Snowflake credentials</strong> (URL, username, private key, warehouse)</span></label>
                 <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m1-s13"><span class="step-v2__text">Create <strong>Snowflake Data Stream</strong>: CORAL_CLOUD_DATA → PUBLIC → HOTEL_RESERVATIONS</span></label>
                 <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m1-s14"><span class="step-v2__text">Configure Reservation object (Category: Engagement, PK: RESERVATION_ID__C)</span></label>
@@ -447,11 +447,11 @@ Qn9cJ/tvcXhqvErS3bEBpEPm</pre>
           </div>
           <div class="module-v2__content">
             <div class="module-v2__body">
-              <p class="module-v2__description">Explore the data ingested into Data Cloud. Use Data Explorer to query Data Model Objects and Profile Explorer to view unified customer profiles with merged records from multiple sources.</p>
+              <p class="module-v2__description">Explore the data ingested into Data 360. Use Data Explorer to query Data Model Objects and Profile Explorer to view unified customer profiles with merged records from multiple sources.</p>
 
               <div class="module-callout module-callout--info">
                 <span class="module-callout__icon"><i class="ph ph-info" style="color:#C4A962"></i></span>
-                <div><strong>Key Concept:</strong> <em>Data Explorer</em> is object-centric — browse DMO records as rows. <em>Profile Explorer</em> is person-centric — see everything Data Cloud knows about one individual in a unified view.</div>
+                <div><strong>Key Concept:</strong> <em>Data Explorer</em> is object-centric — browse DMO records as rows. <em>Profile Explorer</em> is person-centric — see everything Data 360 knows about one individual in a unified view.</div>
               </div>
 
               <div class="module-callout module-callout--tip">
@@ -461,7 +461,7 @@ Qn9cJ/tvcXhqvErS3bEBpEPm</pre>
 
               <h4 class="module-v2__section-title">Steps</h4>
               <div class="step-list-v2">
-                <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m2-s1"><span class="step-v2__text">Open <strong>Data Explorer</strong> from the Data Cloud app</span></label>
+                <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m2-s1"><span class="step-v2__text">Open <strong>Data Explorer</strong> from the Data 360 app</span></label>
                 <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m2-s2"><span class="step-v2__text">Select Data Space: <strong>"default"</strong></span></label>
                 <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m2-s3"><span class="step-v2__text">Select Object Type: <strong>"Data Model Object"</strong></span></label>
                 <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m2-s4"><span class="step-v2__text">Select Object: <strong>"Individual"</strong> and run query</span></label>
@@ -527,7 +527,7 @@ Qn9cJ/tvcXhqvErS3bEBpEPm</pre>
 
               <h4 class="module-v2__section-title">Steps</h4>
               <div class="step-list-v2">
-                <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m3-s1"><span class="step-v2__text">Navigate to <strong>Segments</strong> in the Data Cloud app (use "More" dropdown if hidden)</span></label>
+                <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m3-s1"><span class="step-v2__text">Navigate to <strong>Segments</strong> in the Data 360 app (use "More" dropdown if hidden)</span></label>
                 <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m3-s2"><span class="step-v2__text">Click <strong>"New"</strong> → Select <strong>"Use Visual Builder"</strong></span></label>
                 <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m3-s3"><span class="step-v2__text">Set <strong>"Segment On"</strong> to <strong>Unified Individual</strong></span></label>
                 <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m3-s4"><span class="step-v2__text">Name your segment: <strong>"High Value Guests"</strong></span></label>
@@ -652,7 +652,7 @@ Qn9cJ/tvcXhqvErS3bEBpEPm</pre>
                 <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m5-s7"><span class="step-v2__text">Set Dimension: <strong>Unified Individual Id</strong> (from Unified Individual)</span></label>
                 <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m5-s8"><span class="step-v2__text">Configure <strong>Schedule</strong> (One-time or Recurring) and Save</span></label>
                 <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m5-s9"><span class="step-v2__text"><strong>Run</strong> the insight and verify results in Data Explorer</span></label>
-                <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m5-s10"><span class="step-v2__text">Configure <strong>CRM Related List</strong>: Add Data Cloud component to Contact page to display insight metrics</span></label>
+                <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m5-s10"><span class="step-v2__text">Configure <strong>CRM Related List</strong>: Add Data 360 component to Contact page to display insight metrics</span></label>
               </div>
             </div>
           </div>
@@ -700,7 +700,7 @@ Qn9cJ/tvcXhqvErS3bEBpEPm</pre>
               <div class="step-list-v2">
                 <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m6-s1"><span class="step-v2__text">Setup → <strong>Platform Events</strong> → New → Name: <strong>Data_Cloud_Case_Action__e</strong></span></label>
                 <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m6-s2"><span class="step-v2__text">Add custom field: <strong>Record_Id__c</strong> (Text, length 18)</span></label>
-                <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m6-s3"><span class="step-v2__text">Navigate to Data Cloud → <strong>Data Action Targets</strong> → New</span></label>
+                <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m6-s3"><span class="step-v2__text">Navigate to Data 360 → <strong>Data Action Targets</strong> → New</span></label>
                 <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m6-s4"><span class="step-v2__text">Select Type: <strong>Salesforce (Org)</strong> → Name the target → Save</span></label>
                 <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m6-s5"><span class="step-v2__text">Navigate to <strong>Data Actions</strong> → New → Select DMO and define trigger condition</span></label>
                 <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m6-s6"><span class="step-v2__text">Map fields from the DMO to the Platform Event (Record_Id__c)</span></label>
@@ -723,7 +723,7 @@ Qn9cJ/tvcXhqvErS3bEBpEPm</pre>
             <span class="module-v2__number">7</span>
             <div class="module-v2__info">
               <h3 class="module-v2__title">Einstein AI & Advanced Reporting</h3>
-              <p class="module-v2__subtitle">Data Cloud Reports, Duplicate Detection, Einstein Segments, Flow Queries</p>
+              <p class="module-v2__subtitle">Data 360 Reports, Duplicate Detection, Einstein Segments, Flow Queries</p>
             </div>
             <div class="module-v2__meta">
               <span class="module-v2__step-count">0 / 10</span>
@@ -732,11 +732,11 @@ Qn9cJ/tvcXhqvErS3bEBpEPm</pre>
           </div>
           <div class="module-v2__content">
             <div class="module-v2__body">
-              <p class="module-v2__description">Leverage Einstein AI capabilities within Data Cloud. Create intelligent segments with natural language, detect duplicates, build cross-object reports, and query Data Cloud from Flows.</p>
+              <p class="module-v2__description">Leverage Einstein AI capabilities within Data 360. Create intelligent segments with natural language, detect duplicates, build cross-object reports, and query Data 360 from Flows.</p>
 
               <div class="callout-v2 callout-v2--tip">
                 <span class="callout-v2__icon"><i class="ph ph-lightbulb"></i></span>
-                <div><strong>Optional Advanced Exercises:</strong> These exercises demonstrate cutting-edge capabilities. They require Data Cloud Reports and Einstein features to be enabled in your org.</div>
+                <div><strong>Optional Advanced Exercises:</strong> These exercises demonstrate cutting-edge capabilities. They require Data 360 Reports and Einstein features to be enabled in your org.</div>
               </div>
 
               <h4 class="module-v2__section-title">Steps</h4>
@@ -749,8 +749,8 @@ Qn9cJ/tvcXhqvErS3bEBpEPm</pre>
                 <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m7-s6"><span class="step-v2__text">Enter prompt: <strong>"Guests who stayed more than 3 times and spent over $5,000"</strong></span></label>
                 <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m7-s7"><span class="step-v2__text">Review and <strong>refine</strong> Einstein-generated segment criteria</span></label>
                 <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m7-s8"><span class="step-v2__text">Create a <strong>Screen Flow</strong> with a recordId input variable</span></label>
-                <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m7-s9"><span class="step-v2__text">Add a <strong>Data Cloud Query</strong> action to retrieve profile data in the Flow</span></label>
-                <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m7-s10"><span class="step-v2__text">Display Data Cloud results on a <strong>Lightning Record Page</strong></span></label>
+                <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m7-s9"><span class="step-v2__text">Add a <strong>Data 360 Query</strong> action to retrieve profile data in the Flow</span></label>
+                <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m7-s10"><span class="step-v2__text">Display Data 360 results on a <strong>Lightning Record Page</strong></span></label>
               </div>
             </div>
           </div>
@@ -775,17 +775,17 @@ Qn9cJ/tvcXhqvErS3bEBpEPm</pre>
           </div>
           <div class="module-v2__content">
             <div class="module-v2__body">
-              <p class="module-v2__description">Explore advanced Data Cloud capabilities including metadata management with Informatica, AI-powered document processing, governance policies, and multi-brand data isolation with Data Spaces.</p>
+              <p class="module-v2__description">Explore advanced Data 360 capabilities including metadata management with Informatica, AI-powered document processing, governance policies, and multi-brand data isolation with Data Spaces.</p>
 
               <div class="callout-v2 callout-v2--info">
                 <span class="callout-v2__icon"><i class="ph ph-info"></i></span>
-                <div><strong>Reference Material:</strong> This module covers advanced topics for awareness. These features may not all be available in your workshop org but represent the full Data Cloud platform capabilities.</div>
+                <div><strong>Reference Material:</strong> This module covers advanced topics for awareness. These features may not all be available in your workshop org but represent the full Data 360 platform capabilities.</div>
               </div>
 
               <div class="section-header">
                 <span class="section-header__title">Metadata Studio (Informatica)</span>
               </div>
-              <p style="color:var(--gray-600); font-size:0.85rem; margin-bottom:0.5rem;">External metadata management, data lineage tracking, catalog integration with Informatica CLAIRE. Provides enterprise-wide visibility into data assets flowing through Data Cloud.</p>
+              <p style="color:var(--gray-600); font-size:0.85rem; margin-bottom:0.5rem;">External metadata management, data lineage tracking, catalog integration with Informatica CLAIRE. Provides enterprise-wide visibility into data assets flowing through Data 360.</p>
 
               <div class="section-header">
                 <span class="section-header__title">Document AI / Unstructured Data</span>

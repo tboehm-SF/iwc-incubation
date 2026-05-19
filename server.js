@@ -250,6 +250,6 @@ app.get('/api/admin/iwc-password', requireAuth, requireAdmin, (req, res) => {
 // Start server
 // ---------------------------------------------------------------------------
 app.listen(PORT, () => {
-  console.log(`\n  Data Cloud Incubation Workshop - IWC Schaffhausen`);
+  console.log(`\n  Data 360 Incubation Workshop - IWC Schaffhausen`);
   console.log(`  Running on http://localhost:${PORT}\n`);
 });

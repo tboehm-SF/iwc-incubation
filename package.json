@@ -1,7 +1,7 @@
 {
   "name": "iwc-incubation-workshop",
   "version": "1.0.0",
-  "description": "Data Cloud Incubation Workshop for IWC Schaffhausen",
+  "description": "Data 360 Incubation Workshop for IWC Schaffhausen",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

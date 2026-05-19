@@ -1,5 +1,5 @@
 /**
- * IWC Data Cloud Workshop — Use Cases Page
+ * IWC Data 360 Workshop — Use Cases Page
  * Handles filtering, searching, expanding/collapsing use case cards
  */
 (function () {

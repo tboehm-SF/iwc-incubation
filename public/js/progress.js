@@ -1,5 +1,5 @@
 /**
- * IWC Data Cloud Workshop - Progress Tracking
+ * IWC Data 360 Workshop - Progress Tracking
  *
  * Handles interactive checkboxes, progress bars, module completion tracking,
  * and celebration effects.

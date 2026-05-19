@@ -538,6 +538,9 @@ input, textarea { font: inherit; }
   font-size: 1rem; font-weight: 700; flex-shrink: 0;
 }
 .module-v2.module-complete .module-v2__number { background: linear-gradient(135deg, var(--green), #4ade80); color: var(--white); }
+.module-v2__number--bonus { background: linear-gradient(135deg, #C4A962, #E8D5A0) !important; color: #0C1B2A !important; font-size: 0.85rem !important; font-weight: 800; letter-spacing: -0.02em; }
+.module-v2--bonus .module-v2__card { border: 1px solid rgba(196, 169, 98, 0.3); }
+.module-v2--bonus .module-v2__title::after { content: " BONUS"; font-size: 0.6rem; font-weight: 700; color: #C4A962; background: rgba(196, 169, 98, 0.12); padding: 2px 6px; border-radius: 4px; margin-left: 8px; vertical-align: middle; letter-spacing: 0.05em; }
 .module-v2__info { flex: 1; }
 .module-v2__title { font-size: 1.0625rem; font-weight: 700; color: var(--gray-800); margin-bottom: 2px; }
 .module-v2__subtitle { font-size: 0.8125rem; color: var(--gray-500); }

@@ -112,6 +112,27 @@
     }
     .copy-key-confirmation--visible { opacity: 1; }
 
+    /* Inline key display (single-line keys like AWS) */
+    .private-key-inline {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .private-key-inline code {
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.8rem;
+      background: rgba(12, 27, 42, 0.06);
+      padding: 4px 8px;
+      border-radius: 4px;
+      color: var(--iwc-navy);
+      user-select: all;
+    }
+    .copy-key-btn--inline {
+      padding: 0.25rem 0.5rem;
+      font-size: 0.7rem;
+    }
+
     /* Mapping Tables */
     .mapping-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; border-radius: 12px; overflow: hidden; border: 1px solid var(--gray-200); }
     .mapping-table th { padding: 0.6rem 0.8rem; background: var(--iwc-navy); color: var(--iwc-gold); text-align: left; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
@@ -294,6 +315,24 @@
                 <thead><tr><th>Field</th><th>Value</th></tr></thead>
                 <tbody>
                   <tr><td>Connection</td><td><code>Coral Cloud Resort S3 Connection</code></td></tr>
+                  <tr><td>Access Key</td><td>
+                    <div class="private-key-inline">
+                      <code id="aws-access-key">AKIA47CRZ7L5P7VBV3LD</code>
+                      <button class="copy-key-btn copy-key-btn--inline" onclick="copyPrivateKey('aws-access-key')" title="Copy">
+                        <i class="ph ph-copy"></i>
+                      </button>
+                      <span class="copy-key-confirmation" id="copied-aws-access-key">Copied!</span>
+                    </div>
+                  </td></tr>
+                  <tr><td>Secret Access Key</td><td>
+                    <div class="private-key-inline">
+                      <code id="aws-secret-key">PIVzypT/xl7EG9dwbv2tMOqoHpiPBV9AeEvZFvd9</code>
+                      <button class="copy-key-btn copy-key-btn--inline" onclick="copyPrivateKey('aws-secret-key')" title="Copy">
+                        <i class="ph ph-copy"></i>
+                      </button>
+                      <span class="copy-key-confirmation" id="copied-aws-secret-key">Copied!</span>
+                    </div>
+                  </td></tr>
                   <tr><td>File Type</td><td><code>CSV</code></td></tr>
                   <tr><td>Bucket Name</td><td><code>coral-cloud</code></td></tr>
                   <tr><td>File Name</td><td><code>Coral_Clouds_Guests.csv</code></td></tr>
@@ -582,11 +621,37 @@ Qn9cJ/tvcXhqvErS3bEBpEPm</pre>
                 </tbody>
               </table>
 
+              <p style="color:var(--iwc-gold-dark); font-size:0.8rem; font-weight:600; margin-bottom:0.5rem; text-transform:uppercase; letter-spacing:0.03em;">S3 ACTIVATION TARGET CREDENTIALS</p>
+              <table class="credential-table" style="margin-bottom:1.25rem">
+                <thead><tr><th>Field</th><th>Value</th></tr></thead>
+                <tbody>
+                  <tr><td>Bucket</td><td><code>dcworkshops</code></td></tr>
+                  <tr><td>Access Key</td><td>
+                    <div class="private-key-inline">
+                      <code id="aws-access-key-act">AKIA47CRZ7L5P7VBV3LD</code>
+                      <button class="copy-key-btn copy-key-btn--inline" onclick="copyPrivateKey('aws-access-key-act')" title="Copy">
+                        <i class="ph ph-copy"></i>
+                      </button>
+                      <span class="copy-key-confirmation" id="copied-aws-access-key-act">Copied!</span>
+                    </div>
+                  </td></tr>
+                  <tr><td>Secret Access Key</td><td>
+                    <div class="private-key-inline">
+                      <code id="aws-secret-key-act">PIVzypT/xl7EG9dwbv2tMOqoHpiPBV9AeEvZFvd9</code>
+                      <button class="copy-key-btn copy-key-btn--inline" onclick="copyPrivateKey('aws-secret-key-act')" title="Copy">
+                        <i class="ph ph-copy"></i>
+                      </button>
+                      <span class="copy-key-confirmation" id="copied-aws-secret-key-act">Copied!</span>
+                    </div>
+                  </td></tr>
+                </tbody>
+              </table>
+
               <h4 class="module-v2__section-title">Steps</h4>
               <div class="step-list-v2">
                 <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m4-s1"><span class="step-v2__text">Navigate to <strong>Activation Targets</strong> → Click "New"</span></label>
                 <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m4-s2"><span class="step-v2__text">Select platform: <strong>Amazon S3</strong> → Configure bucket: <strong>dcworkshops</strong></span></label>
-                <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m4-s3"><span class="step-v2__text">Enter S3 credentials (Access Key + Secret Key from credential sheet) → <strong>Save</strong></span></label>
+                <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m4-s3"><span class="step-v2__text">Enter S3 credentials (Access Key + Secret Key from table above) → <strong>Save</strong></span></label>
                 <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m4-s4"><span class="step-v2__text">Navigate to <strong>Activations</strong> → Click "New" → Select <strong>Enterprise Data Warehouse</strong></span></label>
                 <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m4-s5"><span class="step-v2__text">Select segment: <strong>"High Value Guests"</strong></span></label>
                 <label class="step-v2"><input type="checkbox" class="step-v2__checkbox step-checkbox" data-step="d360-m4-s6"><span class="step-v2__text">Configure Contact Point: <strong>Unified Indv Contact Point Email → Email Address</strong></span></label>

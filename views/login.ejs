@@ -73,7 +73,7 @@
       width: 100%;
       max-width: 440px;
       margin: 1rem;
-      padding: 3rem 2.5rem;
+      padding: 0 0 2.5rem;
       background: rgba(12, 27, 42, 0.85);
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
@@ -82,6 +82,35 @@
       box-shadow:
         0 24px 48px rgba(0, 0, 0, 0.5),
         0 0 0 1px rgba(196, 169, 98, 0.05) inset;
+      overflow: hidden;
+    }
+
+    /* Watch hero image */
+    .login-card__hero {
+      position: relative;
+      width: 100%;
+      height: 180px;
+      overflow: hidden;
+    }
+    .login-card__hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+      display: block;
+    }
+    .login-card__hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: linear-gradient(to top, rgba(12, 27, 42, 0.85) 0%, transparent 100%);
+    }
+
+    .login-card__body {
+      padding: 1.5rem 2.5rem 0;
     }
 
     /* Logos */
@@ -310,9 +339,15 @@
     @media (max-width: 480px) {
       .login-card {
         margin: 0.75rem;
-        padding: 2rem 1.5rem;
+        padding: 0 0 2rem;
         border-radius: 20px;
         max-width: 100%;
+      }
+      .login-card__hero {
+        height: 140px;
+      }
+      .login-card__body {
+        padding: 1.25rem 1.5rem 0;
       }
       .login-card__title {
         font-size: 1.3rem;
@@ -330,63 +365,69 @@
   <div class="login-background"></div>
 
   <div class="login-card">
-    <div class="login-card__logos">
-      <img src="/assets/images/salesforce-logo.png" alt="Salesforce" class="login-card__logo">
-      <div class="login-card__logo-divider"></div>
-      <img src="/assets/images/iwc-logo.png" alt="IWC Schaffhausen" class="login-card__logo">
+    <div class="login-card__hero">
+      <img src="/assets/images/iwc-watch-hero.png" alt="IWC Schaffhausen Perpetual Calendar" loading="eager">
     </div>
 
-    <h1 class="login-card__title">Data 360<br>Incubation Workshop</h1>
-    <p class="login-card__subtitle">Sign in with your corporate email</p>
-
-    <form class="login-form" id="loginForm" autocomplete="off">
-      <div class="login-form__error" id="loginError"></div>
-
-      <div class="login-form__group">
-        <input
-          type="text"
-          id="loginName"
-          class="login-form__input"
-          placeholder="Full Name"
-          required
-          autocomplete="name"
-        >
-        <label for="loginName" class="login-form__label">Full Name</label>
+    <div class="login-card__body">
+      <div class="login-card__logos">
+        <img src="/assets/images/salesforce-logo.png" alt="Salesforce" class="login-card__logo">
+        <div class="login-card__logo-divider"></div>
+        <img src="/assets/images/iwc-logo.png" alt="IWC Schaffhausen" class="login-card__logo">
       </div>
 
-      <div class="login-form__group">
-        <input
-          type="email"
-          id="loginEmail"
-          class="login-form__input"
-          placeholder="Corporate Email"
-          required
-          autocomplete="email"
-        >
-        <label for="loginEmail" class="login-form__label">Corporate Email</label>
-      </div>
+      <h1 class="login-card__title">Data 360<br>Incubation Workshop</h1>
+      <p class="login-card__subtitle">Sign in with your corporate email</p>
 
-      <div class="login-form__group login-form__password-wrapper">
-        <input
-          type="password"
-          id="loginPassword"
-          class="login-form__input"
-          placeholder="Password"
-          required
-          autocomplete="current-password"
-        >
-        <label for="loginPassword" class="login-form__label">Password</label>
-        <button type="button" class="login-form__password-toggle" id="passwordToggle" aria-label="Toggle password visibility">
-          <i class="ph ph-eye"></i>
+      <form class="login-form" id="loginForm" autocomplete="off">
+        <div class="login-form__error" id="loginError"></div>
+
+        <div class="login-form__group">
+          <input
+            type="text"
+            id="loginName"
+            class="login-form__input"
+            placeholder="Full Name"
+            required
+            autocomplete="name"
+          >
+          <label for="loginName" class="login-form__label">Full Name</label>
+        </div>
+
+        <div class="login-form__group">
+          <input
+            type="email"
+            id="loginEmail"
+            class="login-form__input"
+            placeholder="Corporate Email"
+            required
+            autocomplete="email"
+          >
+          <label for="loginEmail" class="login-form__label">Corporate Email</label>
+        </div>
+
+        <div class="login-form__group login-form__password-wrapper">
+          <input
+            type="password"
+            id="loginPassword"
+            class="login-form__input"
+            placeholder="Password"
+            required
+            autocomplete="current-password"
+          >
+          <label for="loginPassword" class="login-form__label">Password</label>
+          <button type="button" class="login-form__password-toggle" id="passwordToggle" aria-label="Toggle password visibility">
+            <i class="ph ph-eye"></i>
+          </button>
+        </div>
+
+        <button type="submit" class="login-form__submit" id="loginSubmit">
+          Sign In
         </button>
-      </div>
+      </form>
 
-      <button type="submit" class="login-form__submit" id="loginSubmit">
-        Sign In
-      </button>
-    </form>
-
-    <p class="login-card__footer">Access restricted to IWC and Salesforce employees</p>
+      <p class="login-card__footer">Access restricted to IWC and Salesforce employees</p>
+    </div>
   </div>
 
   <script>

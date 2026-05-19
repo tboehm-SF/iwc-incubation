@@ -100,33 +100,19 @@
         <div class="agenda-slot">
           <div class="agenda-slot__time">14:30</div>
           <div class="agenda-slot__content">
-            <h3>Data &amp; Insights in Salesforce CRM (Exercise #4)</h3>
-            <p>Surfacing insights on records, Data Actions, and Platform Events</p>
-          </div>
-        </div>
-        <div class="agenda-slot">
-          <div class="agenda-slot__time">15:00</div>
-          <div class="agenda-slot__content">
-            <h3>Segmentation &amp; Activation (Exercise #5)</h3>
+            <h3>Segmentation (Exercise #4)</h3>
             <p>Segment builder, audience filters, and publishing to targets</p>
           </div>
         </div>
         <div class="agenda-slot">
-          <div class="agenda-slot__time">15:30</div>
+          <div class="agenda-slot__time">15:00</div>
           <div class="agenda-slot__content">
             <h3>What's Next?</h3>
             <p>Roadmap, advanced topics, and future workshop tracks</p>
           </div>
         </div>
         <div class="agenda-slot">
-          <div class="agenda-slot__time">16:00</div>
-          <div class="agenda-slot__content">
-            <h3>Credit Calculations Deep-Dive</h3>
-            <p>Understanding Data Cloud credit consumption and optimization</p>
-          </div>
-        </div>
-        <div class="agenda-slot">
-          <div class="agenda-slot__time">16:30</div>
+          <div class="agenda-slot__time">15:30</div>
           <div class="agenda-slot__content">
             <h3>Networking</h3>
             <p>Open discussion, Q&amp;A, and next steps</p>
@@ -135,6 +121,186 @@
       </div>
     </div>
   </section>
+
+  <!-- ============================================== -->
+  <!-- WORKSHOP ACCESS CREDENTIALS                    -->
+  <!-- ============================================== -->
+  <section class="section credentials-section" id="credentials">
+    <div class="container">
+      <h2 class="section__title">Workshop Access Keys</h2>
+      <p class="section__subtitle">Use these credentials to log in to the workshop platform.</p>
+
+      <div class="credentials-grid">
+        <!-- IWC Credential -->
+        <div class="credential-card">
+          <div class="credential-card__icon">
+            <i class="ph ph-building"></i>
+          </div>
+          <h3 class="credential-card__title">IWC Employees</h3>
+          <p class="credential-card__domain">@iwc.com</p>
+          <div class="credential-card__key-wrapper">
+            <code class="credential-card__key" id="key-iwc">Watchmaking26!1</code>
+            <button class="credential-card__copy" onclick="copyKey('key-iwc')" title="Copy to clipboard">
+              <i class="ph ph-copy"></i>
+            </button>
+          </div>
+          <span class="credential-card__copied" id="copied-key-iwc">Copied!</span>
+        </div>
+
+        <!-- Salesforce Credential -->
+        <div class="credential-card">
+          <div class="credential-card__icon credential-card__icon--sf">
+            <i class="ph ph-cloud"></i>
+          </div>
+          <h3 class="credential-card__title">Salesforce Employees</h3>
+          <p class="credential-card__domain">@salesforce.com</p>
+          <div class="credential-card__key-wrapper">
+            <code class="credential-card__key" id="key-sf">Röstigraben_SF26!1</code>
+            <button class="credential-card__copy" onclick="copyKey('key-sf')" title="Copy to clipboard">
+              <i class="ph ph-copy"></i>
+            </button>
+          </div>
+          <span class="credential-card__copied" id="copied-key-sf">Copied!</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .credentials-section {
+      background: linear-gradient(180deg, rgba(196, 169, 98, 0.03) 0%, transparent 100%);
+    }
+    .credentials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .credential-card {
+      position: relative;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(196, 169, 98, 0.2);
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .credential-card:hover {
+      border-color: rgba(196, 169, 98, 0.4);
+      box-shadow: 0 8px 32px rgba(196, 169, 98, 0.1);
+    }
+    .credential-card__icon {
+      width: 56px;
+      height: 56px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(196, 169, 98, 0.1);
+      border: 1px solid rgba(196, 169, 98, 0.25);
+      border-radius: 14px;
+      color: #C4A962;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .credential-card__icon--sf {
+      background: rgba(0, 161, 224, 0.1);
+      border-color: rgba(0, 161, 224, 0.25);
+      color: #00A1E0;
+    }
+    .credential-card__title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 0.25rem;
+    }
+    .credential-card__domain {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 1.25rem;
+    }
+    .credential-card__key-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+    }
+    .credential-card__key {
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      font-size: 1rem;
+      color: #E8D5A0;
+      letter-spacing: 0.02em;
+      user-select: all;
+    }
+    .credential-card__copy {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: rgba(196, 169, 98, 0.15);
+      border: 1px solid rgba(196, 169, 98, 0.3);
+      border-radius: 8px;
+      color: #C4A962;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: all 0.2s ease;
+      flex-shrink: 0;
+    }
+    .credential-card__copy:hover {
+      background: rgba(196, 169, 98, 0.25);
+      transform: scale(1.05);
+    }
+    .credential-card__copy:active {
+      transform: scale(0.95);
+    }
+    .credential-card__copied {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      color: #4CAF50;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .credential-card__copied--visible {
+      opacity: 1;
+    }
+  </style>
+
+  <script>
+    function copyKey(elementId) {
+      var keyEl = document.getElementById(elementId);
+      var copiedEl = document.getElementById('copied-' + elementId);
+      var text = keyEl.textContent;
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function() {
+          showCopied(copiedEl);
+        });
+      } else {
+        // Fallback for older browsers
+        var textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.style.position = 'fixed';
+        textArea.style.opacity = '0';
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        showCopied(copiedEl);
+      }
+    }
+    function showCopied(el) {
+      el.classList.add('credential-card__copied--visible');
+      setTimeout(function() {
+        el.classList.remove('credential-card__copied--visible');
+      }, 2000);
+    }
+  </script>
 
   <!-- ============================================== -->
   <!-- TRACK CARDS                                    -->

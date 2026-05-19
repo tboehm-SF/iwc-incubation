@@ -61,8 +61,56 @@
     /* Credential Tables */
     .credential-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
     .credential-table th { padding: 0.75rem 1rem; text-align: left; font-weight: 600; color: var(--iwc-gold-dark); border-bottom: 2px solid rgba(196,169,98,0.3); }
-    .credential-table td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--gray-200); color: var(--gray-700); }
+    .credential-table td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--gray-200); color: var(--gray-700); vertical-align: top; }
     .credential-table code { font-family: 'SF Mono', monospace; background: rgba(12,27,42,0.06); padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; color: var(--iwc-navy); }
+
+    /* Private Key Display */
+    .private-key-container { position: relative; }
+    .private-key-display {
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.65rem;
+      line-height: 1.4;
+      background: rgba(12, 27, 42, 0.06);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      padding: 0.75rem;
+      white-space: pre-wrap;
+      word-break: break-all;
+      color: var(--iwc-navy);
+      max-height: 180px;
+      overflow-y: auto;
+      margin: 0 0 0.5rem 0;
+    }
+    .copy-key-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.4rem 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      color: var(--iwc-navy);
+      background: rgba(196, 169, 98, 0.15);
+      border: 1px solid rgba(196, 169, 98, 0.4);
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .copy-key-btn:hover {
+      background: rgba(196, 169, 98, 0.25);
+      border-color: rgba(196, 169, 98, 0.6);
+    }
+    .copy-key-btn:active { transform: scale(0.95); }
+    .copy-key-confirmation {
+      display: inline-block;
+      margin-left: 0.5rem;
+      font-size: 0.75rem;
+      color: #2E844A;
+      font-weight: 600;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .copy-key-confirmation--visible { opacity: 1; }
 
     /* Mapping Tables */
     .mapping-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; border-radius: 12px; overflow: hidden; border: 1px solid var(--gray-200); }
@@ -287,7 +335,40 @@
                   <tr><td>Connection Name</td><td><code>Coral Reef Snowflake</code></td></tr>
                   <tr><td>Account URL</td><td><code style="font-size:0.7rem">https://aab14426.us-east-1.snowflakecomputing.com/</code></td></tr>
                   <tr><td>Username</td><td><code>stopkaya</code></td></tr>
-                  <tr><td>Private Key</td><td><em style="opacity:0.6">Provided by facilitator (RSA key)</em></td></tr>
+                  <tr><td>Private Key</td><td>
+                    <div class="private-key-container">
+                      <pre class="private-key-display" id="snowflake-private-key">MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQD1sq3MLWFAuLsy
+5Qgyq4Uvfh5WHr8gw3Ej/qGRkzwWf2BWHW77iFjyoMELpLu31wixd8TeJzRIDp18
+67LqCWVyhKkPtcUBsomXRdVwh31eg7CrySllAN8H8s5ZYjxCrSopKPrhmpBmim38
+SfDaLi+tBlstNFbTs4P4v/QxYdz4hoaJINmv/nj7MO4U5UV5wDZRMTt/hrrB/Huq
+hsHBixqVbOqwCxtOK7tqScpdZUxzTTGRS0idSIuOMFqMgdSPJDPrwSu4p28MAIC3
+S9WRnHJY0ghjZkeIF8Gq4kDKf3+KKW8nGVkst3n/pN4zSgyPJFdpb3zXv0ZKcTku
+VR9NR/xFAgMBAAECggEACboNpFglkfzeOFkV1n+w0Z0CEXG9KkxidcTWW5+DEPbw
+9ufKZX3T26MekVnvror+RpxRuGO/75xYgsIH/rjpgbubv8n35yXMyabTmNVcUroO
+6/YWQ+/hZHypy6MWdKNLWH7NU9IdJloTmZnJxbFvZL+sK2F3kID6WAYtYikYKOSC
+onTWk4PyyLqPqvCLkBwgY8AfwZdBhg+KBJSoYFgAUL+QSMXf+lB5YS77NXi8v/Av
+DicsKHaWUQoMx7Yb56H9kYfFLhSU77IJv0XIjm0mnm/fOVDd45aPBGoK3GPU2p76
+OQc9ST8fYaSTQWp7h+XYb45GBe7a8hdi40aLA8QSUQKBgQD6/MPDsHdL+OP3h5SU
+ENdS1myJnOdr+a11geB8JJVgHb75bfnksY7jtVlMyKdvN8kwxaT9PIRuUJjV1dz3
+tW+j6lyboFkWGa9Q2FE0JQaCytxWFQzdcbOQ9XW96I7XOaAFlMe2sm+JVs1Pe6mS
+4xv4pfywBxlv4oLE0hCyloQaTQKBgQD6mt7uyoon3FPt97XHyuuA3urUi/Bz5ouA
+TP3+eMKNWb62kL22qsbOwvbdiuFD1Q2ZdFpvhvoCia4IdjknE3AQxKC7IUJbfBA3
+4cnBnoqu0XN8N1mkD4n4eCTM17VuZlwKG4YMAcOo8wvc3XGDc8DmZT88r813Mccv
+kj8qn6r12QKBgAzKjP+QIsRQbu3SjxPst8yU+PsacADkvJ5cfCBXjPVVDsKPhEjP
+c8TPHTn4j+/vG+XMbNgrGWS13tQnDhfhu0rTStzzkxa5QGISZDEQIgDQbeJFOF6g
+yNH+cH25OG5nlWwzZOo+tch+EACZAM9nm6lUbEhcVEOLe7akLg2r9heRAoGBAKHz
+zhiB2fDSqYbDK73XPITHCvmbCiTMm+CpYQfAIPLaSa6QMZpIGTzrsEASDWwZ1rUS
+BZPHpfBX65laVasUG7sqZzkn0EtxDMYga5NuEu/ROhHPb2XgCOkDM70RthWHnvmF
+OgauaTTZBRSSI1axSrtaORjOADmEeNYcbCfukbxZAoGBAOJ8Y+nen8tigeHTMDQ8
+dx0y32iPPVh3gUXd0H5YKj6eRcbHT8adKPLrPyMLorOuBWU4zDpnEKod2n2CDmkR
+R6yGkPhaMVor03quNrpwonJ6OV8rQZhCoAjsD/CiZE/9V/XFObCRPQVbX3YRZz93
+Qn9cJ/tvcXhqvErS3bEBpEPm</pre>
+                      <button class="copy-key-btn" onclick="copyPrivateKey('snowflake-private-key')" title="Copy Private Key">
+                        <i class="ph ph-copy"></i> Copy
+                      </button>
+                      <span class="copy-key-confirmation" id="copied-snowflake-private-key">Copied!</span>
+                    </div>
+                  </td></tr>
                   <tr><td>Region</td><td><code>us-east-1</code></td></tr>
                   <tr><td>Warehouse</td><td><code>WH_INDUSTRY_DEMO (X-Small)</code></td></tr>
                 </tbody>
@@ -769,6 +850,35 @@
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') closeLightbox();
     });
+
+    // Copy Private Key function
+    function copyPrivateKey(elementId) {
+      var keyEl = document.getElementById(elementId);
+      var copiedEl = document.getElementById('copied-' + elementId);
+      var text = keyEl.textContent.trim();
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function() {
+          showCopyConfirmation(copiedEl);
+        });
+      } else {
+        var textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.style.position = 'fixed';
+        textArea.style.opacity = '0';
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        showCopyConfirmation(copiedEl);
+      }
+    }
+    function showCopyConfirmation(el) {
+      el.classList.add('copy-key-confirmation--visible');
+      setTimeout(function() {
+        el.classList.remove('copy-key-confirmation--visible');
+      }, 2000);
+    }
   </script>
 </body>
 </html>
